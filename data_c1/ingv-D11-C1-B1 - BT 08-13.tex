@@ -1,0 +1,756 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=1.5cm] {geometry}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{tkz-euclide}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+\usepackage{tikz,tkz-tab}
+%\usepackage[solcolor]{ex_test}
+%\usepackage[dethi]{ex_test} % Chỉ hiển thị đề thi
+\usepackage[loigiai]{ex_test} % Hiển thị lời giải
+%\usepackage[color]{ex_test} % Khoanh các đáp án
+\everymath{\displaystyle}
+
+\def\colorEX{\color{purple}}
+%\def\colorEX{}%Không tô màu đáp án đúng trong tùy chọn loigiai
+\renewtheorem{ex}{\color{violet}Câu}
+\renewcommand{\FalseEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+\renewcommand{\TrueEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+
+%---------- Khai báo viết tắt, in đáp án
+\newcommand{\hoac}[1]{ %hệ hoặc
+    \left[\begin{aligned}#1\end{aligned}\right.}
+\newcommand{\heva}[1]{ %hệ và
+    \left\{\begin{aligned}#1\end{aligned}\right.}
+
+%Tiêu đề
+\newcommand{\tenso}{THÀNH PHỐ HỒ CHÍ MINH}
+\newcommand{\tentruong}{HD-NQQ}
+\newcommand{\tenkythi}{GÓC LƯỢNG GIÁC }
+\newcommand{\tenmonthi}{Môn: D11-C1-B1 - BT 08-13}
+\newcommand{\thoigian}{}
+\newcommand{\tieude}[1]{
+   \begin{tabular}{cm{1cm}cm{3cm}cm{3cm}}
+    {\bf \tenso} & & {\bf \tenkythi} \\
+    {\bf \tentruong} & & {\bf \tenmonthi}\\
+    && {\bf Thời gian: \bf \thoigian \, phút}\\
+    && { \fbox{\bf Mã đề: #1}}
+   \end{tabular}\\\\
+    
+   {Họ tên HS: \dotfill Số báo danh \dotfill}\\
+}
+\newcommand{\chantrang}[2]{\rfoot{Trang \thepage $-$ Mã đề #2}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+
+\begin{document}
+%Thiết lập giãn dọng 1.5cm 
+%\setlength{\lineskip}{1.5em}
+%Nội dung trắc nghiệm bắt đầu ở đây
+
+
+\tieude{001}
+%\chantrang{\pageref{LastPage}}{001}
+\setcounter{page}{1}
+{\bf PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-1]
+\begin{ex}[13-M1. Cho góc x. Tìm tất cả các góc có cùng điểm biểu diễn với x]
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{\pi}{3}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{\pi}{3}+k4\pi, k\in \mathbb{Z}$ }
+   { $\frac{\pi}{3}+\dfrac{k\pi }{3}, k\in \mathbb{Z}$ }
+     { $\frac{\pi}{3}+k\pi, k\in \mathbb{Z}$ }
+    { \True $\frac{\pi}{3}+k2\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{\pi}{3}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${3 \pi}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $3 \pi+\dfrac{k\pi }{3}, k\in \mathbb{Z}$ }
+   { \True $3 \pi+k2\pi, k\in \mathbb{Z}$ }
+     { $3 \pi+k3\pi, k\in \mathbb{Z}$ }
+    { $3 \pi+k4\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $3 \pi+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${8 \pi}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $8 \pi+k4\pi, k\in \mathbb{Z}$ }
+   { $8 \pi+\dfrac{k\pi }{4}, k\in \mathbb{Z}$ }
+     { $8 \pi+\dfrac{k\pi }{2}, k\in \mathbb{Z}$ }
+    { \True $8 \pi+k2\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $8 \pi+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{2 \pi}{5}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{2 \pi}{5}+k3\pi, k\in \mathbb{Z}$ }
+   { $\frac{2 \pi}{5}+\dfrac{k\pi }{2}, k\in \mathbb{Z}$ }
+     { $\frac{2 \pi}{5}+k4\pi, k\in \mathbb{Z}$ }
+    { \True $\frac{2 \pi}{5}+k2\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{2 \pi}{5}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${3 \pi}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ \True $3 \pi+k2\pi, k\in \mathbb{Z}$ }
+   { $3 \pi+k3\pi, k\in \mathbb{Z}$ }
+     { $3 \pi+\dfrac{k\pi }{3}, k\in \mathbb{Z}$ }
+    { $3 \pi+\dfrac{k\pi }{4}, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $3 \pi+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{2 \pi}{7}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{2 \pi}{7}+k\pi, k\in \mathbb{Z}$ }
+   { $\frac{2 \pi}{7}+\dfrac{k\pi }{4}, k\in \mathbb{Z}$ }
+     { \True $\frac{2 \pi}{7}+k2\pi, k\in \mathbb{Z}$ }
+    { $\frac{2 \pi}{7}+\dfrac{k\pi }{3}, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{2 \pi}{7}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+{\bf PHẦN II. Câu trắc nghiệm đúng sai.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-2]
+\begin{ex}[08-M2. Cho góc radian. Xét Đ-S: Đổi sang độ, Điểm biểu diễn thuộc phần tư][Góc cùng điểm biểu diễn, Đếm số điểm biểu diễn]\\
+ Cho góc lượng giác $\frac{37 \pi}{9}$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ $\frac{37 \pi}{9}=743^\circ$  }
+   { Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $- \frac{\pi}{9}$  }
+     { \True Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ I }
+    { \True Số điểm biểu diễn trên đường tròn lượng giác của góc $\frac{37 \pi}{9}+k\frac{2 \pi}{7},k \in \mathbb{Z}$ là ${7}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Ta có: $\frac{37 \pi}{9}=\left(\dfrac{\frac{37 \pi}{9}.180}{\pi}\right)^\circ=740^\circ$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $\frac{37 \pi}{9}=\frac{\pi}{9} +2.2\pi$
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ Vì: $\frac{37 \pi}{9}=\frac{\pi}{9} +2.2\pi$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ I.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\frac{37 \pi}{9}+k\frac{2 \pi}{7}=\frac{37 \pi}{9}+\dfrac{k2\pi}{7}$ nên có ${7}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\frac{71 \pi}{18}$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ $\frac{71 \pi}{18}=720^\circ$  }
+   { \True Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $- \frac{\pi}{18}$ }
+     { Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ I }
+    { \True Số điểm biểu diễn trên đường tròn lượng giác của góc $\frac{71 \pi}{18}+k\pi,k \in \mathbb{Z}$ là ${2}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Ta có: $\frac{71 \pi}{18}=\left(\dfrac{\frac{71 \pi}{18}.180}{\pi}\right)^\circ=710^\circ$.
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì: $\frac{71 \pi}{18}=- \frac{\pi}{18} +2.2\pi$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $\frac{71 \pi}{18}=- \frac{\pi}{18} +2.2\pi$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ IV.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\frac{71 \pi}{18}+k\pi=\frac{71 \pi}{18}+\dfrac{k2\pi}{2}$ nên có ${2}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\frac{19 \pi}{3}$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ \True $\frac{19 \pi}{3}=1140^\circ$ }
+   { \True Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{\pi}{3}$ }
+     { Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ IV }
+    { Số điểm biểu diễn trên đường tròn lượng giác của góc $\frac{19 \pi}{3}+k\frac{\pi}{4},k \in \mathbb{Z}$ là ${9}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Ta có: $\frac{19 \pi}{3}=\left(\dfrac{\frac{19 \pi}{3}.180}{\pi}\right)^\circ=1140^\circ$.
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì: $\frac{19 \pi}{3}=\frac{\pi}{3} +3.2\pi$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $\frac{19 \pi}{3}=\frac{\pi}{3} +3.2\pi$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ I.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\frac{19 \pi}{3}+k\frac{\pi}{4}=\frac{19 \pi}{3}+\dfrac{k2\pi}{8}$ nên có ${8}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $- \frac{43 \pi}{12}$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ $- \frac{43 \pi}{12}=-628^\circ$  }
+   { \True Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{5 \pi}{12}$ }
+     { Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ IV }
+    { \True Số điểm biểu diễn trên đường tròn lượng giác của góc $- \frac{43 \pi}{12}+k\frac{\pi}{3},k \in \mathbb{Z}$ là ${6}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Ta có: $- \frac{43 \pi}{12}=\left(\dfrac{- \frac{43 \pi}{12}.180}{\pi}\right)^\circ=-645^\circ$.
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì: $- \frac{43 \pi}{12}=\frac{5 \pi}{12} -2.2\pi$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $- \frac{43 \pi}{12}=\frac{5 \pi}{12} -2.2\pi$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ I.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $- \frac{43 \pi}{12}+k\frac{\pi}{3}=- \frac{43 \pi}{12}+\dfrac{k2\pi}{6}$ nên có ${6}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\frac{73 \pi}{12}$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ $\frac{73 \pi}{12}=1106^\circ$  }
+   { Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $- \frac{\pi}{12}$  }
+     { Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ IV }
+    { \True Số điểm biểu diễn trên đường tròn lượng giác của góc $\frac{73 \pi}{12}+k\pi,k \in \mathbb{Z}$ là ${2}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Ta có: $\frac{73 \pi}{12}=\left(\dfrac{\frac{73 \pi}{12}.180}{\pi}\right)^\circ=1095^\circ$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $\frac{73 \pi}{12}=\frac{\pi}{12} +3.2\pi$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $\frac{73 \pi}{12}=\frac{\pi}{12} +3.2\pi$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ I.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\frac{73 \pi}{12}+k\pi=\frac{73 \pi}{12}+\dfrac{k2\pi}{2}$ nên có ${2}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\frac{7 \pi}{4}$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ \True $\frac{7 \pi}{4}=315^\circ$ }
+   { Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{\pi}{4}$  }
+     { \True Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ IV }
+    { Số điểm biểu diễn trên đường tròn lượng giác của góc $\frac{7 \pi}{4}+k\pi,k \in \mathbb{Z}$ là ${5}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Ta có: $\frac{7 \pi}{4}=\left(\dfrac{\frac{7 \pi}{4}.180}{\pi}\right)^\circ=315^\circ$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $\frac{7 \pi}{4}=- \frac{\pi}{4} +2\pi$
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ Vì: $\frac{7 \pi}{4}=- \frac{\pi}{4} +1.2\pi$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ IV.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\frac{7 \pi}{4}+k\pi=\frac{7 \pi}{4}+\dfrac{k2\pi}{2}$ nên có ${2}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}[09-M2. Cho góc độ. Xét Đ-S: Đổi sang radian, Điểm biểu diễn thuộc phần tư][Góc cùng điểm biểu diễn, Đếm số điểm biểu diễn] \\
+ Cho góc lượng giác $-350^\circ$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ $-350^\circ=- \frac{86 \pi}{45}$  }
+   { Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $-10^\circ$  }
+     { \True Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ I }
+    { \True Số điểm biểu diễn trên đường tròn lượng giác của góc $-350^\circ +k36^\circ,k \in \mathbb{Z}$ là ${10}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Ta có: $-350^\circ=\dfrac{-350.\pi}{180}=- \frac{35 \pi}{18}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $-350^\circ=10^\circ -1.360^\circ$
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ Vì: $-350^\circ=10^\circ -1.360^\circ$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ I.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $-350^\circ +k36^\circ=-350^\circ +\dfrac{k360^\circ}{10}$ nên có ${10}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $-675^\circ$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ $-675^\circ=- \frac{11 \pi}{3}$  }
+   { Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $-45^\circ$  }
+     { Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ II }
+    { Số điểm biểu diễn trên đường tròn lượng giác của góc $-675^\circ +k40^\circ,k \in \mathbb{Z}$ là ${11}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Ta có: $-675^\circ=\dfrac{-675.\pi}{180}=- \frac{15 \pi}{4}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $-675^\circ=45^\circ -2.360^\circ$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $-675^\circ=45^\circ -2.360^\circ$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ I.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $-675^\circ +k40^\circ=-675^\circ +\dfrac{k360^\circ}{9}$ nên có ${9}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $930^\circ$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ $930^\circ=\frac{467 \pi}{90}$  }
+   { Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $150^\circ$  }
+     { Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ II }
+    { \True Số điểm biểu diễn trên đường tròn lượng giác của góc $930^\circ +k180^\circ,k \in \mathbb{Z}$ là ${2}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Ta có: $930^\circ=\dfrac{930.\pi}{180}=\frac{31 \pi}{6}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $930^\circ=-150^\circ +3.360^\circ$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $930^\circ=-150^\circ +3.360^\circ$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ III.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $930^\circ +k180^\circ=930^\circ +\dfrac{k360^\circ}{2}$ nên có ${2}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $-375^\circ$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ \True $-375^\circ=- \frac{25 \pi}{12}$ }
+   { Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $15^\circ$  }
+     { Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ I }
+    { \True Số điểm biểu diễn trên đường tròn lượng giác của góc $-375^\circ +k36^\circ,k \in \mathbb{Z}$ là ${10}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Ta có: $-375^\circ=\dfrac{-375.\pi}{180}=- \frac{25 \pi}{12}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $-375^\circ=-15^\circ -1.360^\circ$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $-375^\circ=-15^\circ -1.360^\circ$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ IV.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $-375^\circ +k36^\circ=-375^\circ +\dfrac{k360^\circ}{10}$ nên có ${10}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $-585^\circ$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ \True $-585^\circ=- \frac{13 \pi}{4}$ }
+   { Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $-135^\circ$  }
+     { \True Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ II }
+    { Số điểm biểu diễn trên đường tròn lượng giác của góc $-585^\circ +k72^\circ,k \in \mathbb{Z}$ là ${6}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Ta có: $-585^\circ=\dfrac{-585.\pi}{180}=- \frac{13 \pi}{4}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $-585^\circ=135^\circ -2.360^\circ$
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ Vì: $-585^\circ=135^\circ -2.360^\circ$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ II.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $-585^\circ +k72^\circ=-585^\circ +\dfrac{k360^\circ}{5}$ nên có ${5}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $-855^\circ$. Xét tính đúng-sai của các khẳng định sau
+\choiceTFt
+{ $-855^\circ=- \frac{169 \pi}{36}$  }
+   { \True Góc lượng giác đã cho có cùng điểm biểu diễn trên đường tròn lượng giác với góc $-135^\circ$ }
+     { Điểm biểu diễn trên đường tròn lượng giác của góc đã cho thuộc phần tư thứ I }
+    { Số điểm biểu diễn trên đường tròn lượng giác của góc $-855^\circ +k36^\circ,k \in \mathbb{Z}$ là ${13}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Ta có: $-855^\circ=\dfrac{-855.\pi}{180}=- \frac{19 \pi}{4}$.
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì: $-855^\circ=-135^\circ -2.360^\circ$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ Vì: $-855^\circ=-135^\circ -2.360^\circ$ nên điểm biểu diễn của góc đã cho thuộc phần tư thứ III.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $-855^\circ +k36^\circ=-855^\circ +\dfrac{k360^\circ}{10}$ nên có ${10}$ điểm biểu diễn trên đường tròn lượng giác.
+
+ 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+{\bf PHẦN III. Câu trắc nghiệm trả lời ngắn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-3]
+\begin{ex}[10-M2. Cho số vòng quay bánh xe sau t1 giây][Tính góc radian sau khi quay trong t2 giây] \\
+ Một bánh xe của một loại xe quay được 8 vòng trong 3 giây. Tính góc theo rađian mà bánh xe quay được trong 10 giây (kết quả làm tròn đến hàng phần chục).\ 
+\shortans[4]{167,6}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{8}{3}$.
+
+Một vòng quay ứng với góc $2\pi$. Sau ${10}$ giây có $\frac{8}{3}.10=\frac{80}{3}$ vòng quay ứng với góc:
+
+$\frac{80}{3}.2\pi=\frac{160}{3}\pi=167,6$. 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe quay được 11 vòng trong 4 giây. Tính góc theo rađian mà bánh xe quay được trong 6 giây (kết quả làm tròn đến hàng phần chục).\ 
+\shortans[4]{103,7}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{11}{4}$.
+
+Một vòng quay ứng với góc $2\pi$. Sau ${6}$ giây có $\frac{11}{4}.6=\frac{33}{2}$ vòng quay ứng với góc:
+
+$\frac{33}{2}.2\pi=33\pi=103,7$. 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe quay được 8 vòng trong 5 giây. Tính góc theo rađian mà bánh xe quay được trong 4 giây (kết quả làm tròn đến hàng phần chục).\ 
+\shortans[4]{40,2}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{8}{5}$.
+
+Một vòng quay ứng với góc $2\pi$. Sau ${4}$ giây có $\frac{8}{5}.4=\frac{32}{5}$ vòng quay ứng với góc:
+
+$\frac{32}{5}.2\pi=\frac{64}{5}\pi=40,2$. 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe quay được 12 vòng trong 3 giây. Tính góc theo rađian mà bánh xe quay được trong 6 giây (kết quả làm tròn đến hàng phần chục).\ 
+\shortans[4]{150,8}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $4$.
+
+Một vòng quay ứng với góc $2\pi$. Sau ${6}$ giây có $4.6=24$ vòng quay ứng với góc:
+
+$24.2\pi=48\pi=150,8$. 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe quay được 5 vòng trong 5 giây. Tính góc theo rađian mà bánh xe quay được trong 7 giây (kết quả làm tròn đến hàng phần chục).\ 
+\shortans[4]{44}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $1$.
+
+Một vòng quay ứng với góc $2\pi$. Sau ${7}$ giây có $1.7=7$ vòng quay ứng với góc:
+
+$7.2\pi=14\pi=44$. 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe quay được 9 vòng trong 5 giây. Tính góc theo rađian mà bánh xe quay được trong 6 giây (kết quả làm tròn đến hàng phần chục).\ 
+\shortans[4]{67,9}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{9}{5}$.
+
+Một vòng quay ứng với góc $2\pi$. Sau ${6}$ giây có $\frac{9}{5}.6=\frac{54}{5}$ vòng quay ứng với góc:
+
+$\frac{54}{5}.2\pi=\frac{108}{5}\pi=67,9$. 
+ }\end{ex}
+
+\begin{ex}[11-M3. Cho số vòng quay bánh xe sau t1 giây]\textbf{[Tính quãng đường đi được sau t2 giây]} \\
+ Một bánh xe của một loại xe có bán kính ${57}$ cm và quay được 6 vòng trong 4 giây. Tính độ dài quãng đường (theo đơn vị mét) xe đi được trong 8 giây (kết quả làm tròn đến hàng phần mười). 
+\shortans[4]{43}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{3}{2}$.
+
+Một vòng quay ứng với quãng đường là $2\pi.\dfrac{57}{100}=2\pi.\frac{57}{100}=\frac{57}{50}\pi$.
+
+Sau ${8}$ giây quãng đường đi được là: $\frac{3}{2}.8.\frac{57}{50}\pi=\frac{342}{25}\pi=43$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe có bán kính ${59}$ cm và quay được 6 vòng trong 5 giây. Tính độ dài quãng đường (theo đơn vị mét) xe đi được trong 9 giây (kết quả làm tròn đến hàng phần mười). 
+\shortans[4]{40}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{6}{5}$.
+
+Một vòng quay ứng với quãng đường là $2\pi.\dfrac{59}{100}=2\pi.\frac{59}{100}=\frac{59}{50}\pi$.
+
+Sau ${9}$ giây quãng đường đi được là: $\frac{6}{5}.9.\frac{59}{50}\pi=\frac{1593}{125}\pi=40$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe có bán kính ${52}$ cm và quay được 8 vòng trong 6 giây. Tính độ dài quãng đường (theo đơn vị mét) xe đi được trong 5 giây (kết quả làm tròn đến hàng phần mười). 
+\shortans[4]{21,8}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{4}{3}$.
+
+Một vòng quay ứng với quãng đường là $2\pi.\dfrac{52}{100}=2\pi.\frac{13}{25}=\frac{26}{25}\pi$.
+
+Sau ${5}$ giây quãng đường đi được là: $\frac{4}{3}.5.\frac{26}{25}\pi=\frac{104}{15}\pi=21,8$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe có bán kính ${54}$ cm và quay được 5 vòng trong 4 giây. Tính độ dài quãng đường (theo đơn vị mét) xe đi được trong 8 giây (kết quả làm tròn đến hàng phần mười). 
+\shortans[4]{33,9}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{5}{4}$.
+
+Một vòng quay ứng với quãng đường là $2\pi.\dfrac{54}{100}=2\pi.\frac{27}{50}=\frac{27}{25}\pi$.
+
+Sau ${8}$ giây quãng đường đi được là: $\frac{5}{4}.8.\frac{27}{25}\pi=\frac{54}{5}\pi=33,9$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe có bán kính ${50}$ cm và quay được 8 vòng trong 4 giây. Tính độ dài quãng đường (theo đơn vị mét) xe đi được trong 6 giây (kết quả làm tròn đến hàng phần mười). 
+\shortans[4]{37,7}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $2$.
+
+Một vòng quay ứng với quãng đường là $2\pi.\dfrac{50}{100}=2\pi.\frac{1}{2}=1\pi$.
+
+Sau ${6}$ giây quãng đường đi được là: $2.6.1\pi=12\pi=37,7$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Một bánh xe của một loại xe có bán kính ${44}$ cm và quay được 11 vòng trong 5 giây. Tính độ dài quãng đường (theo đơn vị mét) xe đi được trong 9 giây (kết quả làm tròn đến hàng phần mười). 
+\shortans[4]{54,7}
+
+\loigiai{ 
+ Một giây bánh xe quay được số vòng là: $\frac{11}{5}$.
+
+Một vòng quay ứng với quãng đường là $2\pi.\dfrac{44}{100}=2\pi.\frac{11}{25}=\frac{22}{25}\pi$.
+
+Sau ${9}$ giây quãng đường đi được là: $\frac{11}{5}.9.\frac{22}{25}\pi=\frac{2178}{125}\pi=54,7$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ \textbf{[12-M3. Cho đường kính của bánh trước và bánh sau, vận tốc n vòng/phút. Tính quãng đường xe đi.]} \\ Một máy kéo nông nghiệp với bánh xe trước có đường kính là ${72}$ cm, bánh xe sau có đường kính là ${178}$ cm,  xe chuyển động với vận tốc không đổi trên một đoạn đường thẳng. Biết rằng vận tốc của bánh xe sau trong chuyển động này là ${12}$ vòng/ phút. Tính quãng đường mà máy kéo đi được (bằng km) trong ${10}$ phút (làm tròn đến hàng phần mười).\\ 
+\shortans[4]{0,7}
+
+\loigiai{ 
+ Chu vi của bánh sau là: $2\pi.89=178\pi$.
+
+Tức là bánh xe sau đi mỗi vòng được quãng đường có độ dài là $178\pi$.
+
+Vận tốc của bánh xe sau là ${12}$ vòng/ phút nên trong ${10}$ phút bánh xe sau chuyển động được:\[12.10=120\text{(vòng)}.\]
+
+Quãng đường đi được của máy kéo trong ${10}$ phút là quãng đường đi được khi bánh xe sau lăn ${120}$ vòng:
+
+$120.178\pi=21360\pi$ (cm) $=0,2136\pi$ (km) $=0,7$ (km). 
+ }\end{ex}
+
+\begin{ex}
+ Một máy kéo nông nghiệp với bánh xe trước có đường kính là ${96}$ cm, bánh xe sau có đường kính là ${174}$ cm,  xe chuyển động với vận tốc không đổi trên một đoạn đường thẳng. Biết rằng vận tốc của bánh xe trước trong chuyển động này là ${14}$ vòng/ phút. Tính quãng đường mà máy kéo đi được (bằng km) trong ${11}$ phút (làm tròn đến hàng phần mười).\\ 
+\shortans[4]{0,5}
+
+\loigiai{ 
+ Chu vi của bánh trước là: $2\pi.48=96\pi$.
+
+Tức là bánh xe trước đi mỗi vòng được quãng đường có độ dài là $96\pi$.
+
+Vận tốc của bánh xe trước là ${14}$ vòng/ phút nên trong ${11}$ phút bánh xe trước chuyển động được:\[14.11=154\text{(vòng)}.\]
+
+Quãng đường đi được của máy kéo trong ${11}$ phút là quãng đường đi được khi bánh xe trước lăn ${154}$ vòng:
+
+$154.96\pi=14784\pi$ (cm) $=0,14784\pi$ (km) $=0,5$ (km). 
+ }\end{ex}
+
+\begin{ex}
+ Một máy kéo nông nghiệp với bánh xe trước có đường kính là ${94}$ cm, bánh xe sau có đường kính là ${178}$ cm,  xe chuyển động với vận tốc không đổi trên một đoạn đường thẳng. Biết rằng vận tốc của bánh xe sau trong chuyển động này là ${7}$ vòng/ phút. Tính quãng đường mà máy kéo đi được (bằng km) trong ${13}$ phút (làm tròn đến hàng phần mười).\\ 
+\shortans[4]{0,5}
+
+\loigiai{ 
+ Chu vi của bánh sau là: $2\pi.89=178\pi$.
+
+Tức là bánh xe sau đi mỗi vòng được quãng đường có độ dài là $178\pi$.
+
+Vận tốc của bánh xe sau là ${7}$ vòng/ phút nên trong ${13}$ phút bánh xe sau chuyển động được:\[7.13=91\text{(vòng)}.\]
+
+Quãng đường đi được của máy kéo trong ${13}$ phút là quãng đường đi được khi bánh xe sau lăn ${91}$ vòng:
+
+$91.178\pi=16198\pi$ (cm) $=0,16198\pi$ (km) $=0,5$ (km). 
+ }\end{ex}
+
+\begin{ex}
+ Một máy kéo nông nghiệp với bánh xe trước có đường kính là ${72}$ cm, bánh xe sau có đường kính là ${162}$ cm,  xe chuyển động với vận tốc không đổi trên một đoạn đường thẳng. Biết rằng vận tốc của bánh xe sau trong chuyển động này là ${5}$ vòng/ phút. Tính quãng đường mà máy kéo đi được (bằng km) trong ${10}$ phút (làm tròn đến hàng phần mười).\\ 
+\shortans[4]{0,3}
+
+\loigiai{ 
+ Chu vi của bánh sau là: $2\pi.81=162\pi$.
+
+Tức là bánh xe sau đi mỗi vòng được quãng đường có độ dài là $162\pi$.
+
+Vận tốc của bánh xe sau là ${5}$ vòng/ phút nên trong ${10}$ phút bánh xe sau chuyển động được:\[5.10=50\text{(vòng)}.\]
+
+Quãng đường đi được của máy kéo trong ${10}$ phút là quãng đường đi được khi bánh xe sau lăn ${50}$ vòng:
+
+$50.162\pi=8100\pi$ (cm) $=0,081\pi$ (km) $=0,3$ (km). 
+ }\end{ex}
+
+\begin{ex}
+ Một máy kéo nông nghiệp với bánh xe trước có đường kính là ${74}$ cm, bánh xe sau có đường kính là ${182}$ cm,  xe chuyển động với vận tốc không đổi trên một đoạn đường thẳng. Biết rằng vận tốc của bánh xe sau trong chuyển động này là ${4}$ vòng/ phút. Tính quãng đường mà máy kéo đi được (bằng km) trong ${14}$ phút (làm tròn đến hàng phần mười).\\ 
+\shortans[4]{0,3}
+
+\loigiai{ 
+ Chu vi của bánh sau là: $2\pi.91=182\pi$.
+
+Tức là bánh xe sau đi mỗi vòng được quãng đường có độ dài là $182\pi$.
+
+Vận tốc của bánh xe sau là ${4}$ vòng/ phút nên trong ${14}$ phút bánh xe sau chuyển động được:\[4.14=56\text{(vòng)}.\]
+
+Quãng đường đi được của máy kéo trong ${14}$ phút là quãng đường đi được khi bánh xe sau lăn ${56}$ vòng:
+
+$56.182\pi=10192\pi$ (cm) $=0,10192\pi$ (km) $=0,3$ (km). 
+ }\end{ex}
+
+\begin{ex}
+ Một máy kéo nông nghiệp với bánh xe trước có đường kính là ${100}$ cm, bánh xe sau có đường kính là ${176}$ cm,  xe chuyển động với vận tốc không đổi trên một đoạn đường thẳng. Biết rằng vận tốc của bánh xe sau trong chuyển động này là ${6}$ vòng/ phút. Tính quãng đường mà máy kéo đi được (bằng km) trong ${11}$ phút (làm tròn đến hàng phần mười).\\ 
+\shortans[4]{0,4}
+
+\loigiai{ 
+ Chu vi của bánh sau là: $2\pi.88=176\pi$.
+
+Tức là bánh xe sau đi mỗi vòng được quãng đường có độ dài là $176\pi$.
+
+Vận tốc của bánh xe sau là ${6}$ vòng/ phút nên trong ${11}$ phút bánh xe sau chuyển động được:\[6.11=66\text{(vòng)}.\]
+
+Quãng đường đi được của máy kéo trong ${11}$ phút là quãng đường đi được khi bánh xe sau lăn ${66}$ vòng:
+
+$66.176\pi=11616\pi$ (cm) $=0,11616\pi$ (km) $=0,4$ (km). 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+
+ \begin{center}
+-----HẾT-----
+\end{center}
+
+ %\newpage 
+%\begin{center}
+%{\bf BẢNG ĐÁP ÁN MÃ ĐỀ 1 }
+%\end{center}
+%{\bf Phần 1 }
+% \inputansbox{6}{ans001-1}
+%{\bf Phần 2 }
+% \inputansbox{2}{ans001-2}
+%{\bf Phần 3 }
+% \inputansbox{6}{ans001-3}
+\newpage 
+
+
+
+\end{document}

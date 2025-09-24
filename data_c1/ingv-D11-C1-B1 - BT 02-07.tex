@@ -1,0 +1,504 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=1.5cm] {geometry}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{tkz-euclide}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+\usepackage{tikz,tkz-tab}
+%\usepackage[solcolor]{ex_test}
+%\usepackage[dethi]{ex_test} % Chỉ hiển thị đề thi
+\usepackage[loigiai]{ex_test} % Hiển thị lời giải
+%\usepackage[color]{ex_test} % Khoanh các đáp án
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+\everymath{\displaystyle}
+
+\def\colorEX{\color{purple}}
+%\def\colorEX{}%Không tô màu đáp án đúng trong tùy chọn loigiai
+\renewtheorem{ex}{\color{violet}Câu}
+\renewcommand{\FalseEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+\renewcommand{\TrueEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+
+%---------- Khai báo viết tắt, in đáp án
+\newcommand{\hoac}[1]{ %hệ hoặc
+    \left[\begin{aligned}#1\end{aligned}\right.}
+\newcommand{\heva}[1]{ %hệ và
+    \left\{\begin{aligned}#1\end{aligned}\right.}
+
+%Tiêu đề
+\newcommand{\tenso}{THÀNH PHỐ HỒ CHÍ MINH}
+\newcommand{\tentruong}{HD-NQQ}
+\newcommand{\tenkythi}{GÓC LƯỢNG GIÁC }
+\newcommand{\tenmonthi}{Môn: D11-C1-B1 - BT 02-07}
+\newcommand{\thoigian}{}
+\newcommand{\tieude}[1]{
+   \begin{tabular}{cm{1cm}cm{3cm}cm{4cm}}
+    {\bf \tenso} & & {\bf \tenkythi} \\
+    {\bf \tentruong} & & {\bf \tenmonthi}\\
+    && {\bf Thời gian: \bf \thoigian \, phút}\\
+    && { \fbox{\bf Mã đề: #1}}
+   \end{tabular}\\\\
+    
+   {Họ tên HS: \dotfill Số báo danh \dotfill}\\
+}
+\newcommand{\chantrang}[2]{\rfoot{Trang \thepage $-$ Mã đề #2}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+
+\begin{document}
+%Thiết lập giãn dọng 1.5cm 
+%\setlength{\lineskip}{1.5em}
+%Nội dung trắc nghiệm bắt đầu ở đây
+
+
+\tieude{001}
+%\chantrang{\pageref{LastPage}}{001}
+\setcounter{page}{1}
+{\bf PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-1]
+\begin{ex}[02-M1. Đổi số đo từ độ sang radian]
+ Đổi số đo của góc $0^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $- \frac{\pi}{9}$ }
+   { $\frac{\pi}{18}$ }
+     { $\frac{\pi}{6}$ }
+    { \True $0$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $0^\circ=\dfrac{0.\pi}{180}=0$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $750^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $\frac{13 \pi}{3}$ }
+   { $\frac{73 \pi}{18}$ }
+     { $\frac{38 \pi}{9}$ }
+    { \True $\frac{25 \pi}{6}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $750^\circ=\dfrac{750.\pi}{180}=\frac{25 \pi}{6}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $660^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $\frac{67 \pi}{18}$ }
+   { $\frac{32 \pi}{9}$ }
+     { $\frac{23 \pi}{6}$ }
+    { \True $\frac{11 \pi}{3}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $660^\circ=\dfrac{660.\pi}{180}=\frac{11 \pi}{3}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $-480^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ \True $- \frac{8 \pi}{3}$ }
+   { $- \frac{5 \pi}{2}$ }
+     { $- \frac{25 \pi}{9}$ }
+    { $- \frac{47 \pi}{18}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $-480^\circ=\dfrac{-480.\pi}{180}=- \frac{8 \pi}{3}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $570^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $\frac{29 \pi}{9}$ }
+   { $\frac{10 \pi}{3}$ }
+     { \True $\frac{19 \pi}{6}$ }
+    { $\frac{55 \pi}{18}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $570^\circ=\dfrac{570.\pi}{180}=\frac{19 \pi}{6}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $15^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $- \frac{\pi}{36}$ }
+   { $\frac{\pi}{4}$ }
+     { \True $\frac{\pi}{12}$ }
+    { $\frac{5 \pi}{36}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $15^\circ=\dfrac{15.\pi}{180}=\frac{\pi}{12}$. 
+ }\end{ex}
+
+\begin{ex}[03-M1. Đổi số đo từ radian sang độ]
+ Đổi số đo của góc $\frac{16 \pi}{3}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $933^\circ$ }
+   { \True $960^\circ$ }
+     { $990^\circ$ }
+    { $970^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{16 \pi}{3}=\left(\dfrac{\frac{16 \pi}{3}.180}{\pi}\right)^\circ=960^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $- \frac{26 \pi}{9}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ \True $-520^\circ$ }
+   { $-564^\circ$ }
+     { $-490^\circ$ }
+    { $-510^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $- \frac{26 \pi}{9}=\left(\dfrac{- \frac{26 \pi}{9}.180}{\pi}\right)^\circ=-520^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $\frac{19 \pi}{9}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $410^\circ$ }
+   { $390^\circ$ }
+     { $343^\circ$ }
+    { \True $380^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{19 \pi}{9}=\left(\dfrac{\frac{19 \pi}{9}.180}{\pi}\right)^\circ=380^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $\frac{16 \pi}{3}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $920^\circ$ }
+   { \True $960^\circ$ }
+     { $970^\circ$ }
+    { $990^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{16 \pi}{3}=\left(\dfrac{\frac{16 \pi}{3}.180}{\pi}\right)^\circ=960^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $- \frac{55 \pi}{12}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $-875^\circ$ }
+   { $-815^\circ$ }
+     { \True $-825^\circ$ }
+    { $-795^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $- \frac{55 \pi}{12}=\left(\dfrac{- \frac{55 \pi}{12}.180}{\pi}\right)^\circ=-825^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $- \frac{8 \pi}{9}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ \True $-160^\circ$ }
+   { $-183^\circ$ }
+     { $-130^\circ$ }
+    { $-150^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $- \frac{8 \pi}{9}=\left(\dfrac{- \frac{8 \pi}{9}.180}{\pi}\right)^\circ=-160^\circ$. 
+ }\end{ex}
+
+\begin{ex}[04-M2. Tìm góc có điểm biểu diễn trùng nhau]
+ Góc lượng giác $- \frac{28 \pi}{9}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc lượng giác nào sau đây?\\ 
+\choice
+{ $\frac{17 \pi}{18}$ }
+   { \True $\frac{8 \pi}{9}$ }
+     { $\frac{31 \pi}{30}$ }
+    { $\frac{23 \pi}{30}$ }
+\loigiai{ 
+ Ta có: $- \frac{28 \pi}{9}=\frac{8 \pi}{9} -2.2\pi$ nên $- \frac{28 \pi}{9}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{8 \pi}{9}$. 
+ }\end{ex}
+
+\begin{ex}
+ Góc lượng giác $\frac{161 \pi}{36}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc lượng giác nào sau đây?\\ 
+\choice
+{ $\frac{14 \pi}{45}$ }
+   { $\frac{19 \pi}{36}$ }
+     { \True $\frac{17 \pi}{36}$ }
+    { $\frac{13 \pi}{20}$ }
+\loigiai{ 
+ Ta có: $\frac{161 \pi}{36}=\frac{17 \pi}{36} +2.2\pi$ nên $\frac{161 \pi}{36}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{17 \pi}{36}$. 
+ }\end{ex}
+
+\begin{ex}
+ Góc lượng giác $- \frac{3 \pi}{2}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc lượng giác nào sau đây?\\ 
+\choice
+{ $\frac{13 \pi}{18}$ }
+   { \True $\frac{\pi}{2}$ }
+     { $\frac{5 \pi}{9}$ }
+    { $\frac{11 \pi}{30}$ }
+\loigiai{ 
+ Ta có: $- \frac{3 \pi}{2}=\frac{\pi}{2} -1.2\pi$ nên $- \frac{3 \pi}{2}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{\pi}{2}$. 
+ }\end{ex}
+
+\begin{ex}
+ Góc lượng giác $- \frac{67 \pi}{18}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc lượng giác nào sau đây?\\ 
+\choice
+{ \True $\frac{5 \pi}{18}$ }
+   { $\frac{\pi}{3}$ }
+     { $\frac{11 \pi}{90}$ }
+    { $\frac{13 \pi}{30}$ }
+\loigiai{ 
+ Ta có: $- \frac{67 \pi}{18}=\frac{5 \pi}{18} -2.2\pi$ nên $- \frac{67 \pi}{18}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{5 \pi}{18}$. 
+ }\end{ex}
+
+\begin{ex}
+ Góc lượng giác $\frac{175 \pi}{36}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc lượng giác nào sau đây?\\ 
+\choice
+{ $\frac{11 \pi}{12}$ }
+   { $\frac{187 \pi}{180}$ }
+     { \True $\frac{31 \pi}{36}$ }
+    { $\frac{29 \pi}{45}$ }
+\loigiai{ 
+ Ta có: $\frac{175 \pi}{36}=\frac{31 \pi}{36} +2.2\pi$ nên $\frac{175 \pi}{36}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{31 \pi}{36}$. 
+ }\end{ex}
+
+\begin{ex}
+ Góc lượng giác $- \frac{55 \pi}{18}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc lượng giác nào sau đây?\\ 
+\choice
+{ \True $\frac{17 \pi}{18}$ }
+   { $\frac{13 \pi}{18}$ }
+     { $\pi$ }
+    { $\frac{17 \pi}{15}$ }
+\loigiai{ 
+ Ta có: $- \frac{55 \pi}{18}=\frac{17 \pi}{18} -2.2\pi$ nên $- \frac{55 \pi}{18}$ có cùng điểm biểu diễn trên đường tròn lượng giác với góc $\frac{17 \pi}{18}$. 
+ }\end{ex}
+
+\begin{ex}[05-M2. Tìm góc ứng với điểm biểu diễn trên hình]
+ Điểm biểu diễn trên đường tròn lượng giác như hình vẽ bên là của  góc lượng giác nào sau đây?\\ 
+\begin{center}\begin{tikzpicture}[scale=3, line width=1pt] 
+ \trucLG 
+\pointLG{120}{1}{*}{red} 
+\end{tikzpicture}
+\end{center}
+\choice
+{ $\frac{5 \pi}{3}$ }
+   { $\frac{13 \pi}{6}$ }
+     { \True $- \frac{10 \pi}{3}$ }
+    { $\frac{5 \pi}{6}$ }
+\loigiai{ 
+ Ta có: $- \frac{10 \pi}{3}=\frac{2 \pi}{3} -2.2\pi$ nên $- \frac{10 \pi}{3}$ là góc có điểm biểu diễn trùng với góc $\frac{2 \pi}{3}$ trên đường tròn lượng giác như hình vẽ bên. 
+ }\end{ex}
+
+\begin{ex}
+ Điểm biểu diễn trên đường tròn lượng giác như hình vẽ bên là của  góc lượng giác nào sau đây?\\ 
+\begin{center}\begin{tikzpicture}[scale=3, line width=1pt] 
+ \trucLG 
+\pointLG{180}{1}{*}{red} 
+\end{tikzpicture}
+\end{center}
+\choice
+{ $\frac{5 \pi}{2}$ }
+   { $\frac{5 \pi}{4}$ }
+     { $2 \pi$ }
+    { \True $5 \pi$ }
+\loigiai{ 
+ Ta có: $5 \pi=\pi +2.2\pi$ nên $5 \pi$ là góc có điểm biểu diễn trùng với góc $\pi$ trên đường tròn lượng giác như hình vẽ bên. 
+ }\end{ex}
+
+\begin{ex}
+ Điểm biểu diễn trên đường tròn lượng giác như hình vẽ bên là của  góc lượng giác nào sau đây?\\ 
+\begin{center}\begin{tikzpicture}[scale=3, line width=1pt] 
+ \trucLG 
+\pointLG{30}{1}{*}{red} 
+\end{tikzpicture}
+\end{center}
+\choice
+{ \True $- \frac{11 \pi}{6}$ }
+   { $\frac{5 \pi}{3}$ }
+     { $\frac{7 \pi}{6}$ }
+    { $\frac{2 \pi}{3}$ }
+\loigiai{ 
+ Ta có: $- \frac{11 \pi}{6}=\frac{\pi}{6} -1.2\pi$ nên $- \frac{11 \pi}{6}$ là góc có điểm biểu diễn trùng với góc $\frac{\pi}{6}$ trên đường tròn lượng giác như hình vẽ bên. 
+ }\end{ex}
+
+\begin{ex}
+ Điểm biểu diễn trên đường tròn lượng giác như hình vẽ bên là của  góc lượng giác nào sau đây?\\ 
+\begin{center}\begin{tikzpicture}[scale=3, line width=1pt] 
+ \trucLG 
+\pointLG{45}{1}{*}{red} 
+\end{tikzpicture}
+\end{center}
+\choice
+{ $\frac{5 \pi}{12}$ }
+   { $\frac{5 \pi}{4}$ }
+     { $\frac{7 \pi}{4}$ }
+    { \True $- \frac{7 \pi}{4}$ }
+\loigiai{ 
+ Ta có: $- \frac{7 \pi}{4}=\frac{\pi}{4} -1.2\pi$ nên $- \frac{7 \pi}{4}$ là góc có điểm biểu diễn trùng với góc $\frac{\pi}{4}$ trên đường tròn lượng giác như hình vẽ bên. 
+ }\end{ex}
+
+\begin{ex}
+ Điểm biểu diễn trên đường tròn lượng giác như hình vẽ bên là của  góc lượng giác nào sau đây?\\ 
+\begin{center}\begin{tikzpicture}[scale=3, line width=1pt] 
+ \trucLG 
+\pointLG{60}{1}{*}{red} 
+\end{tikzpicture}
+\end{center}
+\choice
+{ $\frac{11 \pi}{6}$ }
+   { $\frac{5 \pi}{6}$ }
+     { \True $\frac{7 \pi}{3}$ }
+    { $\frac{4 \pi}{3}$ }
+\loigiai{ 
+ Ta có: $\frac{7 \pi}{3}=\frac{\pi}{3} +1.2\pi$ nên $\frac{7 \pi}{3}$ là góc có điểm biểu diễn trùng với góc $\frac{\pi}{3}$ trên đường tròn lượng giác như hình vẽ bên. 
+ }\end{ex}
+
+\begin{ex}
+ Điểm biểu diễn trên đường tròn lượng giác như hình vẽ bên là của  góc lượng giác nào sau đây?\\ 
+\begin{center}\begin{tikzpicture}[scale=3, line width=1pt] 
+ \trucLG 
+\pointLG{150}{1}{*}{red} 
+\end{tikzpicture}
+\end{center}
+\choice
+{ $\frac{11 \pi}{6}$ }
+   { $\pi$ }
+     { \True $\frac{17 \pi}{6}$ }
+    { $\frac{7 \pi}{3}$ }
+\loigiai{ 
+ Ta có: $\frac{17 \pi}{6}=\frac{5 \pi}{6} +1.2\pi$ nên $\frac{17 \pi}{6}$ là góc có điểm biểu diễn trùng với góc $\frac{5 \pi}{6}$ trên đường tròn lượng giác như hình vẽ bên. 
+ }\end{ex}
+
+\begin{ex}[06-M2. Cho bán kính và góc radian. Tính độ dài của cung]
+ Một đường tròn có bán kính bằng ${1}$ cm. Cung trên đường tròn đó có số đo là ${15}$ thì có độ dài bằng\\ 
+\choice
+{ \True $15$ }
+   { $\frac{1}{30}$ }
+     { $17$ }
+    { $16$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=1.15=15$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${2}$ cm. Cung trên đường tròn đó có số đo là ${\pi}$ thì có độ dài bằng\\ 
+\choice
+{ \True $2 \pi$ }
+   { $\pi$ }
+     { $6 \pi$ }
+    { $\frac{\pi}{2}$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=2.pi=2 \pi$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${2}$ cm. Cung trên đường tròn đó có số đo là ${4}$ thì có độ dài bằng\\ 
+\choice
+{ $6$ }
+   { $\frac{1}{4}$ }
+     { \True $8$ }
+    { $2$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=2.4=8$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${2}$ cm. Cung trên đường tròn đó có số đo là ${7}$ thì có độ dài bằng\\ 
+\choice
+{ $\frac{1}{7}$ }
+   { $9$ }
+     { \True $14$ }
+    { $\frac{7}{2}$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=2.7=14$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${19}$ cm. Cung trên đường tròn đó có số đo là ${11}$ thì có độ dài bằng\\ 
+\choice
+{ $\frac{19}{22}$ }
+   { $\frac{11}{19}$ }
+     { $30$ }
+    { \True $209$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=19.11=209$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${14}$ cm. Cung trên đường tròn đó có số đo là ${\frac{3 \pi}{2}}$ thì có độ dài bằng\\ 
+\choice
+{ $\frac{21 \pi}{4}$ }
+   { \True $21 \pi$ }
+     { $84 \pi$ }
+    { $\frac{21 \pi}{2}$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=14.3*pi/2=21 \pi$. 
+ }\end{ex}
+
+\begin{ex}[07-M2. Cho bán kính và góc độ. Tính độ dài của cung]
+ Một đường tròn có bán kính bằng ${6}$ cm. Cung trên đường tròn đó có số đo là ${227}^\circ$ thì có độ dài bằng\\ 
+\choice
+{ \True $\frac{227 \pi}{30}$ }
+   { $\frac{227 \pi}{60}$ }
+     { $\frac{227 \pi}{20}$ }
+    { $\frac{227 \pi}{90}$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=\dfrac{6.227}{180}\pi=\frac{227 \pi}{30}$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${4}$ cm. Cung trên đường tròn đó có số đo là ${405}^\circ$ thì có độ dài bằng\\ 
+\choice
+{ \True $9 \pi$ }
+   { $\frac{45 \pi}{4}$ }
+     { $\frac{9 \pi}{2}$ }
+    { $3 \pi$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=\dfrac{4.405}{180}\pi=9 \pi$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${15}$ cm. Cung trên đường tròn đó có số đo là ${185}^\circ$ thì có độ dài bằng\\ 
+\choice
+{ \True $\frac{185 \pi}{12}$ }
+   { $\frac{185 \pi}{36}$ }
+     { $\frac{185 \pi}{24}$ }
+    { $\frac{629 \pi}{36}$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=\dfrac{15.185}{180}\pi=\frac{185 \pi}{12}$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${4}$ cm. Cung trên đường tròn đó có số đo là ${48}^\circ$ thì có độ dài bằng\\ 
+\choice
+{ $\frac{4 \pi}{3}$ }
+   { $\frac{16 \pi}{45}$ }
+     { \True $\frac{16 \pi}{15}$ }
+    { $\frac{8 \pi}{15}$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=\dfrac{4.48}{180}\pi=\frac{16 \pi}{15}$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${16}$ cm. Cung trên đường tròn đó có số đo là ${450}^\circ$ thì có độ dài bằng\\ 
+\choice
+{ $45 \pi$ }
+   { $20 \pi$ }
+     { \True $40 \pi$ }
+    { $\frac{40 \pi}{3}$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=\dfrac{16.450}{180}\pi=40 \pi$. 
+ }\end{ex}
+
+\begin{ex}
+ Một đường tròn có bán kính bằng ${3}$ cm. Cung trên đường tròn đó có số đo là ${90}^\circ$ thì có độ dài bằng\\ 
+\choice
+{ $\frac{\pi}{2}$ }
+   { $2 \pi$ }
+     { \True $\frac{3 \pi}{2}$ }
+    { $\frac{3 \pi}{4}$ }
+\loigiai{ 
+ Độ dài của cung tròn là: $l=\dfrac{3.90}{180}\pi=\frac{3 \pi}{2}$. 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+
+ \begin{center}
+-----HẾT-----
+\end{center}
+
+ %\newpage 
+%\begin{center}
+%{\bf BẢNG ĐÁP ÁN MÃ ĐỀ 1 }
+%\end{center}
+%{\bf Phần 1 }
+% \inputansbox{6}{ans001-1}
+
+
+
+\end{document}

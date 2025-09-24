@@ -1,0 +1,407 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=1.5cm] {geometry}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{tkz-euclide}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+\usepackage{tikz,tkz-tab}
+%\usepackage[solcolor]{ex_test}
+%\usepackage[dethi]{ex_test} % Chỉ hiển thị đề thi
+\usepackage[loigiai]{ex_test} % Hiển thị lời giải
+%\usepackage[color]{ex_test} % Khoanh các đáp án
+\everymath{\displaystyle}
+
+\def\colorEX{\color{purple}}
+%\def\colorEX{}%Không tô màu đáp án đúng trong tùy chọn loigiai
+\renewtheorem{ex}{\color{violet}Câu}
+\renewcommand{\FalseEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+\renewcommand{\TrueEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+
+%---------- Khai báo viết tắt, in đáp án
+\newcommand{\hoac}[1]{ %hệ hoặc
+    \left[\begin{aligned}#1\end{aligned}\right.}
+\newcommand{\heva}[1]{ %hệ và
+    \left\{\begin{aligned}#1\end{aligned}\right.}
+
+%Tiêu đề
+\newcommand{\tenso}{THÀNH PHỐ HỒ CHÍ MINH}
+\newcommand{\tentruong}{HD-NQQ}
+\newcommand{\tenkythi}{Bài 1 Góc Lượng Giác }
+\newcommand{\tenmonthi}{Môn thi: Mức độ 1}
+\newcommand{\thoigian}{}
+\newcommand{\tieude}[1]{
+   \begin{tabular}{cm{3cm}cm{3cm}cm{3cm}}
+    {\bf \tenso} & & {\bf \tenkythi} \\
+    {\bf \tentruong} & & {\bf \tenmonthi}\\
+    && {\bf Thời gian: \bf \thoigian \, phút}\\
+    && { \fbox{\bf Mã đề: #1}}
+   \end{tabular}\\\\
+    
+   {Họ tên HS: \dotfill Số báo danh \dotfill}\\
+}
+\newcommand{\chantrang}[2]{\rfoot{Trang \thepage $-$ Mã đề #2}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+
+\begin{document}
+%Thiết lập giãn dọng 1.5cm 
+%\setlength{\lineskip}{1.5em}
+%Nội dung trắc nghiệm bắt đầu ở đây
+
+
+\tieude{001}
+\chantrang{\pageref{LastPage}}{001}
+\setcounter{page}{1}
+{\bf PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-1]
+\begin{ex}
+ Đổi số đo của góc $900^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ \True $5 \pi$ }
+   { $\frac{91 \pi}{18}$ }
+     { $\frac{31 \pi}{6}$ }
+    { $\frac{44 \pi}{9}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $900^\circ=\dfrac{900.\pi}{180}=5 \pi$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $405^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $\frac{29 \pi}{12}$ }
+   { $\frac{83 \pi}{36}$ }
+     { $\frac{77 \pi}{36}$ }
+    { \True $\frac{9 \pi}{4}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $405^\circ=\dfrac{405.\pi}{180}=\frac{9 \pi}{4}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $-270^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $- \frac{4 \pi}{3}$ }
+   { \True $- \frac{3 \pi}{2}$ }
+     { $- \frac{13 \pi}{9}$ }
+    { $- \frac{29 \pi}{18}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $-270^\circ=\dfrac{-270.\pi}{180}=- \frac{3 \pi}{2}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $945^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $\frac{185 \pi}{36}$ }
+   { $\frac{191 \pi}{36}$ }
+     { $\frac{65 \pi}{12}$ }
+    { \True $\frac{21 \pi}{4}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $945^\circ=\dfrac{945.\pi}{180}=\frac{21 \pi}{4}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $-810^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $- \frac{83 \pi}{18}$ }
+   { $- \frac{13 \pi}{3}$ }
+     { \True $- \frac{9 \pi}{2}$ }
+    { $- \frac{40 \pi}{9}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $-810^\circ=\dfrac{-810.\pi}{180}=- \frac{9 \pi}{2}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $330^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ \True $\frac{11 \pi}{6}$ }
+   { $\frac{31 \pi}{18}$ }
+     { $\frac{17 \pi}{9}$ }
+    { $2 \pi$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $330^\circ=\dfrac{330.\pi}{180}=\frac{11 \pi}{6}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $-720^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $- \frac{23 \pi}{6}$ }
+   { $- \frac{37 \pi}{9}$ }
+     { \True $- 4 \pi$ }
+    { $- \frac{71 \pi}{18}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $-720^\circ=\dfrac{-720.\pi}{180}=- 4 \pi$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $840^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $\frac{29 \pi}{6}$ }
+   { \True $\frac{14 \pi}{3}$ }
+     { $\frac{85 \pi}{18}$ }
+    { $\frac{41 \pi}{9}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $840^\circ=\dfrac{840.\pi}{180}=\frac{14 \pi}{3}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $435^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ $\frac{89 \pi}{36}$ }
+   { $\frac{31 \pi}{12}$ }
+     { \True $\frac{29 \pi}{12}$ }
+    { $\frac{83 \pi}{36}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $435^\circ=\dfrac{435.\pi}{180}=\frac{29 \pi}{12}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $-780^\circ$ sang radian ta được kết quả bằng\\ 
+\choice
+{ \True $- \frac{13 \pi}{3}$ }
+   { $- \frac{25 \pi}{6}$ }
+     { $- \frac{40 \pi}{9}$ }
+    { $- \frac{77 \pi}{18}$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $-780^\circ=\dfrac{-780.\pi}{180}=- \frac{13 \pi}{3}$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $- \frac{13 \pi}{3}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $-750^\circ$ }
+   { \True $-780^\circ$ }
+     { $-803^\circ$ }
+    { $-770^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $- \frac{13 \pi}{3}=\left(\dfrac{- \frac{13 \pi}{3}.180}{\pi}\right)^\circ=-780^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $\frac{91 \pi}{18}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $940^\circ$ }
+   { \True $910^\circ$ }
+     { $920^\circ$ }
+    { $865^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{91 \pi}{18}=\left(\dfrac{\frac{91 \pi}{18}.180}{\pi}\right)^\circ=910^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $\frac{37 \pi}{12}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ \True $555^\circ$ }
+   { $565^\circ$ }
+     { $585^\circ$ }
+    { $517^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{37 \pi}{12}=\left(\dfrac{\frac{37 \pi}{12}.180}{\pi}\right)^\circ=555^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $- \frac{43 \pi}{12}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $-635^\circ$ }
+   { \True $-645^\circ$ }
+     { $-615^\circ$ }
+    { $-695^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $- \frac{43 \pi}{12}=\left(\dfrac{- \frac{43 \pi}{12}.180}{\pi}\right)^\circ=-645^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $\frac{8 \pi}{3}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $490^\circ$ }
+   { $431^\circ$ }
+     { \True $480^\circ$ }
+    { $510^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{8 \pi}{3}=\left(\dfrac{\frac{8 \pi}{3}.180}{\pi}\right)^\circ=480^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $\frac{13 \pi}{4}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $595^\circ$ }
+   { \True $585^\circ$ }
+     { $615^\circ$ }
+    { $551^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{13 \pi}{4}=\left(\dfrac{\frac{13 \pi}{4}.180}{\pi}\right)^\circ=585^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $\frac{17 \pi}{3}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $974^\circ$ }
+   { $1050^\circ$ }
+     { $1030^\circ$ }
+    { \True $1020^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{17 \pi}{3}=\left(\dfrac{\frac{17 \pi}{3}.180}{\pi}\right)^\circ=1020^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $- \frac{53 \pi}{18}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $-500^\circ$ }
+   { \True $-530^\circ$ }
+     { $-573^\circ$ }
+    { $-520^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $- \frac{53 \pi}{18}=\left(\dfrac{- \frac{53 \pi}{18}.180}{\pi}\right)^\circ=-530^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $- 2 \pi$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $-330^\circ$ }
+   { $-350^\circ$ }
+     { \True $-360^\circ$ }
+    { $-401^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $- 2 \pi=\left(\dfrac{- 2 \pi.180}{\pi}\right)^\circ=-360^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Đổi số đo của góc $\frac{\pi}{6}$ sang độ ta được kết quả bằng\\ 
+\choice
+{ $60^\circ$ }
+   { $-9^\circ$ }
+     { \True $30^\circ$ }
+    { $40^\circ$ }
+\loigiai{ 
+ Áp dụng công thức chuyển đổi: $\frac{\pi}{6}=\left(\dfrac{\frac{\pi}{6}.180}{\pi}\right)^\circ=30^\circ$. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{4 \pi}{3}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{4 \pi}{3}+k3\pi, k\in \mathbb{Z}$ }
+   { \True $\frac{4 \pi}{3}+k2\pi, k\in \mathbb{Z}$ }
+     { $\frac{4 \pi}{3}+k4\pi, k\in \mathbb{Z}$ }
+    { $\frac{4 \pi}{3}+k\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{4 \pi}{3}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{8 \pi}{9}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{8 \pi}{9}+k4\pi, k\in \mathbb{Z}$ }
+   { $\frac{8 \pi}{9}+\dfrac{k\pi }{2}, k\in \mathbb{Z}$ }
+     { $\frac{8 \pi}{9}+k3\pi, k\in \mathbb{Z}$ }
+    { \True $\frac{8 \pi}{9}+k2\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{8 \pi}{9}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${8 \pi}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ \True $8 \pi+k2\pi, k\in \mathbb{Z}$ }
+   { $8 \pi+k3\pi, k\in \mathbb{Z}$ }
+     { $8 \pi+k\pi, k\in \mathbb{Z}$ }
+    { $8 \pi+\dfrac{k\pi }{3}, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $8 \pi+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{7 \pi}{2}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{7 \pi}{2}+\dfrac{k\pi }{3}, k\in \mathbb{Z}$ }
+   { $\frac{7 \pi}{2}+\dfrac{k\pi }{4}, k\in \mathbb{Z}$ }
+     { $\frac{7 \pi}{2}+k3\pi, k\in \mathbb{Z}$ }
+    { \True $\frac{7 \pi}{2}+k2\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{7 \pi}{2}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\pi}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ \True $\pi+k2\pi, k\in \mathbb{Z}$ }
+   { $\pi+k4\pi, k\in \mathbb{Z}$ }
+     { $\pi+k\pi, k\in \mathbb{Z}$ }
+    { $\pi+\dfrac{k\pi }{2}, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\pi+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{\pi}{8}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ \True $\frac{\pi}{8}+k2\pi, k\in \mathbb{Z}$ }
+   { $\frac{\pi}{8}+k3\pi, k\in \mathbb{Z}$ }
+     { $\frac{\pi}{8}+k\pi, k\in \mathbb{Z}$ }
+    { $\frac{\pi}{8}+\dfrac{k\pi }{2}, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{\pi}{8}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{\pi}{6}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{\pi}{6}+k4\pi, k\in \mathbb{Z}$ }
+   { $\frac{\pi}{6}+k\pi, k\in \mathbb{Z}$ }
+     { \True $\frac{\pi}{6}+k2\pi, k\in \mathbb{Z}$ }
+    { $\frac{\pi}{6}+k3\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{\pi}{6}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{3 \pi}{8}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{3 \pi}{8}+\dfrac{k\pi }{4}, k\in \mathbb{Z}$ }
+   { $\frac{3 \pi}{8}+k4\pi, k\in \mathbb{Z}$ }
+     { $\frac{3 \pi}{8}+\dfrac{k\pi }{3}, k\in \mathbb{Z}$ }
+    { \True $\frac{3 \pi}{8}+k2\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{3 \pi}{8}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\frac{7 \pi}{6}}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\frac{7 \pi}{6}+k\pi, k\in \mathbb{Z}$ }
+   { $\frac{7 \pi}{6}+\dfrac{k\pi }{2}, k\in \mathbb{Z}$ }
+     { \True $\frac{7 \pi}{6}+k2\pi, k\in \mathbb{Z}$ }
+    { $\frac{7 \pi}{6}+k3\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\frac{7 \pi}{6}+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Trên đường tròn lượng giác, cho góc lượng giác có số đo ${\pi}$ thì mọi góc lượng giác có cùng tia đầu và tia cuối với góc lượng giác trên đều có số đo dạng nào trong các dạng sau? 
+\choice
+{ $\pi+\dfrac{k\pi }{2}, k\in \mathbb{Z}$ }
+   { $\pi+k3\pi, k\in \mathbb{Z}$ }
+     { $\pi+\dfrac{k\pi }{3}, k\in \mathbb{Z}$ }
+    { \True $\pi+k2\pi, k\in \mathbb{Z}$ }
+\loigiai{ 
+ $\pi+k2\pi, k\in \mathbb{Z}$ là khẳng định đúng. 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+
+ \begin{center}
+-----HẾT-----
+\end{center}
+
+ %\newpage 
+%\begin{center}
+%{\bf BẢNG ĐÁP ÁN MÃ ĐỀ 1 }
+%\end{center}
+%{\bf Phần 1 }
+% \inputansbox{6}{ans001-1}
+
+
+
+\end{document}

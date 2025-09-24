@@ -1,0 +1,279 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=1.5cm] {geometry}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{tkz-euclide}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+\usepackage{tikz,tkz-tab}
+%\usepackage[solcolor]{ex_test}
+%\usepackage[dethi]{ex_test} % Chỉ hiển thị đề thi
+\usepackage[loigiai]{ex_test} % Hiển thị lời giải
+%\usepackage[color]{ex_test} % Khoanh các đáp án
+\everymath{\displaystyle}
+
+\def\colorEX{\color{purple}}
+%\def\colorEX{}%Không tô màu đáp án đúng trong tùy chọn loigiai
+\renewtheorem{ex}{\color{violet}Câu}
+\renewcommand{\FalseEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+\renewcommand{\TrueEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+
+%---------- Khai báo viết tắt, in đáp án
+\newcommand{\hoac}[1]{ %hệ hoặc
+    \left[\begin{aligned}#1\end{aligned}\right.}
+\newcommand{\heva}[1]{ %hệ và
+    \left\{\begin{aligned}#1\end{aligned}\right.}
+
+%Tiêu đề
+\newcommand{\tenso}{THÀNH PHỐ HỒ CHÍ MINH}
+\newcommand{\tentruong}{BÀI GIẢI MẪU  *  HD-NQQ}
+\newcommand{\tenkythi}{CÔNG THỨC LƯỢNG GIÁC }
+\newcommand{\tenmonthi}{Môn: D11-C1-B3 - 14 DẠNG}
+\newcommand{\thoigian}{}
+\newcommand{\tieude}[1]{
+   \begin{tabular}{cm{1cm}cm{3cm}cm{3cm}}
+    {\bf \tenso} & & {\bf \tenkythi} \\
+    {\bf \tentruong} & & {\bf \tenmonthi}\\
+    && {\bf Thời gian: \bf \thoigian \, phút}\\
+    && { \fbox{\bf Mã đề: #1}}
+   \end{tabular}\\\\
+    
+   {Họ tên HS: \dotfill Số báo danh \dotfill}\\
+}
+\newcommand{\chantrang}[2]{\rfoot{Trang \thepage $-$ Mã đề #2}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+
+\begin{document}
+%Thiết lập giãn dọng 1.5cm 
+%\setlength{\lineskip}{1.5em}
+%Nội dung trắc nghiệm bắt đầu ở đây
+
+
+\tieude{001}
+%\chantrang{\pageref{LastPage}}{001}
+\setcounter{page}{1}
+{\bf PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-1]
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc đối nhau]
+ Cho ${5x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau. 
+\choice
+{ $\sin (-5x)=\sin 5x$ }
+   { $\tan (-5x)=\cot 5x$ }
+     { \True $\sin (-5x)=-\sin 5x$ }
+    { $\cos (-5x)=-\cos 5x$ }
+\loigiai{ 
+ $\sin (-5x)=-\sin 5x$ là khẳng định đúng. Vì $-5x$ và $5x$ là hai góc đối nhau nên cùng $\cos$, nhưng $\sin$ đối dấu.
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc bù nhau]
+ Cho ${5x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\sin (\pi-5x)=\sin 5x$ }
+   { $\cot (\pi-5x)=\cot 5x$ }
+     { $\cos (\pi-5x)=\sin 5x$ }
+    { $\sin (\pi-5x)=\cos 5x$ }
+\loigiai{ 
+ $\sin (\pi-5x)=\sin 5x$ là khẳng định đúng. Vì $\pi-5x$ và $5x$ là hai góc \textbf{bù} nhau nên cùng $\sin$, nhưng $\cos$ đối dấu. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc phụ nhau]
+ Cho ${3a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos \left(\frac{\pi}{2}-3a\right)=\cos 3a$ }
+   { $\cos \left(\frac{\pi}{2}-3a\right)=-\cos 3a$ }
+     { $\cot \left(\frac{\pi}{2}-3a\right)=\cot 3a$ }
+    { \True $\sin \left(\frac{\pi}{2}-3a\right)=\cos 3a$ }
+\loigiai{ 
+ $\sin \left(\frac{\pi}{2}-3a\right)=\cos 3a$ là khẳng định đúng. Vì $\frac{\pi}{2}-3a$ và $3a$ là hai góc \textbf{phụ} nhau nên chéo $\sin$ thành $\cos$, $\tan$ thành $\cot$.
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc hơn kém pi]
+ Cho ${x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cot (\pi+x)=-\cot x$ }
+   { \True $\tan (\pi+x)=\tan x$ }
+     { $\sin (\pi+x)=\sin x$ }
+    { $\cos (\pi+x)=\cos x$ }
+\loigiai{ 
+ $\tan (\pi+x)=\tan x$ là khẳng định đúng. Vì $\pi+x$ và $x$ là hai góc \textbf{hơn $\pi$} nhau nên cùng $\tan$ và $\cot$, nhưng $\sin$ và $\cos$ đối dấu.
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc liên quan tùy ý]
+ Cho ${\gamma}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\tan (\pi-\gamma)=\tan \gamma$ }
+   { $\cos (\pi-\gamma)=\sin \gamma$ }
+     { \True $\sin (\pi-\gamma)=\sin \gamma$ }
+    { $\cos \left(\frac{\pi}{2}-\gamma\right)=-\cos \gamma$ }
+\loigiai{ 
+ $\sin (\pi-\gamma)=\sin \gamma$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về công thức nhân đôi]
+ Cho ${a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\tan 2a=\dfrac{2\tan a}{1-\tan^2 a}$ }
+   { $\cos 2a=\sin^2 a-\cos^2 a$ }
+     { $\sin 2a=2\sin a$ }
+    { $\tan 2a=\dfrac{\tan a}{1-\tan^2 a}$ }
+\loigiai{ 
+ $\tan 2a=\dfrac{2\tan a}{1-\tan^2 a}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về công thức cộng]
+ Cho ${x,y}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin (x+y)=\sin x +\sin y$ }
+   { $\cos (x-y)=\cos x -\cos y$ }
+     { $\tan (x+y)=\dfrac{\tan x + \tan y } {1+\tan x \tan y }$ }
+    { \True $\sin (x-y)=\sin x \cos y-\cos x \sin y $ }
+\loigiai{ 
+ $\sin (x-y)=\sin x \cos y-\cos x \sin y $ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về công thức tích thành tổng]
+ Cho ${\alpha,\beta}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos \alpha + \cos \beta=\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+   { $\sin \alpha + \sin \beta=2\cos \dfrac{\alpha+\beta}{2} \sin \dfrac{\alpha-\beta}{2}$ }
+     { $\sin \alpha - \cos \beta=-2\sin \dfrac{\alpha+\beta}{2} \sin \dfrac{\alpha-\beta}{2}$ }
+    { \True $\cos \alpha + \cos \beta=2\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+\loigiai{ 
+ $\cos \alpha + \cos \beta=2\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về công thức tổng thành tích]
+ Cho ${u,v}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos u \cos v=-\dfrac 1 2[\cos(u+v) + \cos(u-v)]$ }
+   { \True $\sin u \sin v=\dfrac 1 2[\cos(u-v) - \cos(u+v)]$ }
+     { $\sin u \cos v=\dfrac 1 2[\sin(u+v) - \sin(u-v)]$ }
+    { $\sin u \sin v=-\dfrac 1 2[\cos(u-v) - \cos(u+v)]$ }
+\loigiai{ 
+ $\sin u \sin v=\dfrac 1 2[\cos(u-v) - \cos(u+v)]$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M1. Cho sina, cosa. Tính sin2a.]
+ Cho $\sin a= - \frac{5}{12}, \cos a=\frac{\sqrt{119}}{12}$. Tính giá trị $\sin 2a$. \\ 
+\choice
+{ $ - \frac{5 \sqrt{119}}{144} $ }
+   { $ - \frac{5}{6} $ }
+     { \True $ - \frac{5 \sqrt{119}}{72} $ }
+    { $ \frac{\sqrt{119}}{6} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}[M2. Cho sina hoặc cosa. Tính cos2a]
+ Cho $\sin a= - \frac{1}{2}$. Tính giá trị $\cos 2a$. \\ 
+\choice
+{ $ \frac{3}{4} $ }
+   { \True $ \frac{1}{2} $ }
+     { $ -1 $ }
+    { $ - \frac{1}{2} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}[M3. Cho sinx. Tính sin(x+a) hoặc cos(x+b)]
+ Cho $\sin \beta=\frac{1}{2}$ với $\beta\in \left( \frac{5 \pi}{2};3\pi \right)$. Tính $\sin\left(\beta+\frac{2 \pi}{3}\right)$.\ 
+\choice
+{ $\frac{1}{2} - \frac{\sqrt{3}}{2}$ }
+   { $\frac{1}{2}$ }
+     { $\frac{\sqrt{3}}{2}$ }
+    { \True $-1$ }
+\loigiai{ 
+ Vì $\beta \in \left( \frac{5 \pi}{2};3\pi \right)$ nên $\cos \beta < 0$.
+
+$\cos \beta =-\sqrt{1-\frac{1}{4}}=- \frac{\sqrt{3}}{2}$.
+
+$\sin\left(\beta+\frac{2 \pi}{3}\right)=\sin \beta\cos (\frac{2 \pi}{3})+\cos \beta \sin (\frac{2 \pi}{3})=$$\frac{1}{2}.(- \frac{1}{2})+(- \frac{\sqrt{3}}{2}).(\frac{\sqrt{3}}{2})=-1$. 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+{\bf PHẦN II. Câu trắc nghiệm đúng sai.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-2]
+\begin{ex}[M2. Cho tanx. Xét Đ-S: cotx, cos2x, sin2x, tan2x]
+ Cho $\tan \gamma=-5$ . Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cot \gamma=- \frac{1}{5}$ }
+   { $\cos 2\gamma=- \frac{51}{13}$  }
+     { $\sin 2\gamma=\frac{21}{13}$ }
+    { $\tan 2\gamma=- \frac{5}{13}:- \frac{12}{13}=\frac{41}{12}$  }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ $\cot \gamma = - \frac{1}{5}$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $\cos 2\gamma=2\cos^2 \gamma-1=\dfrac{2}{1+\tan^2 \gamma}-1=- \frac{12}{13}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2\gamma=2\sin \gamma \cos \gamma=2\tan \gamma \cos^2 \gamma=\dfrac{2\tan \gamma} {1+\tan^2 \gamma}=- \frac{5}{13}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\tan 2\gamma=\dfrac{\sin 2\gamma}{\cos 2\gamma}=\frac{5}{12}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}[M2. Cho sinx. Xét Đ-S: cosx, sin2x, sin(x+a), cos(x+b)]
+ Cho $\sin \alpha=\frac{5}{6}, \alpha\in \left( \frac{\pi}{2};\pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cos \alpha=\frac{\sqrt{11}}{6}$ }
+   { $\sin 2\alpha=- \frac{5 \sqrt{11}}{36}$  }
+     { $\cos 2\alpha=\frac{7}{18}$  }
+    { \True $\sin\left(\alpha+\frac{2 \pi}{3}\right)=- \frac{\sqrt{33}}{12} - \frac{5}{12}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Vì $\alpha \in \left( \frac{\pi}{2};\pi \right)$ nên $\cos \alpha < 0$.
+
+$\cos \alpha =-\sqrt{1-\frac{25}{36}}=- \frac{\sqrt{11}}{6}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2\alpha=2\sin \alpha \cos \alpha=2.\frac{5}{6}.(- \frac{\sqrt{11}}{6})=- \frac{5 \sqrt{11}}{18}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos 2\alpha=1-2\sin^2 \alpha=1-2.\frac{25}{36}=- \frac{7}{18}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin\left(\alpha+\frac{2 \pi}{3}\right)=\sin \alpha\cos (\frac{2 \pi}{3})+\cos \alpha \sin (\frac{2 \pi}{3})=$$\frac{5}{6}.(- \frac{1}{2})+(- \frac{\sqrt{11}}{6}).(\frac{\sqrt{3}}{2})=- \frac{\sqrt{33}}{12} - \frac{5}{12}$.
+
+ 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+
+ \begin{center}
+-----HẾT-----
+\end{center}
+
+ %\newpage 
+%\begin{center}
+%{\bf BẢNG ĐÁP ÁN MÃ ĐỀ 1 }
+%\end{center}
+%{\bf Phần 1 }
+% \inputansbox{6}{ans001-1}
+%{\bf Phần 2 }
+% \inputansbox{2}{ans001-2}
+
+
+
+\end{document}

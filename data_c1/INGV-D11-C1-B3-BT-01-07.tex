@@ -1,0 +1,539 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=1.5cm] {geometry}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{tkz-euclide}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+\usepackage{tikz,tkz-tab}
+%\usepackage[solcolor]{ex_test}
+%\usepackage[dethi]{ex_test} % Chỉ hiển thị đề thi
+\usepackage[loigiai]{ex_test} % Hiển thị lời giải
+%\usepackage[color]{ex_test} % Khoanh các đáp án
+\everymath{\displaystyle}
+
+\def\colorEX{\color{purple}}
+%\def\colorEX{}%Không tô màu đáp án đúng trong tùy chọn loigiai
+\renewtheorem{ex}{\color{violet}Câu}
+\renewcommand{\FalseEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+\renewcommand{\TrueEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+
+%---------- Khai báo viết tắt, in đáp án
+\newcommand{\hoac}[1]{ %hệ hoặc
+    \left[\begin{aligned}#1\end{aligned}\right.}
+\newcommand{\heva}[1]{ %hệ và
+    \left\{\begin{aligned}#1\end{aligned}\right.}
+
+%Tiêu đề
+\newcommand{\tenso}{THÀNH PHỐ HỒ CHÍ MINH}
+\newcommand{\tentruong}{HD-NQQ}
+\newcommand{\tenkythi}{CÔNG THỨC LƯỢNG GIÁC}
+\newcommand{\tenmonthi}{Môn thi: D11-C1-B3 - BT 01-07}
+\newcommand{\thoigian}{}
+\newcommand{\tieude}[1]{
+   \begin{tabular}{cm{1cm}cm{3cm}cm{3cm}}
+    {\bf \tenso} & & {\bf \tenkythi} \\
+    {\bf \tentruong} & & {\bf \tenmonthi}\\
+    && {\bf Thời gian: \bf \thoigian \, phút}\\
+    && { \fbox{\bf Mã đề: #1}}
+   \end{tabular}\\\\
+    
+   {Họ tên HS: \dotfill Số báo danh \dotfill}\\
+}
+\newcommand{\chantrang}[2]{\rfoot{Trang \thepage $-$ Mã đề #2}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+
+\begin{document}
+%Thiết lập giãn dọng 1.5cm 
+%\setlength{\lineskip}{1.5em}
+%Nội dung trắc nghiệm bắt đầu ở đây
+
+
+\tieude{001}
+%\chantrang{\pageref{LastPage}}{001}
+\setcounter{page}{1}
+{\bf PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-1]
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc đối nhau]
+ Cho ${3\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin (-3\beta)=\sin 3\beta$ }
+   { \True $\cos (-3\beta)=\cos 3\beta$ }
+     { $\tan (-3\beta)=\cot 3\beta$ }
+    { $\cos (-3\beta)=\sin 3\beta$ }
+\loigiai{ 
+ $\cos (-3\beta)=\cos 3\beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${4a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cot (-4a)=\tan 4a$ }
+   { $\sin (-4a)=\sin 4a$ }
+     { $\cos (-4a)=-\cos 4a$ }
+    { \True $\sin (-4a)=-\sin 4a$ }
+\loigiai{ 
+ $\sin (-4a)=-\sin 4a$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\alpha}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos (-\alpha)=\sin \alpha$ }
+   { $\sin (-\alpha)=\cos \alpha$ }
+     { $\tan (-\alpha)=\tan \alpha$ }
+    { \True $\tan (-\alpha)=-\tan \alpha$ }
+\loigiai{ 
+ $\tan (-\alpha)=-\tan \alpha$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos (-\beta)=-\cos \beta$ }
+   { $\sin (-\beta)=\cos \beta$ }
+     { $\cot (-\beta)=\tan \beta$ }
+    { \True $\cot (-\beta)=-\cot \beta$ }
+\loigiai{ 
+ $\cot (-\beta)=-\cot \beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\tan (-\beta)=\cot \beta$ }
+   { $\cos (-\beta)=\sin \beta$ }
+     { $\sin (-\beta)=\sin \beta$ }
+    { \True $\tan (-\beta)=-\tan \beta$ }
+\loigiai{ 
+ $\tan (-\beta)=-\tan \beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\cot (-x)=-\cot x$ }
+   { $\cos (-x)=-\cos x$ }
+     { $\tan (-x)=\tan x$ }
+    { $\sin (-x)=\sin x$ }
+\loigiai{ 
+ $\cot (-x)=-\cot x$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc bù nhau]
+ Cho ${x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin (\pi-x)=\cos x$ }
+   { \True $\tan (\pi-x)=-\tan x$ }
+     { $\cos (\pi-x)=\cos x$ }
+    { $\tan (\pi-x)=\tan x$ }
+\loigiai{ 
+ $\tan (\pi-x)=-\tan x$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${4a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\tan (\pi-4a)=\cot 4a$ }
+   { $\cos (\pi-4a)=\cos 4a$ }
+     { \True $\cos (\pi-4a)=-\cos 4a$ }
+    { $\sin (\pi-4a)=\cos 4a$ }
+\loigiai{ 
+ $\cos (\pi-4a)=-\cos 4a$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cot (\pi-\beta)=\tan \beta$ }
+   { $\cos (\pi-\beta)=\cos \beta$ }
+     { \True $\tan (\pi-\beta)=-\tan \beta$ }
+    { $\sin (\pi-\beta)=\cos \beta$ }
+\loigiai{ 
+ $\tan (\pi-\beta)=-\tan \beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${3\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cot (\pi-3\beta)=\cot 3\beta$ }
+   { \True $\cos (\pi-3\beta)=-\cos 3\beta$ }
+     { $\sin (\pi-3\beta)=\cos 3\beta$ }
+    { $\cos (\pi-3\beta)=\cos 3\beta$ }
+\loigiai{ 
+ $\cos (\pi-3\beta)=-\cos 3\beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${3a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\tan (\pi-3a)=-\tan 3a$ }
+   { $\cot (\pi-3a)=\tan 3a$ }
+     { $\cos (\pi-3a)=\cos 3a$ }
+    { $\sin (\pi-3a)=-\sin 3a$ }
+\loigiai{ 
+ $\tan (\pi-3a)=-\tan 3a$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\cot (\pi-x)=-\cot x$ }
+   { $\cot (\pi-x)=\cot x$ }
+     { $\sin (\pi-x)=-\sin x$ }
+    { $\cos (\pi-x)=\sin x$ }
+\loigiai{ 
+ $\cot (\pi-x)=-\cot x$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc phụ nhau]
+ Cho ${a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\cos \left(\frac{\pi}{2}-a\right)=\sin a$ }
+   { $\cot \left(\frac{\pi}{2}-a\right)=\cot a$ }
+     { $\sin \left(\frac{\pi}{2}-a\right)=-\sin a$ }
+    { $\sin \left(\frac{\pi}{2}-a\right)=\sin a$ }
+\loigiai{ 
+ $\cos \left(\frac{\pi}{2}-a\right)=\sin a$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin \left(\frac{\pi}{2}-a\right)=-\sin a$ }
+   { \True $\cot \left(\frac{\pi}{2}-a\right)=\tan a$ }
+     { $\cos \left(\frac{\pi}{2}-a\right)=\cos a$ }
+    { $\cot \left(\frac{\pi}{2}-a\right)=-\cot a$ }
+\loigiai{ 
+ $\cot \left(\frac{\pi}{2}-a\right)=\tan a$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin \left(\frac{\pi}{2}-x\right)=-\sin x$ }
+   { $\sin \left(\frac{\pi}{2}-x\right)=\sin x$ }
+     { $\tan \left(\frac{\pi}{2}-x\right)=-\tan x$ }
+    { \True $\cot \left(\frac{\pi}{2}-x\right)=\tan x$ }
+\loigiai{ 
+ $\cot \left(\frac{\pi}{2}-x\right)=\tan x$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin \left(\frac{\pi}{2}-a\right)=-\sin a$ }
+   { $\cot \left(\frac{\pi}{2}-a\right)=\cot a$ }
+     { \True $\cot \left(\frac{\pi}{2}-a\right)=\tan a$ }
+    { $\sin \left(\frac{\pi}{2}-a\right)=\sin a$ }
+\loigiai{ 
+ $\cot \left(\frac{\pi}{2}-a\right)=\tan a$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin \left(\frac{\pi}{2}-x\right)=-\sin x$ }
+   { $\tan \left(\frac{\pi}{2}-x\right)=\tan x$ }
+     { \True $\sin \left(\frac{\pi}{2}-x\right)=\cos x$ }
+    { $\sin \left(\frac{\pi}{2}-x\right)=\sin x$ }
+\loigiai{ 
+ $\sin \left(\frac{\pi}{2}-x\right)=\cos x$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos \left(\frac{\pi}{2}-a\right)=-\cos a$ }
+   { $\cot \left(\frac{\pi}{2}-a\right)=-\cot a$ }
+     { $\cos \left(\frac{\pi}{2}-a\right)=\cos a$ }
+    { \True $\sin \left(\frac{\pi}{2}-a\right)=\cos a$ }
+\loigiai{ 
+ $\sin \left(\frac{\pi}{2}-a\right)=\cos a$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc hơn kém pi]
+ Cho ${5\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\tan (\pi+5\beta)=\cot 5\beta$ }
+   { \True $\sin (\pi+5\beta)=-\sin 5\beta$ }
+     { $\sin (\pi+5\beta)=\cos 5\beta$ }
+    { $\cos (\pi+5\beta)=\sin 5\beta$ }
+\loigiai{ 
+ $\sin (\pi+5\beta)=-\sin 5\beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos (\pi+\beta)=\sin \beta$ }
+   { $\sin (\pi+\beta)=\sin \beta$ }
+     { \True $\sin (\pi+\beta)=-\sin \beta$ }
+    { $\tan (\pi+\beta)=\cot \beta$ }
+\loigiai{ 
+ $\sin (\pi+\beta)=-\sin \beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${3x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin (\pi+3x)=\cos 3x$ }
+   { $\cos (\pi+3x)=\cos 3x$ }
+     { \True $\cos (\pi+3x)=-\cos 3x$ }
+    { $\cot (\pi+3x)=-\cot 3x$ }
+\loigiai{ 
+ $\cos (\pi+3x)=-\cos 3x$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\alpha}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin (\pi+\alpha)=\sin \alpha$ }
+   { $\tan (\pi+\alpha)=-\tan \alpha$ }
+     { $\cos (\pi+\alpha)=\sin \alpha$ }
+    { \True $\tan (\pi+\alpha)=\tan \alpha$ }
+\loigiai{ 
+ $\tan (\pi+\alpha)=\tan \alpha$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${2x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\tan (\pi+2x)=-\tan 2x$ }
+   { $\cos (\pi+2x)=\cos 2x$ }
+     { \True $\cot (\pi+2x)=\cot 2x$ }
+    { $\sin (\pi+2x)=\cos 2x$ }
+\loigiai{ 
+ $\cot (\pi+2x)=\cot 2x$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\alpha}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos (\pi+\alpha)=\sin \alpha$ }
+   { \True $\tan (\pi+\alpha)=\tan \alpha$ }
+     { $\cot (\pi+\alpha)=-\cot \alpha$ }
+    { $\sin (\pi+\alpha)=\sin \alpha$ }
+\loigiai{ 
+ $\tan (\pi+\alpha)=\tan \alpha$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về hai góc hơn kém pi]
+ Cho ${x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos (\pi+x)=\sin x$ }
+   { $\sin (-x)=\cos x$ }
+     { \True $\cos \left(\frac{\pi}{2}-x\right)=\sin x$ }
+    { $\cot (\pi-x)=\tan x$ }
+\loigiai{ 
+ $\cos \left(\frac{\pi}{2}-x\right)=\sin x$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\gamma}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos \left(\frac{\pi}{2}-\gamma\right)=-\cos \gamma$ }
+   { \True $\cot (\pi+\gamma)=\cot \gamma$ }
+     { $\sin \left(\frac{\pi}{2}-\gamma\right)=\sin \gamma$ }
+    { $\cot (\pi-\gamma)=\tan \gamma$ }
+\loigiai{ 
+ $\cot (\pi+\gamma)=\cot \gamma$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${a}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\cot (-a)=-\cot a$ }
+   { $\sin (\pi-a)=-\sin a$ }
+     { $\cos (-a)=\sin a$ }
+    { $\cot (\pi-a)=\tan a$ }
+\loigiai{ 
+ $\cot (-a)=-\cot a$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${b}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\tan (\pi-b)=-\tan b$ }
+   { $\sin \left(\frac{\pi}{2}-b\right)=-\sin b$ }
+     { $\cos (-b)=\sin b$ }
+    { $\cot (\pi-b)=\cot b$ }
+\loigiai{ 
+ $\tan (\pi-b)=-\tan b$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\alpha}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\tan (\pi-\alpha)=-\tan \alpha$ }
+   { $\cos (\pi-\alpha)=\sin \alpha$ }
+     { $\sin (\pi+\alpha)=\sin \alpha$ }
+    { $\cot (\pi-\alpha)=\cot \alpha$ }
+\loigiai{ 
+ $\tan (\pi-\alpha)=-\tan \alpha$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\gamma}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos \left(\frac{\pi}{2}-\gamma\right)=-\cos \gamma$ }
+   { $\cot \left(\frac{\pi}{2}-\gamma\right)=-\cot \gamma$ }
+     { \True $\cot (-\gamma)=-\cot \gamma$ }
+    { $\cos (-\gamma)=\sin \gamma$ }
+\loigiai{ 
+ $\cot (-\gamma)=-\cot \gamma$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về công thức nhân đôi]
+ Cho ${\gamma}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\cos 2\gamma=2\cos^2 \gamma-1$ }
+   { $\cos 2\gamma=2\sin^2 \gamma-1$ }
+     { $\tan 2\gamma=\dfrac{2\tan \gamma}{1+\tan^2 \gamma}$ }
+    { $\sin 2\gamma=2\sin \gamma$ }
+\loigiai{ 
+ $\cos 2\gamma=2\cos^2 \gamma-1$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${x}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\tan 2x=\dfrac{2\tan x}{1-\tan^2 x}$ }
+   { $\sin 2x=2\sin x$ }
+     { $\cos 2x=2\sin^2 x-1$ }
+    { $\tan 2x=\dfrac{2\tan x}{1+\tan^2 x}$ }
+\loigiai{ 
+ $\tan 2x=\dfrac{2\tan x}{1-\tan^2 x}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\gamma}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin 2\gamma=\sin \gamma\cos \gamma$ }
+   { \True $\tan 2\gamma=\dfrac{2\tan \gamma}{1-\tan^2 \gamma}$ }
+     { $\tan 2\gamma=\dfrac{\tan \gamma}{1-\tan^2 \gamma}$ }
+    { $\cos 2\gamma=2\sin^2 \gamma-1$ }
+\loigiai{ 
+ $\tan 2\gamma=\dfrac{2\tan \gamma}{1-\tan^2 \gamma}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\alpha}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\tan 2\alpha=\dfrac{\tan \alpha}{1-\tan^2 \alpha}$ }
+   { \True $\cos 2\alpha=1-2\sin^2 \alpha$ }
+     { $\cos 2\alpha=2\sin \alpha\cos \alpha$ }
+    { $\sin 2\alpha=\sin \alpha+\cos \alpha$ }
+\loigiai{ 
+ $\cos 2\alpha=1-2\sin^2 \alpha$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\tan 2\beta=\dfrac{\tan \beta}{1-2\tan^2 \beta}$ }
+   { $\cos 2\beta=\sin^2 \beta-\cos^2 \beta$ }
+     { \True $\cos 2\beta=1-2\sin^2 \beta$ }
+    { $\sin 2\beta=\sin \beta\cos \beta$ }
+\loigiai{ 
+ $\cos 2\beta=1-2\sin^2 \beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\beta}$ là góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos 2\beta=2\sin^2 \beta-1$ }
+   { $\sin 2\beta=2\sin \beta$ }
+     { \True $\sin 2\beta=2\sin \beta\cos \beta$ }
+    { $\tan 2\beta=\dfrac{2\tan \beta}{1+\tan^2 \beta}$ }
+\loigiai{ 
+ $\sin 2\beta=2\sin \beta\cos \beta$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về công thức cộng]
+ Cho ${x,y}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\cos (x-y)=\cos x \cos y+\sin x \sin y$ }
+   { $\tan (x-y)=\dfrac{\tan x - \tan y } {1-\tan x \tan y }$ }
+     { $\cos (x-y)=\cos x -\cos y$ }
+    { $\sin (x+y)=\sin x +\sin y$ }
+\loigiai{ 
+ $\cos (x-y)=\cos x \cos y+\sin x \sin y$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${a,b}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\tan (a+b)=\dfrac{\tan a + \tan b } {1+\tan a \tan b }$ }
+   { \True $\cos (a+b)=\cos a \cos b-\sin a \sin b$ }
+     { $\cos (a+b)=\cos a +\cos b$ }
+    { $\sin (a+b)=\sin a +\sin b$ }
+\loigiai{ 
+ $\cos (a+b)=\cos a \cos b-\sin a \sin b$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${u,v}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin (u+v)=\sin u +\sin v$ }
+   { \True $\cos (u-v)=\cos u \cos v+\sin u \sin v$ }
+     { $\cos (u+v)=\cos u \cos v+\sin u \sin v$ }
+    { $\tan (u-v)=\dfrac{\tan u - \tan v } {1-\tan u \tan v }$ }
+\loigiai{ 
+ $\cos (u-v)=\cos u \cos v+\sin u \sin v$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${a,b}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin (a+b)=\sin a +\sin b$ }
+   { \True $\sin (a-b)=\sin a \cos b-\cos a \sin b $ }
+     { $\tan (a+b)=\tan a + \tan b$ }
+    { $\cos (a+b)=\cos a +\cos b$ }
+\loigiai{ 
+ $\sin (a-b)=\sin a \cos b-\cos a \sin b $ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${x,y}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos (x+y)=\cos x +\cos y$ }
+   { \True $\cos (x+y)=\cos x \cos y-\sin x \sin y$ }
+     { $\tan (x+y)=\tan x + \tan y$ }
+    { $\sin (x-y)=\sin x -\sin y$ }
+\loigiai{ 
+ $\cos (x+y)=\cos x \cos y-\sin x \sin y$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${u,v}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin (u+v)=\sin u \cos v- \cos u \sin v$ }
+   { $\tan (u+v)=\tan u + \tan v$ }
+     { \True $\tan (u+v)=\dfrac{\tan u + \tan v } {1-\tan u \tan v }$ }
+    { $\cos (u+v)=\cos u +\cos v$ }
+\loigiai{ 
+ $\tan (u+v)=\dfrac{\tan u + \tan v } {1-\tan u \tan v }$ là khẳng định đúng. 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+
+ \begin{center}
+-----HẾT-----
+\end{center}
+
+ %\newpage 
+%\begin{center}
+%{\bf BẢNG ĐÁP ÁN MÃ ĐỀ 1 }
+%\end{center}
+%{\bf Phần 1 }
+% \inputansbox{6}{ans001-1}
+
+
+
+\end{document}

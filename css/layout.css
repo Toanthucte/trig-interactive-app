@@ -1,0 +1,132 @@
+/*
+  Layout Stylesheet - Project V2
+  Author: NQQ
+  Created: 24/07/2024
+  
+  Defines the main structure and layout of the application.
+*/
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+#app-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: var(--surface-color);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-3) var(--spacing-4);
+    transition: padding 0.3s ease-in-out;
+}
+
+#app-header.scrolled {
+    padding-top: var(--spacing-1);
+    padding-bottom: var(--spacing-1);
+}
+
+#app-header h1 {
+    text-align: center;
+    font-size: var(--font-size-xl);
+    margin: 0 0 var(--spacing-3) 0;
+    color: var(--primary-color);
+    transition: font-size 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#app-header.scrolled h1 {
+    font-size: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+#tab-navigation {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+
+#tab-navigation::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.tab-btn {
+    flex: 1 0 auto;
+    padding: var(--spacing-2) var(--spacing-3);
+    margin: 0 var(--spacing-1);
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+}
+
+#app-main {
+    flex: 1;
+    padding: var(--spacing-4);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#app-footer {
+    padding: var(--spacing-4);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    background: var(--surface-alt);
+    border-top: 1px solid var(--border-color);
+}
+
+#modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: var(--z-modal);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    #app-header {
+        padding: var(--spacing-4) var(--spacing-8);
+    }
+
+    #app-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    #tab-navigation {
+        justify-content: center;
+    }
+
+    .tab-btn {
+        flex-grow: 0;
+    }
+
+    #app-main {
+        padding: var(--spacing-8);
+    }
+}

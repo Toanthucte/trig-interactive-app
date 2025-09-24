@@ -1,0 +1,21 @@
+{
+  "name": "Góc Lượng Giác Tương Tác",
+  "short_name": "Góc Lượng Giác",
+  "description": "Một ứng dụng web tiến bộ để học và tương tác với các khái niệm lượng giác.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

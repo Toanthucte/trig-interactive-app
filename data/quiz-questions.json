@@ -1,0 +1,194 @@
+{
+  "categories": {
+    "basic": {
+      "name": "Cơ bản",
+      "description": "Góc đặc biệt 0°, 30°, 45°, 60°, 90°",
+      "timeLimit": 15,
+      "questions": [
+        {
+          "id": "b001",
+          "type": "multiple-choice",
+          "question": "sin 30° = ?",
+          "answer": "1/2",
+          "options": ["1/2", "√2/2", "√3/2", "0"],
+          "explanation": "sin 30° = 1/2 (từ tam giác vuông đặc biệt)",
+          "difficulty": 1
+        },
+        {
+          "id": "b002", 
+          "type": "multiple-choice",
+          "question": "cos 45° = ?",
+          "answer": "√2/2",
+          "options": ["1/2", "√2/2", "√3/2", "1"],
+          "explanation": "cos 45° = √2/2 (từ tam giác vuông cân)",
+          "difficulty": 1
+        },
+        {
+          "id": "b003",
+          "type": "multiple-choice", 
+          "question": "tan 60° = ?",
+          "answer": "√3",
+          "options": ["1", "√3/3", "√3", "∞"],
+          "explanation": "tan 60° = √3 (tan = sin/cos = (√3/2)/(1/2) = √3)",
+          "difficulty": 1
+        },
+        {
+          "id": "b004",
+          "type": "conversion",
+          "question": "30° = ? radian",
+          "answer": "π/6", 
+          "alternatives": ["pi/6"],
+          "explanation": "30° × π/180° = π/6 radian",
+          "difficulty": 1
+        },
+        {
+          "id": "b005",
+          "type": "conversion",
+          "question": "π/4 = ? độ", 
+          "answer": "45°",
+          "alternatives": ["45", "45 độ"],
+          "explanation": "π/4 × 180°/π = 45°",
+          "difficulty": 1
+        }
+      ]
+    },
+
+    "intermediate": {
+      "name": "Trung bình",
+      "description": "Góc ở các góc phần tư khác",
+      "timeLimit": 20,
+      "questions": [
+        {
+          "id": "i001",
+          "type": "multiple-choice",
+          "question": "sin 120° = ?",
+          "answer": "√3/2",
+          "options": ["1/2", "√3/2", "-√3/2", "√2/2"],
+          "explanation": "sin 120° = sin(180° - 60°) = sin 60° = √3/2",
+          "difficulty": 2
+        },
+        {
+          "id": "i002",
+          "type": "multiple-choice", 
+          "question": "cos 135° = ?",
+          "answer": "-√2/2",
+          "options": ["√2/2", "-√2/2", "1/2", "-1/2"],
+          "explanation": "cos 135° = cos(180° - 45°) = -cos 45° = -√2/2",
+          "difficulty": 2
+        },
+        {
+          "id": "i003",
+          "type": "fill-blank",
+          "question": "tan 150° = ?",
+          "answer": "-√3/3",
+          "alternatives": ["-√3/3", "-sqrt(3)/3"],
+          "explanation": "tan 150° = tan(180° - 30°) = -tan 30° = -√3/3",
+          "difficulty": 2
+        }
+      ]
+    },
+
+    "advanced": {
+      "name": "Nâng cao", 
+      "description": "Góc bất kỳ và ứng dụng",
+      "timeLimit": 30,
+      "questions": [
+        {
+          "id": "a001",
+          "type": "fill-blank",
+          "question": "sin(5π/6) = ?",
+          "answer": "1/2", 
+          "alternatives": ["0.5"],
+          "hint": "5π/6 = 150°, nằm ở góc phần tư II",
+          "explanation": "5π/6 = 150°, sin 150° = sin(180° - 30°) = sin 30° = 1/2",
+          "difficulty": 3
+        },
+        {
+          "id": "a002",
+          "type": "application",
+          "question": "Bánh xe bán kính 6cm quay góc π/3. Độ dài cung = ?",
+          "answer": "2π",
+          "unit": "cm",
+          "alternatives": ["2pi", "6.28"],
+          "formula": "s = rθ",
+          "explanation": "s = r × θ = 6 × π/3 = 2π cm",
+          "difficulty": 3
+        }
+      ]
+    }
+  },
+
+  "gameModes": {
+    "speed": {
+      "name": "Nhanh tay",
+      "description": "Trả lời nhanh trong thời gian giới hạn",
+      "timePerQuestion": 15,
+      "questionsPerRound": 10,
+      "categories": ["basic"],
+      "scoring": {
+        "correct": 100,
+        "streak": 50,
+        "timeBonus": 10
+      }
+    },
+
+    "challenge": {
+      "name": "Thách đấu", 
+      "description": "Độ khó tăng dần, có giới hạn sai",
+      "lives": 3,
+      "categories": ["basic", "intermediate", "advanced"],
+      "progression": {
+        "level1": { "category": "basic", "questions": 5 },
+        "level2": { "category": "intermediate", "questions": 5 },
+        "level3": { "category": "advanced", "questions": 5 }
+      },
+      "scoring": {
+        "correct": 200,
+        "levelBonus": 500
+      }
+    },
+
+    "practice": {
+      "name": "Luyện tập",
+      "description": "Không giới hạn thời gian, có gợi ý",
+      "unlimited": true,
+      "hintsEnabled": true,
+      "categories": ["basic", "intermediate", "advanced"],
+      "scoring": {
+        "correct": 50,
+        "hintPenalty": -10
+      }
+    }
+  },
+
+  "achievements": [
+    {
+      "id": "first_correct",
+      "name": "Bước đầu tiên",
+      "description": "Trả lời đúng câu hỏi đầu tiên",
+      "icon": "🎯",
+      "points": 10
+    },
+    {
+      "id": "streak_5",
+      "name": "Chuỗi 5",
+      "description": "Trả lời đúng liên tiếp 5 câu",
+      "icon": "🔥",
+      "points": 50
+    },
+    {
+      "id": "speed_master",
+      "name": "Tốc độ",
+      "description": "Hoàn thành vòng Speed với điểm tối đa",
+      "icon": "⚡",
+      "points": 100
+    },
+    {
+      "id": "angle_master", 
+      "name": "Bậc thầy góc",
+      "description": "Hoàn thành tất cả câu hỏi Advanced",
+      "icon": "👨‍🎓",
+      "points": 200
+    }
+  ]
+}

@@ -1,0 +1,683 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=1.5cm] {geometry}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{tkz-euclide}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+\usepackage{tikz,tkz-tab}
+%\usepackage[solcolor]{ex_test}
+%\usepackage[dethi]{ex_test} % Chỉ hiển thị đề thi
+\usepackage[loigiai]{ex_test} % Hiển thị lời giải
+%\usepackage[color]{ex_test} % Khoanh các đáp án
+\everymath{\displaystyle}
+
+\def\colorEX{\color{purple}}
+%\def\colorEX{}%Không tô màu đáp án đúng trong tùy chọn loigiai
+\renewtheorem{ex}{\color{violet}Câu}
+\renewcommand{\FalseEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+\renewcommand{\TrueEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+
+%---------- Khai báo viết tắt, in đáp án
+\newcommand{\hoac}[1]{ %hệ hoặc
+    \left[\begin{aligned}#1\end{aligned}\right.}
+\newcommand{\heva}[1]{ %hệ và
+    \left\{\begin{aligned}#1\end{aligned}\right.}
+
+%Tiêu đề
+\newcommand{\tenso}{THÀNH PHỐ HỒ CHÍ MINH}
+\newcommand{\tentruong}{HD-NQQ}
+\newcommand{\tenkythi}{GÓC LƯỢNG GIÁC}
+\newcommand{\tenmonthi}{Môn học: D11-C1-B1 - BT 20-23}
+\newcommand{\thoigian}{}
+\newcommand{\tieude}[1]{
+   \begin{tabular}{cm{1cm}cm{3cm}cm{3cm}}T
+    {\bf \tenso} & & {\bf \tenkythi} \\
+    {\bf \tentruong} & & {\bf \tenmonthi}\\
+    && {\bf Thời gian: \bf \thoigian \, phút}\\
+    && { \fbox{\bf Mã đề: #1}}
+   \end{tabular}\\\\
+    
+   {Họ tên HS: \dotfill Số báo danh \dotfill}\\
+}
+\newcommand{\chantrang}[2]{\rfoot{Trang \thepage $-$ Mã đề #2}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+
+\begin{document}
+%Thiết lập giãn dọng 1.5cm 
+%\setlength{\lineskip}{1.5em}
+%Nội dung trắc nghiệm bắt đầu ở đây
+
+
+\tieude{001}
+%\chantrang{\pageref{LastPage}}{001}
+\setcounter{page}{1}
+{\bf PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-1]
+\begin{ex}[20-M2. Tìm góc có điểm biểu diễn đối xứng với M qua Oy]
+   Trong mặt phẳng tọa độ ${Oxy}$, trên đường tròn lượng giác gọi điểm ${E}$ là điểm biểu diễn của góc $\frac{4 \pi}{5}$. Lấy điểm ${Q}$ đối xứng với ${E}$ qua trục ${Oy}$. Hỏi ${Q}$ là điểm biểu diễn của góc có số đo bằng bao nhiêu? 
+\choice
+{ $\frac{21 \pi}{20}$ }
+   { $\frac{14 \pi}{5}$ }
+     { \True $\frac{\pi}{5}$ }
+    { $\frac{13 \pi}{10}$ }
+\loigiai{ 
+ ${Q}$ là điểm biểu diễn của góc $\frac{\pi}{5}$. 
+ }\end{ex}
+
+\begin{ex}
+   Trong mặt phẳng tọa độ ${Oxy}$, trên đường tròn lượng giác gọi điểm ${M}$ là điểm biểu diễn của góc $\frac{2 \pi}{3}$. Lấy điểm ${P}$ đối xứng với ${M}$ qua trục ${Oy}$. Hỏi ${P}$ là điểm biểu diễn của góc có số đo bằng bao nhiêu? 
+\choice
+{ $\frac{5 \pi}{3}$ }
+   { $\frac{8 \pi}{3}$ }
+     { \True $\frac{\pi}{3}$ }
+    { $\frac{\pi}{6}$ }
+\loigiai{ 
+ ${P}$ là điểm biểu diễn của góc $\frac{\pi}{3}$. 
+ }\end{ex}
+
+\begin{ex}
+   Trong mặt phẳng tọa độ ${Oxy}$, trên đường tròn lượng giác gọi điểm ${Q}$ là điểm biểu diễn của góc $\frac{3 \pi}{4}$. Lấy điểm ${E}$ đối xứng với ${Q}$ qua trục ${Oy}$. Hỏi ${E}$ là điểm biểu diễn của góc có số đo bằng bao nhiêu? 
+\choice
+{ $\pi$ }
+   { \True $\frac{\pi}{4}$ }
+     { $\frac{13 \pi}{12}$ }
+    { $- \frac{3 \pi}{4}$ }
+\loigiai{ 
+ ${E}$ là điểm biểu diễn của góc $\frac{\pi}{4}$. 
+ }\end{ex}
+
+\begin{ex}
+   Trong mặt phẳng tọa độ ${Oxy}$, trên đường tròn lượng giác gọi điểm ${N}$ là điểm biểu diễn của góc $\frac{2 \pi}{3}$. Lấy điểm ${M}$ đối xứng với ${N}$ qua trục ${Oy}$. Hỏi ${M}$ là điểm biểu diễn của góc có số đo bằng bao nhiêu? 
+\choice
+{ $\frac{\pi}{6}$ }
+   { $- \frac{2 \pi}{3}$ }
+     { $\frac{8 \pi}{3}$ }
+    { \True $\frac{\pi}{3}$ }
+\loigiai{ 
+ ${M}$ là điểm biểu diễn của góc $\frac{\pi}{3}$. 
+ }\end{ex}
+
+\begin{ex}
+   Trong mặt phẳng tọa độ ${Oxy}$, trên đường tròn lượng giác gọi điểm ${P}$ là điểm biểu diễn của góc $\frac{4 \pi}{5}$. Lấy điểm ${M}$ đối xứng với ${P}$ qua trục ${Oy}$. Hỏi ${M}$ là điểm biểu diễn của góc có số đo bằng bao nhiêu? 
+\choice
+{ $\frac{3 \pi}{10}$ }
+   { $\frac{14 \pi}{5}$ }
+     { $\frac{17 \pi}{15}$ }
+    { \True $\frac{\pi}{5}$ }
+\loigiai{ 
+ ${M}$ là điểm biểu diễn của góc $\frac{\pi}{5}$. 
+ }\end{ex}
+
+\begin{ex}
+   Trong mặt phẳng tọa độ ${Oxy}$, trên đường tròn lượng giác gọi điểm ${P}$ là điểm biểu diễn của góc $\frac{\pi}{4}$. Lấy điểm ${M}$ đối xứng với ${P}$ qua trục ${Oy}$. Hỏi ${M}$ là điểm biểu diễn của góc có số đo bằng bao nhiêu? 
+\choice
+{ $\frac{3 \pi}{4}$ }
+   { \True $\frac{3 \pi}{4}$ }
+     { $\frac{5 \pi}{4}$ }
+    { $\frac{9 \pi}{4}$ }
+\loigiai{ 
+ ${M}$ là điểm biểu diễn của góc $\frac{3 \pi}{4}$. 
+ }\end{ex}
+
+\begin{ex}[21-M2. Tìm điểm biểu diễn các góc pi/6, -pi/6, 5pi/6, -5pi/6]
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $- \frac{19 \pi}{6}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (30:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (150:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-150:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-30:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 30°
+            \draw[->, thin] (1,0) arc (0:30:1);
+            \node at (1.5,0.25) {\scriptsize $30^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{A}}$ }
+   { Điểm ${{Q}}$ }
+     { Điểm ${{B}}$ }
+    { \True Điểm ${{N}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{19 \pi}{6}$ trùng với điểm biểu diễn của góc $\frac{5 \pi}{6}$ là Điểm ${{N}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $\frac{5 \pi}{6}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (30:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (150:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-150:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-30:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 30°
+            \draw[->, thin] (1,0) arc (0:30:1);
+            \node at (1.5,0.25) {\scriptsize $30^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{B}}$ }
+   { \True Điểm ${{N}}$ }
+     { Điểm ${{M}}$ }
+    { Điểm ${{Q}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $\frac{5 \pi}{6}$ trùng với điểm biểu diễn của góc $\frac{5 \pi}{6}$ là Điểm ${{N}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $- \frac{29 \pi}{6}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (30:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (150:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-150:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-30:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 30°
+            \draw[->, thin] (1,0) arc (0:30:1);
+            \node at (1.5,0.25) {\scriptsize $30^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{B}}$ }
+   { \True Điểm ${{P}}$ }
+     { Điểm ${{A'}}$ }
+    { Điểm ${{N}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{29 \pi}{6}$ trùng với điểm biểu diễn của góc $- \frac{5 \pi}{6}$ là Điểm ${{P}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $\frac{7 \pi}{6}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (30:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (150:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-150:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-30:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 30°
+            \draw[->, thin] (1,0) arc (0:30:1);
+            \node at (1.5,0.25) {\scriptsize $30^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ \True Điểm ${{P}}$ }
+   { Điểm ${{Q}}$ }
+     { Điểm ${{A}}$ }
+    { Điểm ${{M}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $\frac{7 \pi}{6}$ trùng với điểm biểu diễn của góc $- \frac{5 \pi}{6}$ là Điểm ${{P}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $- \frac{11 \pi}{6}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (30:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (150:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-150:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-30:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 30°
+            \draw[->, thin] (1,0) arc (0:30:1);
+            \node at (1.5,0.25) {\scriptsize $30^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{B}}$ }
+   { Điểm ${{Q}}$ }
+     { Điểm ${{N}}$ }
+    { \True Điểm ${{M}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{11 \pi}{6}$ trùng với điểm biểu diễn của góc $\frac{\pi}{6}$ là Điểm ${{M}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $\frac{29 \pi}{6}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (30:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (150:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-150:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-30:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 30°
+            \draw[->, thin] (1,0) arc (0:30:1);
+            \node at (1.5,0.25) {\scriptsize $30^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{A'}}$ }
+   { \True Điểm ${{N}}$ }
+     { Điểm ${{A}}$ }
+    { Điểm ${{Q}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $\frac{29 \pi}{6}$ trùng với điểm biểu diễn của góc $\frac{5 \pi}{6}$ là Điểm ${{N}}$. 
+ }\end{ex}
+
+\begin{ex}[22-M2. Tìm điểm biểu diễn các góc pi/3, -pi/3, 2pi/3, -2pi/3]
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $- \frac{4 \pi}{3}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (60:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (120:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-120:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-60:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 60°
+            \draw[->, thin] (1,0) arc (0:60:1);
+            \node at (1.5,0.25) {\scriptsize $60^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{B'}}$ }
+   { Điểm ${{B}}$ }
+     { Điểm ${{A}}$ }
+    { \True Điểm ${{N}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{4 \pi}{3}$ trùng với điểm biểu diễn của góc $\frac{2 \pi}{3}$ là Điểm ${{N}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $- \frac{13 \pi}{3}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (60:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (120:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-120:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-60:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 60°
+            \draw[->, thin] (1,0) arc (0:60:1);
+            \node at (1.5,0.25) {\scriptsize $60^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{M}}$ }
+   { Điểm ${{A}}$ }
+     { \True Điểm ${{Q}}$ }
+    { Điểm ${{B'}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{13 \pi}{3}$ trùng với điểm biểu diễn của góc $- \frac{\pi}{3}$ là Điểm ${{Q}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $\frac{11 \pi}{3}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (60:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (120:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-120:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-60:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 60°
+            \draw[->, thin] (1,0) arc (0:60:1);
+            \node at (1.5,0.25) {\scriptsize $60^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{A'}}$ }
+   { Điểm ${{M}}$ }
+     { \True Điểm ${{Q}}$ }
+    { Điểm ${{A}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $\frac{11 \pi}{3}$ trùng với điểm biểu diễn của góc $- \frac{\pi}{3}$ là Điểm ${{Q}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $\frac{7 \pi}{3}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (60:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (120:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-120:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-60:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 60°
+            \draw[->, thin] (1,0) arc (0:60:1);
+            \node at (1.5,0.25) {\scriptsize $60^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{A}}$ }
+   { Điểm ${{P}}$ }
+     { Điểm ${{Q}}$ }
+    { \True Điểm ${{M}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $\frac{7 \pi}{3}$ trùng với điểm biểu diễn của góc $\frac{\pi}{3}$ là Điểm ${{M}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $- \frac{4 \pi}{3}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (60:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (120:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-120:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-60:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 60°
+            \draw[->, thin] (1,0) arc (0:60:1);
+            \node at (1.5,0.25) {\scriptsize $60^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ \True Điểm ${{N}}$ }
+   { Điểm ${{A}}$ }
+     { Điểm ${{P}}$ }
+    { Điểm ${{Q}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{4 \pi}{3}$ trùng với điểm biểu diễn của góc $\frac{2 \pi}{3}$ là Điểm ${{N}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $- \frac{14 \pi}{3}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (60:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (120:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-120:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-60:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 60°
+            \draw[->, thin] (1,0) arc (0:60:1);
+            \node at (1.5,0.25) {\scriptsize $60^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ \True Điểm ${{P}}$ }
+   { Điểm ${{A'}}$ }
+     { Điểm ${{A}}$ }
+    { Điểm ${{B'}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{14 \pi}{3}$ trùng với điểm biểu diễn của góc $- \frac{2 \pi}{3}$ là Điểm ${{P}}$. 
+ }\end{ex}
+
+\begin{ex}[23-M2. Tìm điểm biểu diễn các góc thường gặp]
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Tìm điểm biểu diễn của góc có số đo bằng $4 \pi$. 
+\begin{center}
+\begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt) (2,0) coordinate (A) node[above right] {$A$} circle (1.5pt) (180:2) coordinate (A2) node [above left] {$A'$} circle (1.5 pt) (90:2) coordinate (B1) node [above right] {$B$} circle (1.5pt) (270:2) coordinate (B2) node [below left] {$B'$} circle (1.5pt);
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \clip (-5,-5) rectangle (5,5);
+    \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{A'}}$ }
+   { Điểm ${{B'}}$ }
+     { Điểm ${{B}}$ }
+    { \True Điểm ${{A}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $4 \pi$ là Điểm ${{A}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Tìm điểm biểu diễn của góc có số đo bằng $- \frac{5 \pi}{2}$. 
+\begin{center}
+\begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt) (2,0) coordinate (A) node[above right] {$A$} circle (1.5pt) (180:2) coordinate (A2) node [above left] {$A'$} circle (1.5 pt) (90:2) coordinate (B1) node [above right] {$B$} circle (1.5pt) (270:2) coordinate (B2) node [below left] {$B'$} circle (1.5pt);
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \clip (-5,-5) rectangle (5,5);
+    \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{A'}}$ }
+   { \True ("Điểm ${{B'}}$",) }
+     { Điểm ${{A}}$ }
+    { Điểm ${{B}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{5 \pi}{2}$ là ("Điểm ${{B'}}$",). 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $\frac{17 \pi}{6}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (30:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (150:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-150:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-30:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 30°
+            \draw[->, thin] (1,0) arc (0:30:1);
+            \node at (1.5,0.25) {\scriptsize $30^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ \True Điểm ${{N}}$ }
+   { Điểm ${{M}}$ }
+     { Điểm ${{A}}$ }
+    { Điểm ${{Q}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $\frac{17 \pi}{6}$ trùng với điểm biểu diễn của góc $\frac{5 \pi}{6}$ là Điểm ${{N}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $\frac{11 \pi}{3}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (60:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (120:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-120:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-60:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 60°
+            \draw[->, thin] (1,0) arc (0:60:1);
+            \node at (1.5,0.25) {\scriptsize $60^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ Điểm ${{A'}}$ }
+   { Điểm ${{B}}$ }
+     { \True Điểm ${{Q}}$ }
+    { Điểm ${{P}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $\frac{11 \pi}{3}$ trùng với điểm biểu diễn của góc $- \frac{\pi}{3}$ là Điểm ${{Q}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $- \frac{\pi}{3}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt)
+            (2,0) coordinate (A)
+            (60:2) coordinate (M) node [above] {$M$} circle (1.5 pt)
+            (120:2) coordinate (N) node [above] {$N$} circle (1.5pt)
+            (-120:2) coordinate (P) node [below left] {$P$} circle (1.5pt)
+            (-60:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \draw[dashed] (O)--(M);
+            
+            % Vẽ cung góc và ký hiệu góc 60°
+            \draw[->, thin] (1,0) arc (0:60:1);
+            \node at (1.5,0.25) {\scriptsize $60^\circ$};
+            
+            \clip (-5,-5) rectangle (5,5);
+        \end{tikzpicture} 
+\end{center}
+\choice
+{ \True Điểm ${{Q}}$ }
+   { Điểm ${{M}}$ }
+     { Điểm ${{P}}$ }
+    { Điểm ${{B}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $- \frac{\pi}{3}$ trùng với điểm biểu diễn của góc $- \frac{\pi}{3}$ là Điểm ${{Q}}$. 
+ }\end{ex}
+
+\begin{ex}
+ Trong mặt phẳng tọa độ ${Oxy},$ cho đường tròn lượng giác như hình vẽ bên dưới. Điểm biểu diễn của góc có số đo bằng $\frac{5 \pi}{4}$ là điểm nào trong các điểm sau? 
+\begin{center}
+ \begin{tikzpicture}[scale=.7,>=stealth, font=\footnotesize, line join=round, line cap=round]
+            \draw[fill=black](0,0) coordinate (O) node[below left]{$O$} circle (1.5pt) (2,0) coordinate (A) (45:2) coordinate (M) node [above] {$M$} circle (1.5 pt) (135:2) coordinate (N) node [above] {$N$} circle (1.5pt) (225:2) coordinate (P) node [below left] {$P$} circle (1.5pt) (-45:2) coordinate (Q) node [below] {$Q$} circle (1.5pt);
+            \draw[very thick] (0,0) circle (2 cm);
+            \draw[->] (-3,0)--(3,0) node [below]{$x$};
+            \draw[->] (0,-3)--(0,3) node [left]{$y$};
+            \clip (-5,-5) rectangle (5,5);
+    \end{tikzpicture}
+\end{center}
+\choice
+{ Điểm ${{B}}$ }
+   { Điểm ${{B'}}$ }
+     { \True Điểm ${{P}}$ }
+    { Điểm ${{N}}$ }
+\loigiai{ 
+ Điểm biểu diễn của góc $\frac{5 \pi}{4}$ trùng với điểm biểu diễn của góc $- \frac{3 \pi}{4}$ là Điểm ${{P}}$. 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+
+ \begin{center}
+-----HẾT-----
+\end{center}
+
+ %\newpage 
+%\begin{center}
+%{\bf BẢNG ĐÁP ÁN MÃ ĐỀ 1 }
+%\end{center}
+%{\bf Phần 1 }
+% \inputansbox{6}{ans001-1}
+
+
+
+\end{document}

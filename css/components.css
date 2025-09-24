@@ -1,0 +1,348 @@
+/*
+  Component-specific Styles - Project V2
+  Author: NQQ
+  Created: 24/07/2024
+  
+  Contains styles for reusable UI components.
+*/
+
+/* ===== Section Header ===== */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-6);
+}
+
+.section-header h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-2);
+}
+
+.section-description {
+    color: var(--text-secondary);
+    max-width: 60ch;
+    margin: 0 auto;
+}
+
+/* ===== Card ===== */
+.card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* ===== Input Group ===== */
+.input-group {
+    margin-bottom: var(--spacing-4);
+}
+
+.input-group label {
+    display: block;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2);
+    font-size: var(--font-size-sm);
+}
+
+/* ===== Math Keyboard Component ===== */
+.math-keyboard-modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-4);
+    transform: translateY(100%);
+    transition: transform var(--transition-base);
+    z-index: var(--z-modal);
+    pointer-events: auto;
+}
+
+.math-keyboard-modal.active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-xl);
+}
+
+.keyboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: var(--spacing-2);
+}
+
+.keyboard-key {
+    aspect-ratio: 1.5;
+    background: var(--surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-lg);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-4);
+}
+
+.result-card {
+    background: var(--surface-alt);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.result-card h4 {
+    margin: 0 0 var(--spacing-2) 0;
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.result-card p {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+}
+
+.history-section {
+    margin-top: var(--spacing-8);
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    margin-top: var(--spacing-3);
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-3);
+    background: var(--surface-alt);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+}
+
+.unit-selector {
+    display: flex;
+    gap: var(--spacing-2);
+    margin-top: var(--spacing-3);
+}
+
+.unit-btn {
+    flex: 1;
+    background: var(--surface-alt);
+    border: 1px solid var(--border-color);
+}
+
+.unit-btn.active {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+    border-color: var(--primary-color);
+}
+
+/* Interactive Circle */
+.circle-layout-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.circle-controls {
+    width: 100%;
+    max-width: 500px;
+}
+
+.canvas-container {
+    width: 100%;
+    max-width: 500px; /* Limit canvas size on larger screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#unit-circle-canvas {
+    cursor: grab;
+    border-radius: var(--radius-lg);
+    width: 100% !important;
+    height: auto !important;
+}
+
+.info-panel {
+    width: 100%;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-3);
+}
+
+.info-card {
+    background: var(--surface-alt);
+    padding: var(--spacing-3);
+    border-radius: var(--radius-md);
+}
+
+.info-card h4 {
+    margin: 0 0 var(--spacing-2) 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.mnemonic-phrase {
+    font-style: italic;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2);
+}
+
+/* Value Table */
+.table-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.values-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.values-table th, .values-table td {
+    padding: var(--spacing-3);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.values-table th {
+    cursor: pointer;
+    user-select: none;
+}
+
+.values-table th.sort-asc::after {
+    content: ' ▲';
+}
+
+.values-table th.sort-desc::after {
+    content: ' ▼';
+}
+
+.values-table tbody tr:hover {
+    background: var(--surface-hover);
+}
+
+/* Practical Apps */
+.apps-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-6);
+}
+
+.problem-diagram {
+    background: var(--surface-alt);
+    min-height: 200px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-4);
+}
+
+/* Quiz Game */
+.quiz-setup, .game-area, .result-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.difficulty-selector {
+    display: flex;
+    gap: var(--spacing-3);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3);
+    width: 100%;
+}
+
+.option-btn.correct {
+    background: var(--success-color);
+    color: var(--text-inverse);
+}
+
+.option-btn.incorrect {
+    background: var(--error-color);
+    color: var(--text-inverse);
+}
+
+/* Math Keyboard */
+.math-keyboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--surface);
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-2);
+    z-index: 1000;
+}
+
+.keyboard-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-1);
+}
+
+.keyboard-key {
+    flex: 1;
+    height: 48px;
+    font-size: var(--font-size-lg);
+    background: var(--surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+.keyboard-key:active {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+}
+

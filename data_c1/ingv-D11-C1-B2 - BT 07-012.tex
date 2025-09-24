@@ -1,0 +1,899 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=1.5cm] {geometry}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{tkz-euclide}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+\usepackage{tikz,tkz-tab}
+%\usepackage[solcolor]{ex_test}
+%\usepackage[dethi]{ex_test} % Chỉ hiển thị đề thi
+\usepackage[loigiai]{ex_test} % Hiển thị lời giải
+%\usepackage[color]{ex_test} % Khoanh các đáp án
+\everymath{\displaystyle}
+
+\def\colorEX{\color{purple}}
+%\def\colorEX{}%Không tô màu đáp án đúng trong tùy chọn loigiai
+\renewtheorem{ex}{\color{violet}Câu}
+\renewcommand{\FalseEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+\renewcommand{\TrueEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+
+%---------- Khai báo viết tắt, in đáp án
+\newcommand{\hoac}[1]{ %hệ hoặc
+    \left[\begin{aligned}#1\end{aligned}\right.}
+\newcommand{\heva}[1]{ %hệ và
+    \left\{\begin{aligned}#1\end{aligned}\right.}
+
+%Tiêu đề
+\newcommand{\tenso}{THÀNH PHỐ HỒ CHÍ MINH}
+\newcommand{\tentruong}{HD-NQQ}
+\newcommand{\tenkythi}{GTLG CỦA MỘT GÓC LƯỢNG GIÁ}
+\newcommand{\tenmonthi}{Môn học: D11-C1-B2 - BT 07-12}
+\newcommand{\thoigian}{}
+\newcommand{\tieude}[1]{
+   \begin{tabular}{cm{1cm}cm{3cm}cm{3cm}}
+    {\bf \tenso} & & {\bf \tenkythi} \\
+    {\bf \tentruong} & & {\bf \tenmonthi}\\
+    && {\bf Thời gian: \bf \thoigian \, phút}\\
+    && { \fbox{\bf Mã đề: #1}}
+   \end{tabular}\\\\
+    
+   {Họ tên HS: \dotfill Số báo danh \dotfill}\\
+}
+\newcommand{\chantrang}[2]{\rfoot{Trang \thepage $-$ Mã đề #2}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+%\dotlinefull{ex}
+\begin{document}
+%Thiết lập giãn dọng 1.5cm 
+%\setlength{\lineskip}{1.5em}
+%Nội dung trắc nghiệm bắt đầu ở đây
+
+
+\tieude{001}
+%\chantrang{\pageref{LastPage}}{001}
+\setcounter{page}{1}
+{\bf PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-1]
+\begin{ex}[11-M1. Cho góc x (a<x<b). Tìm khẳng định đúng về dấu của GTLG]
+ Cho góc lượng giác ${\beta}$ thỏa mãn $\beta\in \left( \frac{5 \pi}{2};3\pi \right)$. Khẳng định nào sau đây là khẳng định đúng. 
+\choice
+{ $\cos \beta >0$  }
+   { $\sin \beta <0$  }
+     { \True $\cos \beta <0$  }
+    { $\cot \beta >0$  }
+\loigiai{ 
+ $\cos \beta <0$  là khẳng định đúng 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${\beta}$ thỏa mãn $\beta\in \left( \frac{5 \pi}{2};3\pi \right)$. Khẳng định nào sau đây là khẳng định đúng. 
+\choice
+{ $\cot \beta >0$  }
+   { $\sin \beta <0$  }
+     { $\cos \beta >0$  }
+    { \True $\cot \beta <0$  }
+\loigiai{ 
+ $\cot \beta <0$  là khẳng định đúng 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${b}$ thỏa mãn $b\in \left( \frac{\pi}{2};\pi \right)$. Khẳng định nào sau đây là khẳng định đúng. 
+\choice
+{ $\cos b >0$  }
+   { \True $\tan b <0$  }
+     { $\tan b >0$  }
+    { $\sin b <0$  }
+\loigiai{ 
+ $\tan b <0$  là khẳng định đúng 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${x}$ thỏa mãn $x\in \left( - \frac{3 \pi}{2};- \pi \right)$. Khẳng định nào sau đây là khẳng định đúng. 
+\choice
+{ $\tan x >0$  }
+   { $\sin x <0$  }
+     { \True $\tan x <0$  }
+    { $\cos x >0$  }
+\loigiai{ 
+ $\tan x <0$  là khẳng định đúng 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${\alpha}$ thỏa mãn $\alpha\in \left( 2\pi;\frac{5 \pi}{2} \right)$. Khẳng định nào sau đây là khẳng định đúng. 
+\choice
+{ $\tan \alpha <0$  }
+   { $\cot \alpha <0$  }
+     { \True $\tan \alpha >0$  }
+    { $\cos \alpha <0$  }
+\loigiai{ 
+ $\tan \alpha >0$  là khẳng định đúng 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${\beta}$ thỏa mãn $\beta\in \left( 0;\frac{\pi}{2} \right)$. Khẳng định nào sau đây là khẳng định đúng. 
+\choice
+{ $\cot \beta <0$  }
+   { $\sin \beta <0$  }
+     { \True $\sin \beta >0$  }
+    { $\cos \beta <0$  }
+\loigiai{ 
+ $\sin \beta >0$  là khẳng định đúng 
+ }\end{ex}
+
+\begin{ex}[12-M2. Cho sinx (hoặc cosx), x thuộc (a;b). Tìm cosx (hoặc sinx)]
+ Cho góc lượng giác $\alpha$ thỏa mãn $\sin \alpha=- \frac{2}{3}, \alpha \in \left( \pi;\frac{3 \pi}{2} \right)$. Tính $\cos\alpha$. 
+\choice
+{ ${\frac{\sqrt{3}}{4}}$ }
+   { ${\frac{\sqrt{15}}{9}}$ }
+     { ${\frac{\sqrt{2}}{18}}$ }
+    { \True ${- \frac{\sqrt{5}}{3}}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( \pi;\frac{3 \pi}{2} \right)$ nên $\cos\alpha < 0$.
+
+$\cos\alpha =-\sqrt{1-\frac{4}{9}}=- \frac{\sqrt{5}}{3}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\cos \alpha=\frac{13}{14}, \alpha \in \left( \frac{7 \pi}{2}; 4\pi \right)$. Tính $\sin\alpha$ (kết quả làm tròn đến hàng phần mười). 
+\choice
+{ ${\frac{\sqrt{3}}{3}}$ }
+   { \True ${- \frac{3 \sqrt{3}}{14}}$ }
+     { ${\frac{\sqrt{13}}{11}}$ }
+    { ${\frac{2}{13}}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( \frac{7 \pi}{2}; 4\pi \right)$ nên $\sin\alpha < 0$.
+
+$\sin\alpha =\sqrt{1-\frac{169}{196}}=- \frac{3 \sqrt{3}}{14}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\cos \alpha=- \frac{3}{4}, \alpha \in \left( - \pi; - \frac{\pi}{2} \right)$. Tính $\sin\alpha$ (kết quả làm tròn đến hàng phần mười). 
+\choice
+{ ${\frac{\sqrt{14}}{11}}$ }
+   { ${\frac{\sqrt{10}}{19}}$ }
+     { \True ${- \frac{\sqrt{7}}{4}}$ }
+    { ${\frac{\sqrt{7}}{8}}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( - \pi; - \frac{\pi}{2} \right)$ nên $\sin\alpha < 0$.
+
+$\sin\alpha =\sqrt{1-\frac{9}{16}}=- \frac{\sqrt{7}}{4}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\cos \alpha=- \frac{10}{13}, \alpha \in \left( - \pi; - \frac{\pi}{2} \right)$. Tính $\sin\alpha$ (kết quả làm tròn đến hàng phần mười). 
+\choice
+{ ${\frac{3}{11}}$ }
+   { \True ${- \frac{\sqrt{69}}{13}}$ }
+     { ${\frac{\sqrt{13}}{13}}$ }
+    { ${\frac{\sqrt{10}}{7}}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( - \pi; - \frac{\pi}{2} \right)$ nên $\sin\alpha < 0$.
+
+$\sin\alpha =\sqrt{1-\frac{100}{169}}=- \frac{\sqrt{69}}{13}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\sin \alpha=\frac{5}{7}, \alpha \in \left( 2\pi;\frac{5 \pi}{2} \right)$. Tính $\cos\alpha$. 
+\choice
+{ ${\frac{\sqrt{14}}{6}}$ }
+   { ${\frac{\sqrt{10}}{15}}$ }
+     { \True ${\frac{2 \sqrt{6}}{7}}$ }
+    { ${\frac{\sqrt{10}}{20}}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( 2\pi;\frac{5 \pi}{2} \right)$ nên $\cos\alpha > 0$.
+
+$\cos\alpha =\sqrt{1-\frac{25}{49}}=\frac{2 \sqrt{6}}{7}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\cos \alpha=\frac{1}{2}, \alpha \in \left( \frac{7 \pi}{2}; 4\pi \right)$. Tính $\sin\alpha$ (kết quả làm tròn đến hàng phần mười). 
+\choice
+{ ${\frac{\sqrt{13}}{18}}$ }
+   { ${\frac{\sqrt{3}}{19}}$ }
+     { ${\frac{1}{9}}$ }
+    { \True ${- \frac{\sqrt{3}}{2}}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( \frac{7 \pi}{2}; 4\pi \right)$ nên $\sin\alpha < 0$.
+
+$\sin\alpha =\sqrt{1-\frac{1}{4}}=- \frac{\sqrt{3}}{2}$. 
+ }\end{ex}
+
+\begin{ex}[13-M2.Cho sinx (hoặc cosx), x thuộc (a;b). Tìm tanx (hoặc cotx)]
+ Cho góc lượng giác $\alpha$ thỏa mãn $\sin \alpha=\frac{6}{7}, \alpha \in \left( - \frac{3 \pi}{2};- \pi \right)$. Tính $\tan\alpha$. 
+\choice
+{ \True $- \frac{6 \sqrt{13}}{13}$ }
+   { $\frac{\sqrt{5}}{10}$ }
+     { $\frac{2}{5}$ }
+    { $\frac{\sqrt{10}}{9}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( - \frac{3 \pi}{2};- \pi \right)$ nên $\cos\alpha < 0$.
+
+$\cos\alpha =-\sqrt{1-\frac{36}{49}}=- \frac{\sqrt{13}}{7}$.
+
+$\tan\alpha=\frac{6}{7}:- \frac{\sqrt{13}}{7}=- \frac{6 \sqrt{13}}{13}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\cos \alpha=\frac{4}{5}, \alpha \in \left( \frac{7 \pi}{2}; 4\pi \right)$. Tính $\tan\alpha$ (kết quả làm tròn đến hàng phần mười). 
+\choice
+{ $\frac{2 \sqrt{3}}{13}$ }
+   { $\frac{\sqrt{2}}{14}$ }
+     { \True $- \frac{3}{4}$ }
+    { $\frac{\sqrt{10}}{8}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( \frac{7 \pi}{2}; 4\pi \right)$ nên $\sin\alpha < 0$.
+
+$\sin\alpha =\sqrt{1-\frac{16}{25}}=- \frac{3}{5}$.
+
+$\tan\alpha=- \frac{3}{5}:0.8=- \frac{3}{4}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\sin \alpha=\frac{13}{15}, \alpha \in \left( \frac{5 \pi}{2};3\pi \right)$. Tính $\tan\alpha$. 
+\choice
+{ $\frac{\sqrt{11}}{7}$ }
+   { \True $- \frac{13 \sqrt{14}}{28}$ }
+     { $\frac{\sqrt{6}}{7}$ }
+    { $\frac{2}{9}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( \frac{5 \pi}{2};3\pi \right)$ nên $\cos\alpha < 0$.
+
+$\cos\alpha =-\sqrt{1-\frac{169}{225}}=- \frac{2 \sqrt{14}}{15}$.
+
+$\tan\alpha=\frac{13}{15}:- \frac{2 \sqrt{14}}{15}=- \frac{13 \sqrt{14}}{28}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\cos \alpha=\frac{13}{16}, \alpha \in \left( \frac{7 \pi}{2}; 4\pi \right)$. Tính $\cot\alpha$ (kết quả làm tròn đến hàng phần mười). 
+\choice
+{ $\frac{1}{16}$ }
+   { $\frac{3}{11}$ }
+     { \True $- \frac{13 \sqrt{87}}{87}$ }
+    { $\frac{\sqrt{11}}{15}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( \frac{7 \pi}{2}; 4\pi \right)$ nên $\sin\alpha < 0$.
+
+$\sin\alpha =\sqrt{1-\frac{169}{256}}=- \frac{\sqrt{87}}{16}$.
+
+$\cot\alpha=0.8125:- \frac{\sqrt{87}}{16}=- \frac{13 \sqrt{87}}{87}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\sin \alpha=\frac{13}{14}, \alpha \in \left( - \frac{3 \pi}{2};- \pi \right)$. Tính $\tan\alpha$. 
+\choice
+{ $\frac{\sqrt{3}}{15}$ }
+   { \True $- \frac{13 \sqrt{3}}{9}$ }
+     { $\frac{\sqrt{3}}{2}$ }
+    { $\frac{\sqrt{7}}{14}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( - \frac{3 \pi}{2};- \pi \right)$ nên $\cos\alpha < 0$.
+
+$\cos\alpha =-\sqrt{1-\frac{169}{196}}=- \frac{3 \sqrt{3}}{14}$.
+
+$\tan\alpha=\frac{13}{14}:- \frac{3 \sqrt{3}}{14}=- \frac{13 \sqrt{3}}{9}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác $\alpha$ thỏa mãn $\cos \alpha=- \frac{1}{2}, \alpha \in \left( 3 \pi;\frac{7 \pi}{2} \right)$. Tính $\cot\alpha$ (kết quả làm tròn đến hàng phần mười). 
+\choice
+{ $\frac{\sqrt{2}}{9}$ }
+   { \True $\frac{\sqrt{3}}{3}$ }
+     { $\frac{\sqrt{3}}{7}$ }
+    { $\frac{2}{7}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( 3 \pi;\frac{7 \pi}{2} \right)$ nên $\sin\alpha < 0$.
+
+$\sin\alpha =\sqrt{1-\frac{1}{4}}=- \frac{\sqrt{3}}{2}$.
+
+$\cot\alpha=-0.5:- \frac{\sqrt{3}}{2}=\frac{\sqrt{3}}{3}$.
+
+ 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+{\bf PHẦN II. Câu trắc nghiệm đúng sai.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-2]
+\begin{ex}[07-M3. Cho tanx. Xét Đ-S: cotx, $\sin^2 x$, $\cos^2 x$, (asinx+bcosx)/(csinx+dcosx)]
+ Cho góc lượng giác ${x}$ thỏa mãn $\tan x=2$. Xét tính đúng-sai của các khẳng định sau. 
+\choiceTFt
+{ $\cot x= \frac{7}{2}$  }
+   { \True $\cos^2x=\frac{1}{5}$ }
+     { $\sin^2x=\frac{6}{5}$ }
+    { $P=\frac{- \cos x + 4 \sin x}{- \cos x + \sin x}=10$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ $\cot x=\dfrac{1}{\tan x}=1:2=\frac{1}{2}$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ $1+\tan^2x=\dfrac{1}{\cos^2x} \Rightarrow \cos^2x=\dfrac{1}{1+\tan^2x}=\frac{1}{5}$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin^2x=1-\cos^2x=1-\dfrac{1}{1+\tan^2x}=\frac{4}{5}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $P=\frac{- \cos x + 4 \sin x}{- \cos x + \sin x}=\frac{4 \tan x - 1}{\tan x - 1}=7$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${x}$ thỏa mãn $\tan x=6$. Xét tính đúng-sai của các khẳng định sau. 
+\choiceTFt
+{ \True $\cot x= \frac{1}{6}$ }
+   { $\cos^2x=\frac{1}{7}$  }
+     { \True $\sin^2x=\frac{36}{37}$ }
+    { $P=\frac{- 6 \cos x + 5 \sin x}{- 3 \cos x - 6 \sin x}=\frac{5}{13}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ $\cot x=\dfrac{1}{\tan x}=1:6=\frac{1}{6}$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $1+\tan^2x=\dfrac{1}{\cos^2x} \Rightarrow \cos^2x=\dfrac{1}{1+\tan^2x}=\frac{1}{37}$
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin^2x=1-\cos^2x=1-\dfrac{1}{1+\tan^2x}=\frac{36}{37}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $P=\frac{- 6 \cos x + 5 \sin x}{- 3 \cos x - 6 \sin x}=\frac{5 \tan x - 6}{- 6 \tan x - 3}=- \frac{8}{13}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${x}$ thỏa mãn $\tan x=3$. Xét tính đúng-sai của các khẳng định sau. 
+\choiceTFt
+{ \True $\cot x= \frac{1}{3}$ }
+   { $\cos^2x=\frac{1}{4}$  }
+     { \True $\sin^2x=\frac{9}{10}$ }
+    { $P=\frac{2 \cos x + 3 \sin x}{- \cos x + 3 \sin x}=\frac{19}{8}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ $\cot x=\dfrac{1}{\tan x}=1:3=\frac{1}{3}$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $1+\tan^2x=\dfrac{1}{\cos^2x} \Rightarrow \cos^2x=\dfrac{1}{1+\tan^2x}=\frac{1}{10}$
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin^2x=1-\cos^2x=1-\dfrac{1}{1+\tan^2x}=\frac{9}{10}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $P=\frac{2 \cos x + 3 \sin x}{- \cos x + 3 \sin x}=\frac{3 \tan x + 2}{3 \tan x - 1}=\frac{11}{8}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${x}$ thỏa mãn $\tan x=-5$. Xét tính đúng-sai của các khẳng định sau. 
+\choiceTFt
+{ $\cot x= \frac{14}{5}$  }
+   { $\cos^2x=- \frac{1}{4}$  }
+     { \True $\sin^2x=\frac{25}{26}$ }
+    { $P=\frac{6 \cos x + \sin x}{4 \cos x + \sin x}=0$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ $\cot x=\dfrac{1}{\tan x}=1:-5=- \frac{1}{5}$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $1+\tan^2x=\dfrac{1}{\cos^2x} \Rightarrow \cos^2x=\dfrac{1}{1+\tan^2x}=\frac{1}{26}$
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin^2x=1-\cos^2x=1-\dfrac{1}{1+\tan^2x}=\frac{25}{26}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $P=\frac{6 \cos x + \sin x}{4 \cos x + \sin x}=\frac{\tan x + 6}{\tan x + 4}=-1$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${x}$ thỏa mãn $\tan x=-6$. Xét tính đúng-sai của các khẳng định sau. 
+\choiceTFt
+{ \True $\cot x= - \frac{1}{6}$ }
+   { \True $\cos^2x=\frac{1}{37}$ }
+     { \True $\sin^2x=\frac{36}{37}$ }
+    { $P=\frac{5 \cos x + 4 \sin x}{- 4 \cos x - 5 \sin x}=\frac{59}{26}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ $\cot x=\dfrac{1}{\tan x}=1:-6=- \frac{1}{6}$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ $1+\tan^2x=\dfrac{1}{\cos^2x} \Rightarrow \cos^2x=\dfrac{1}{1+\tan^2x}=\frac{1}{37}$
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin^2x=1-\cos^2x=1-\dfrac{1}{1+\tan^2x}=\frac{36}{37}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $P=\frac{5 \cos x + 4 \sin x}{- 4 \cos x - 5 \sin x}=\frac{4 \tan x + 5}{- 5 \tan x - 4}=- \frac{19}{26}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho góc lượng giác ${x}$ thỏa mãn $\tan x=6$. Xét tính đúng-sai của các khẳng định sau. 
+\choiceTFt
+{ \True $\cot x= \frac{1}{6}$ }
+   { $\cos^2x=\frac{1}{7}$  }
+     { $\sin^2x=\frac{38}{37}$ }
+    { \True $P=\frac{2 \cos x + \sin x}{3 \cos x - 4 \sin x}=- \frac{8}{21}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ $\cot x=\dfrac{1}{\tan x}=1:6=\frac{1}{6}$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $1+\tan^2x=\dfrac{1}{\cos^2x} \Rightarrow \cos^2x=\dfrac{1}{1+\tan^2x}=\frac{1}{37}$
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin^2x=1-\cos^2x=1-\dfrac{1}{1+\tan^2x}=\frac{36}{37}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $P=\frac{2 \cos x + \sin x}{3 \cos x - 4 \sin x}=\frac{\tan x + 2}{3 - 4 \tan x}=- \frac{8}{21}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}[08-M3. Cho sinx (a<x<b). Xét Đ-S: dấu của cosx, cosx, sin(x+kpi/2), P=f(tanx)]
+ Cho $\sin x=\frac{1}{2}, x\in \left( \frac{5 \pi}{2};3\pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cos x <0$ }
+   { \True $\cos x=- \frac{\sqrt{3}}{2}$ }
+     { $\cos\left(x+ \frac{9 \pi}{2} \right)=\frac{1}{2}$  }
+    { \True $P=\frac{2 \sqrt{3} \tan x}{2 \tan^2 x - 1}=6$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Với $x \in \left( \frac{5 \pi}{2};3\pi \right) $ thì $\cos x <0$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x\in \left( \frac{5 \pi}{2};3\pi \right)$ nên $\cos x < 0$.
+
+$\cos x=-\sqrt{1-\frac{1}{4}}=- \frac{\sqrt{3}}{2}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos\left(x+ \frac{9 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+2.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=-0.5$.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan x=\frac{1}{2}:- \frac{\sqrt{3}}{2}=- \frac{\sqrt{3}}{3}$.
+
+$\Rightarrow P=\frac{2 \sqrt{3} \tan x}{2 \tan^2 x - 1}=6$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin x=\frac{3}{5}, x\in \left( - \frac{3 \pi}{2};- \pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cos x >0$ }
+   { \True $\cos x=- \frac{4}{5}$ }
+     { \True $\cos\left(x+ \frac{13 \pi}{2} \right)=-\frac{3}{5}$ }
+    { \True $P=\frac{\sqrt{3} \tan x}{3 \tan^2 x - 4}=\frac{12 \sqrt{3}}{37}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Với $x \in \left( - \frac{3 \pi}{2};- \pi \right) $ thì $\cos x <0$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x\in \left( - \frac{3 \pi}{2};- \pi \right)$ nên $\cos x < 0$.
+
+$\cos x=-\sqrt{1-\frac{9}{25}}=- \frac{4}{5}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos\left(x+ \frac{13 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+3.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=-0.6$.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan x=\frac{3}{5}:- \frac{4}{5}=- \frac{3}{4}$.
+
+$\Rightarrow P=\frac{\sqrt{3} \tan x}{3 \tan^2 x - 4}=\frac{12 \sqrt{3}}{37}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin x=\frac{\sqrt{5}}{8}, x\in \left( 0;\frac{\pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cos x <0$ }
+   { \True $\cos x=\frac{\sqrt{59}}{8}$ }
+     { \True $\cos\left(x+ \frac{9 \pi}{2} \right)=-\frac{\sqrt{5}}{8}$ }
+    { \True $P=\frac{\sqrt{7} \tan x}{3 \tan^2 x + 3}=\frac{\sqrt{2065}}{192}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Với $x \in \left( 0;\frac{\pi}{2} \right) $ thì $\cos x >0$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x \in \left( 0;\frac{\pi}{2} \right)$ nên $\cos x > 0$.
+
+$\cos x =\sqrt{1-\frac{5}{64}}=\frac{\sqrt{59}}{8}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos\left(x+ \frac{9 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+2.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=- \frac{\sqrt{5}}{8}$.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan x=\frac{\sqrt{5}}{8}:\frac{\sqrt{59}}{8}=\frac{\sqrt{295}}{59}$.
+
+$\Rightarrow P=\frac{\sqrt{7} \tan x}{3 \tan^2 x + 3}=\frac{\sqrt{2065}}{192}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin x=- \frac{5}{7}, x\in \left( \frac{7 \pi}{2}; 4\pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cos x >0$ }
+   { \True $\cos x=\frac{2 \sqrt{6}}{7}$ }
+     { $\cos\left(x+ \frac{17 \pi}{2} \right)=- \frac{5}{7}$  }
+    { $P=\frac{\sqrt{14} \tan x}{- 5 \tan^2 x - 5}=- \frac{4 \sqrt{21}}{49}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Với $x \in \left( \frac{7 \pi}{2}; 4\pi \right) $ thì $\cos x >0$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x \in \left( \frac{7 \pi}{2}; 4\pi \right)$ nên $\cos x > 0$.
+
+$\cos x=\sqrt{1-\frac{25}{49}}=\frac{2 \sqrt{6}}{7}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos\left(x+ \frac{17 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+4.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=0.714285714285714$.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\tan x=- \frac{5}{7}:\frac{2 \sqrt{6}}{7}=- \frac{5 \sqrt{6}}{12}$.
+
+$\Rightarrow P=\frac{\sqrt{14} \tan x}{- 5 \tan^2 x - 5}=\frac{4 \sqrt{21}}{49}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin x=- \frac{\sqrt{7}}{8}, x\in \left( 3 \pi;\frac{7 \pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cos x <0$ }
+   { \True $\cos x=- \frac{\sqrt{57}}{8}$ }
+     { \True $\cos\left(x+ \frac{17 \pi}{2} \right)= \frac{\sqrt{7}}{8}$ }
+    { $P=\frac{\sqrt{3} \tan x}{3 \tan^2 x - 2}=\frac{\sqrt{133}}{31}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Với $x \in \left( 3 \pi;\frac{7 \pi}{2} \right) $ thì $\cos x <0$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x \in \left( 3 \pi;\frac{7 \pi}{2} \right)$ nên $\cos x < 0$.
+
+$\cos x=-\sqrt{1-\frac{7}{64}}=- \frac{\sqrt{57}}{8}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos\left(x+ \frac{17 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+4.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=\frac{\sqrt{7}}{8}$.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\tan x=- \frac{\sqrt{7}}{8}:- \frac{\sqrt{57}}{8}=\frac{\sqrt{399}}{57}$.
+
+$\Rightarrow P=\frac{\sqrt{3} \tan x}{3 \tan^2 x - 2}=- \frac{\sqrt{133}}{31}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin x=\frac{\sqrt{3}}{4}, x\in \left( \frac{\pi}{2};\pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cos x <0$ }
+   { $\cos x=\frac{\sqrt{13}}{4}$ }
+     { \True $\cos\left(x+ \frac{9 \pi}{2} \right)=-\frac{\sqrt{3}}{4}$ }
+    { \True $P=\frac{\sqrt{14} \tan x}{- 3 \tan^2 x - 1}=\frac{\sqrt{546}}{22}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Với $x \in \left( \frac{\pi}{2};\pi \right) $ thì $\cos x <0$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì $x\in \left( \frac{\pi}{2};\pi \right)$ nên $\cos x < 0$.
+
+$\cos x=-\sqrt{1-\frac{3}{16}}=- \frac{\sqrt{13}}{4}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos\left(x+ \frac{9 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+2.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=- \frac{\sqrt{3}}{4}$.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan x=\frac{\sqrt{3}}{4}:- \frac{\sqrt{13}}{4}=- \frac{\sqrt{39}}{13}$.
+
+$\Rightarrow P=\frac{\sqrt{14} \tan x}{- 3 \tan^2 x - 1}=\frac{\sqrt{546}}{22}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}[09-M3. Cho cosx (a<x<b). Xét Đ-S: dấu của sinx][ sinx, sin(x+kpi/2), P=f(tanx)] \\
+ Cho $\cos x=- \frac{\sqrt{214}}{15}, x\in \left( \pi;\frac{3 \pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\sin x <0$ }
+   { $\sin x= \frac{\sqrt{11}}{15}$ }
+     { \True $\sin\left(x+ \frac{13 \pi}{2} \right)=- \frac{\sqrt{214}}{15}$ }
+    { $P=\frac{\tan x}{1 - 2 \tan^2 x}=- \frac{\sqrt{2354}}{192}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Với $x \in \left( \pi;\frac{3 \pi}{2} \right) $ thì $\sin x >0$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì $x \in \left( \pi;\frac{3 \pi}{2} \right)$ nên $\sin x > 0$.
+
+$\sin x =-\sqrt{1-\frac{214}{225}}=- \frac{\sqrt{11}}{15}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin\left(x+ \frac{13 \pi}{2} \right)=\sin \left( x+\frac{\pi}{2}+3.2\pi \right)=\sin\left(x+\frac{\pi}{2}\right)=\sin \left[ \frac{\pi}{2}-(-x) \right]=\cos (-x)=\cos x=- \frac{\sqrt{214}}{15}$.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\tan x=- \frac{\sqrt{11}}{15}:- \frac{\sqrt{214}}{15}=\frac{\sqrt{2354}}{214}$.
+
+$\Rightarrow P=\frac{\tan x}{1 - 2 \tan^2 x}=\frac{\sqrt{2354}}{192}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\cos x=- \frac{4 \sqrt{2}}{9}, x\in \left( - \pi; - \frac{\pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\sin x <0$ }
+   { \True $\sin x=- \frac{7}{9}$ }
+     { $\cos\left(x+ \frac{9 \pi}{2} \right)=- \frac{7}{9}$  }
+    { $P=\frac{\sqrt{5} \tan x}{- 3 \tan^2 x - 4}=\frac{28 \sqrt{10}}{275}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Với $x \in \left( - \pi; - \frac{\pi}{2} \right) $ thì $\sin x >0$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x \in \left( - \pi; - \frac{\pi}{2} \right)$ nên $\sin x > 0$.
+
+$\sin x =-\sqrt{1-\frac{32}{81}}=- \frac{7}{9}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos\left(x+ \frac{9 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+2.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=0.777777777777778$.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\tan x=- \frac{7}{9}:- \frac{4 \sqrt{2}}{9}=\frac{7 \sqrt{2}}{8}$.
+
+$\Rightarrow P=\frac{\sqrt{5} \tan x}{- 3 \tan^2 x - 4}=- \frac{28 \sqrt{10}}{275}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\cos x=- \frac{\sqrt{159}}{13}, x\in \left( \pi;\frac{3 \pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\sin x >0$ }
+   { \True $\sin x=- \frac{\sqrt{10}}{13}$ }
+     { $\cos\left(x+ \frac{13 \pi}{2} \right)=- \frac{\sqrt{10}}{13}$  }
+    { $P=\frac{\sqrt{3} \tan x}{1 - 2 \tan^2 x}=- \frac{3 \sqrt{530}}{139}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Với $x \in \left( \pi;\frac{3 \pi}{2} \right) $ thì $\sin x >0$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x \in \left( \pi;\frac{3 \pi}{2} \right)$ nên $\sin x > 0$.
+
+$\sin x =-\sqrt{1-\frac{159}{169}}=- \frac{\sqrt{10}}{13}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos\left(x+ \frac{13 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+3.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=\frac{\sqrt{10}}{13}$.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\tan x=- \frac{\sqrt{10}}{13}:- \frac{\sqrt{159}}{13}=\frac{\sqrt{1590}}{159}$.
+
+$\Rightarrow P=\frac{\sqrt{3} \tan x}{1 - 2 \tan^2 x}=\frac{3 \sqrt{530}}{139}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\cos x=- \frac{\sqrt{33}}{7}, x\in \left( 3 \pi;\frac{7 \pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\sin x <0$ }
+   { $\sin x= \frac{4}{7}$ }
+     { $\sin\left(x+ \frac{17 \pi}{2} \right)=\frac{\sqrt{33}}{7}$  }
+    { \True $P=\frac{\sqrt{3} \tan x}{\tan^2 x + 3}=\frac{12 \sqrt{11}}{115}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Với $x \in \left( 3 \pi;\frac{7 \pi}{2} \right) $ thì $\sin x >0$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì $x \in \left( 3 \pi;\frac{7 \pi}{2} \right)$ nên $\sin x > 0$.
+
+$\sin x =-\sqrt{1-\frac{33}{49}}=- \frac{4}{7}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin\left(x+ \frac{17 \pi}{2} \right)=\sin \left( x+\frac{\pi}{2}+4.2\pi \right)=\sin\left(x+\frac{\pi}{2}\right)=\sin \left[ \frac{\pi}{2}-(-x) \right]=\cos (-x)=\cos x=- \frac{\sqrt{33}}{7}$.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan x=- \frac{4}{7}:- \frac{\sqrt{33}}{7}=\frac{4 \sqrt{33}}{33}$.
+
+$\Rightarrow P=\frac{\sqrt{3} \tan x}{\tan^2 x + 3}=\frac{12 \sqrt{11}}{115}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\cos x=- \frac{\sqrt{7}}{3}, x\in \left( 3 \pi;\frac{7 \pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\sin x >0$ }
+   { $\sin x= \frac{\sqrt{2}}{3}$ }
+     { $\cos\left(x+ \frac{9 \pi}{2} \right)=- \frac{\sqrt{2}}{3}$  }
+    { \True $P=\frac{2 \sqrt{3} \tan x}{5 \tan^2 x - 3}=- \frac{2 \sqrt{42}}{11}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Với $x \in \left( 3 \pi;\frac{7 \pi}{2} \right) $ thì $\sin x >0$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ Vì $x \in \left( 3 \pi;\frac{7 \pi}{2} \right)$ nên $\sin x > 0$.
+
+$\sin x =-\sqrt{1-\frac{7}{9}}=- \frac{\sqrt{2}}{3}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos\left(x+ \frac{9 \pi}{2} \right)=\cos \left( x+\frac{\pi}{2}+2.2\pi \right)=\cos \left(x+\frac{\pi}{2}\right)=\cos \left[ \frac{\pi}{2}-(-x) \right]=\sin (-x)=-\sin x=\frac{\sqrt{2}}{3}$.
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan x=- \frac{\sqrt{2}}{3}:- \frac{\sqrt{7}}{3}=\frac{\sqrt{14}}{7}$.
+
+$\Rightarrow P=\frac{2 \sqrt{3} \tan x}{5 \tan^2 x - 3}=- \frac{2 \sqrt{42}}{11}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\cos x=- \frac{\sqrt{34}}{6}, x\in \left( \pi;\frac{3 \pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\sin x <0$ }
+   { \True $\sin x=- \frac{\sqrt{2}}{6}$ }
+     { $\sin\left(x+ \frac{5 \pi}{2} \right)=\frac{\sqrt{34}}{6}$  }
+    { $P=\frac{\sqrt{11} \tan x}{- 3 \tan^2 x - 4}=\frac{\sqrt{187}}{71}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Với $x \in \left( \pi;\frac{3 \pi}{2} \right) $ thì $\sin x >0$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x \in \left( \pi;\frac{3 \pi}{2} \right)$ nên $\sin x > 0$.
+
+$\sin x =-\sqrt{1-\frac{17}{18}}=- \frac{\sqrt{2}}{6}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin\left(x+ \frac{5 \pi}{2} \right)=\sin \left( x+\frac{\pi}{2}+1.2\pi \right)=\sin\left(x+\frac{\pi}{2}\right)=\sin \left[ \frac{\pi}{2}-(-x) \right]=\cos (-x)=\cos x=- \frac{\sqrt{34}}{6}$.
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\tan x=- \frac{\sqrt{2}}{6}:- \frac{\sqrt{34}}{6}=\frac{\sqrt{17}}{17}$.
+
+$\Rightarrow P=\frac{\sqrt{11} \tan x}{- 3 \tan^2 x - 4}=- \frac{\sqrt{187}}{71}$.
+
+ 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+
+ \begin{center}
+-----HẾT-----
+\end{center}
+
+ %\newpage 
+%\begin{center}
+%{\bf BẢNG ĐÁP ÁN MÃ ĐỀ 1 }
+%\end{center}
+%{\bf Phần 1 }
+% \inputansbox{6}{ans001-1}
+%{\bf Phần 2 }
+% \inputansbox{2}{ans001-2}
+
+
+
+\end{document}

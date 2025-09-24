@@ -1,0 +1,797 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=1.5cm] {geometry}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{tkz-euclide}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+\usepackage{tikz,tkz-tab}
+%\usepackage[solcolor]{ex_test}
+%\usepackage[dethi]{ex_test} % Chỉ hiển thị đề thi
+\usepackage[loigiai]{ex_test} % Hiển thị lời giải
+%\usepackage[color]{ex_test} % Khoanh các đáp án
+\everymath{\displaystyle}
+
+\def\colorEX{\color{purple}}
+%\def\colorEX{}%Không tô màu đáp án đúng trong tùy chọn loigiai
+\renewtheorem{ex}{\color{violet}Câu}
+\renewcommand{\FalseEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+\renewcommand{\TrueEX}{\stepcounter{dapan}{{\bf \textcolor{blue}{\Alph{dapan}.}}}}
+
+%---------- Khai báo viết tắt, in đáp án
+\newcommand{\hoac}[1]{ %hệ hoặc
+    \left[\begin{aligned}#1\end{aligned}\right.}
+\newcommand{\heva}[1]{ %hệ và
+    \left\{\begin{aligned}#1\end{aligned}\right.}
+
+%Tiêu đề
+\newcommand{\tenso}{THÀNH PHỐ HỒ CHÍ MINH}
+\newcommand{\tentruong}{HD-NQQ}
+\newcommand{\tenkythi}{CÔNG THỨC LƯỢNG GIÁC}
+\newcommand{\tenmonthi}{Môn: D11-C1-B3 - BT 08-14}
+\newcommand{\thoigian}{}
+\newcommand{\tieude}[1]{
+   \begin{tabular}{cm{1cm}cm{3cm}cm{3cm}}
+    {\bf \tenso} & & {\bf \tenkythi} \\
+    {\bf \tentruong} & & {\bf \tenmonthi}\\
+    && {\bf Thời gian: \bf \thoigian \, phút}\\
+    && { \fbox{\bf Mã đề: #1}}
+   \end{tabular}\\\\
+    
+   {Họ tên HS: \dotfill Số báo danh \dotfill}\\
+}
+\newcommand{\chantrang}[2]{\rfoot{Trang \thepage $-$ Mã đề #2}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\usetikzlibrary{shapes.geometric,arrows,calc,intersections,angles,quotes,patterns,snakes,positioning}
+
+\begin{document}
+%Thiết lập giãn dọng 1.5cm 
+%\setlength{\lineskip}{1.5em}
+%Nội dung trắc nghiệm bắt đầu ở đây
+
+
+\tieude{001}
+%\chantrang{\pageref{LastPage}}{001}
+\setcounter{page}{1}
+{\bf PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-1]
+\begin{ex}[M2. Tìm khẳng định đúng về công thức tích thành tổng]
+ Cho ${\alpha,\beta}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos \alpha + \cos \beta=\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+   { \True $\cos \alpha - \cos \beta=-2\sin \dfrac{\alpha+\beta}{2} \sin \dfrac{\alpha-\beta}{2}$ }
+     { $\sin \alpha - \sin \beta=2\sin \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+    { $\sin \alpha + \cos \beta=2\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+\loigiai{ 
+ $\cos \alpha - \cos \beta=-2\sin \dfrac{\alpha+\beta}{2} \sin \dfrac{\alpha-\beta}{2}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\alpha,\beta}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos \alpha + \cos \beta=\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+   { $\sin \alpha + \sin \beta=2\cos \dfrac{\alpha+\beta}{2} \sin \dfrac{\alpha-\beta}{2}$ }
+     { \True $\sin \alpha + \sin \beta=2\sin \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+    { $\sin \alpha - \cos \beta=-2\sin \dfrac{\alpha+\beta}{2} \sin \dfrac{\alpha-\beta}{2}$ }
+\loigiai{ 
+ $\sin \alpha + \sin \beta=2\sin \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\alpha,\beta}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\cos \alpha + \cos \beta=2\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+   { $\sin \alpha + \cos \beta=2\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+     { $\cos \alpha - \cos \beta=-\sin \dfrac{\alpha+\beta}{2} \sin \dfrac{\alpha-\beta}{2}$ }
+    { $\sin \alpha - \sin \beta=2\sin \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ }
+\loigiai{ 
+ $\cos \alpha + \cos \beta=2\cos \dfrac{\alpha+\beta}{2} \cos \dfrac{\alpha-\beta}{2}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${u,v}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin u + \sin v=2\cos \dfrac{u+v}{2} \sin \dfrac{u-v}{2}$ }
+   { $\sin u - \cos v=-2\sin \dfrac{u+v}{2} \sin \dfrac{u-v}{2}$ }
+     { $\cos u - \cos v=-\sin \dfrac{u+v}{2} \sin \dfrac{u-v}{2}$ }
+    { \True $\sin u - \sin v=2\cos \dfrac{u+v}{2} \sin \dfrac{u-v}{2}$ }
+\loigiai{ 
+ $\sin u - \sin v=2\cos \dfrac{u+v}{2} \sin \dfrac{u-v}{2}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${x,y}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ \True $\sin x + \sin y=2\sin \dfrac{x+y}{2} \cos \dfrac{x-y}{2}$ }
+   { $\sin x + \cos y=2\cos \dfrac{x+y}{2} \cos \dfrac{x-y}{2}$ }
+     { $\sin x - \sin y=2\sin \dfrac{x+y}{2} \cos \dfrac{x-y}{2}$ }
+    { $\cos x - \cos y=-\sin \dfrac{x+y}{2} \sin \dfrac{x-y}{2}$ }
+\loigiai{ 
+ $\sin x + \sin y=2\sin \dfrac{x+y}{2} \cos \dfrac{x-y}{2}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${a,b}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin a + \sin b=2\cos \dfrac{a+b}{2} \sin \dfrac{a-b}{2}$ }
+   { $\cos a + \cos b=\cos \dfrac{a+b}{2} \cos \dfrac{a-b}{2}$ }
+     { \True $\cos a - \cos b=-2\sin \dfrac{a+b}{2} \sin \dfrac{a-b}{2}$ }
+    { $\sin a - \sin b=2\sin \dfrac{a+b}{2} \cos \dfrac{a-b}{2}$ }
+\loigiai{ 
+ $\cos a - \cos b=-2\sin \dfrac{a+b}{2} \sin \dfrac{a-b}{2}$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M2. Tìm khẳng định đúng về công thức tổng thành tích]
+ Cho ${x,y}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin x \sin y=\dfrac 1 2[\cos(x+y) - \cos(x-y)]$ }
+   { $\sin x \cos y=\dfrac 1 2[\cos(x+y) - \cos(x-y)]$ }
+     { $\cos x \cos y=-\dfrac 1 2[\cos(x+y) + \cos(x-y)]$ }
+    { \True $\sin x \cos y=\dfrac 1 2[\sin(x+y) + \sin(x-y)]$ }
+\loigiai{ 
+ $\sin x \cos y=\dfrac 1 2[\sin(x+y) + \sin(x-y)]$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${u,v}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin u \sin v=-\dfrac 1 2[\cos(u-v) - \cos(u+v)]$ }
+   { $\cos u \cos v=\dfrac 1 2[\cos(u+v) - \cos(u-v)]$ }
+     { $\sin u \cos v=\dfrac 1 2[\sin(u+v) - \sin(u-v)]$ }
+    { \True $\cos u \cos v=\dfrac 1 2[\cos(u+v) + \cos(u-v)]$ }
+\loigiai{ 
+ $\cos u \cos v=\dfrac 1 2[\cos(u+v) + \cos(u-v)]$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${u,v}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin u \sin v=-\dfrac 1 2[\cos(u-v) - \cos(u+v)]$ }
+   { $\sin u \cos v=\dfrac 1 2[\cos(u+v) - \cos(u-v)]$ }
+     { $\cos u \cos v=-\dfrac 1 2[\cos(u+v) + \cos(u-v)]$ }
+    { \True $\cos u \cos v=\dfrac 1 2[\cos(u+v) + \cos(u-v)]$ }
+\loigiai{ 
+ $\cos u \cos v=\dfrac 1 2[\cos(u+v) + \cos(u-v)]$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${u,v}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\cos u \cos v=-\dfrac 1 2[\cos(u+v) + \cos(u-v)]$ }
+   { $\sin u \sin v=\dfrac 1 2[\cos(u+v) - \cos(u-v)]$ }
+     { \True $\sin u \sin v=\dfrac 1 2[\cos(u-v) - \cos(u+v)]$ }
+    { $\sin u \cos v=\dfrac 1 2[\cos(u+v) - \cos(u-v)]$ }
+\loigiai{ 
+ $\sin u \sin v=\dfrac 1 2[\cos(u-v) - \cos(u+v)]$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${x,y}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin x \cos y=\dfrac 1 2[\cos(x+y) - \cos(x-y)]$ }
+   { \True $\sin x \cos y=\dfrac 1 2[\sin(x+y) + \sin(x-y)]$ }
+     { $\sin x \sin y=-\dfrac 1 2[\cos(x-y) - \cos(x+y)]$ }
+    { $\cos x \cos y=-\dfrac 1 2[\cos(x+y) + \cos(x-y)]$ }
+\loigiai{ 
+ $\sin x \cos y=\dfrac 1 2[\sin(x+y) + \sin(x-y)]$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}
+ Cho ${\alpha,\beta}$ là các góc lượng giác. Tìm khẳng định đúng trong các khẳng định sau.\ 
+\choice
+{ $\sin \alpha \cos \beta=\dfrac 1 2[\cos(\alpha+\beta) - \cos(\alpha-\beta)]$ }
+   { $\sin \alpha \sin \beta=\dfrac 1 2[\cos(\alpha+\beta) - \cos(\alpha-\beta)]$ }
+     { $\cos \alpha \cos \beta=-\dfrac 1 2[\cos(\alpha+\beta) + \cos(\alpha-\beta)]$ }
+    { \True $\sin \alpha \sin \beta=\dfrac 1 2[\cos(\alpha-\beta) - \cos(\alpha+\beta)]$ }
+\loigiai{ 
+ $\sin \alpha \sin \beta=\dfrac 1 2[\cos(\alpha-\beta) - \cos(\alpha+\beta)]$ là khẳng định đúng. 
+ }\end{ex}
+
+\begin{ex}[M1. Cho sina, cosa. Tính sin2a]
+ Cho $\sin a= \frac{10}{17}, \cos a=\frac{3 \sqrt{21}}{17}$. Tính giá trị $\sin 2a$. \\ 
+\choice
+{ $ \frac{6 \sqrt{21}}{17} $ }
+   { \True $ \frac{60 \sqrt{21}}{289} $ }
+     { $ \frac{20}{17} $ }
+    { $ \frac{30 \sqrt{21}}{289} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= - \frac{3}{7}, \cos a=\frac{2 \sqrt{10}}{7}$. Tính giá trị $\sin 2a$. \\ 
+\choice
+{ $ \frac{4 \sqrt{10}}{7} $ }
+   { $ - \frac{6 \sqrt{10}}{49} $ }
+     { \True $ - \frac{12 \sqrt{10}}{49} $ }
+    { $ - \frac{6}{7} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= - \frac{1}{15}, \cos a=\frac{4 \sqrt{14}}{15}$. Tính giá trị $\sin 2a$. \\ 
+\choice
+{ $ \frac{8 \sqrt{14}}{15} $ }
+   { $ - \frac{2}{15} $ }
+     { \True $ - \frac{8 \sqrt{14}}{225} $ }
+    { $ - \frac{4 \sqrt{14}}{225} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= - \frac{10}{11}, \cos a=\frac{\sqrt{21}}{11}$. Tính giá trị $\sin 2a$. \\ 
+\choice
+{ $ - \frac{20}{11} $ }
+   { $ - \frac{10 \sqrt{21}}{121} $ }
+     { \True $ - \frac{20 \sqrt{21}}{121} $ }
+    { $ \frac{2 \sqrt{21}}{11} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= - \frac{1}{18}, \cos a=\frac{\sqrt{323}}{18}$. Tính giá trị $\sin 2a$. \\ 
+\choice
+{ $ - \frac{1}{9} $ }
+   { $ - \frac{\sqrt{323}}{324} $ }
+     { \True $ - \frac{\sqrt{323}}{162} $ }
+    { $ \frac{\sqrt{323}}{9} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= - \frac{8}{17}, \cos a=\frac{15}{17}$. Tính giá trị $\sin 2a$. \\ 
+\choice
+{ $ \frac{30}{17} $ }
+   { \True $ - \frac{240}{289} $ }
+     { $ - \frac{120}{289} $ }
+    { $ - \frac{16}{17} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}[M2. Cho sina hoặc cosa. Tính cos2a]
+ Cho $\sin a= - \frac{1}{2}$. Tính giá trị $\cos 2a$. \\ 
+\choice
+{ $ -1 $ }
+   { $ \frac{3}{4} $ }
+     { $ - \frac{1}{2} $ }
+    { \True $ \frac{1}{2} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= - \frac{1}{2}$. Tính giá trị $\cos 2a$. \\ 
+\choice
+{ $ \frac{3}{4} $ }
+   { $ -1 $ }
+     { $ - \frac{1}{2} $ }
+    { \True $ \frac{1}{2} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= \frac{5}{6}$. Tính giá trị $\cos 2a$. \\ 
+\choice
+{ $ \frac{11}{36} $ }
+   { $ \frac{7}{18} $ }
+     { $ \frac{5}{3} $ }
+    { \True $ - \frac{7}{18} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= \frac{3}{7}$. Tính giá trị $\cos 2a$. \\ 
+\choice
+{ $ - \frac{31}{49} $ }
+   { $ \frac{6}{7} $ }
+     { \True $ \frac{31}{49} $ }
+    { $ \frac{40}{49} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= - \frac{1}{8}$. Tính giá trị $\cos 2a$. \\ 
+\choice
+{ $ - \frac{31}{32} $ }
+   { $ - \frac{1}{4} $ }
+     { $ \frac{63}{64} $ }
+    { \True $ \frac{31}{32} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a= - \frac{1}{4}$. Tính giá trị $\cos 2a$. \\ 
+\choice
+{ \True $ \frac{7}{8} $ }
+   { $ - \frac{7}{8} $ }
+     { $ \frac{15}{16} $ }
+    { $ - \frac{1}{2} $ }
+\loigiai{ 
+  
+ }\end{ex}
+
+\begin{ex}[M3. Cho sinx. Tính sin(x+a) hoặc cos(x+b)]
+ Cho $\sin \alpha=\frac{7}{9}$ với $\alpha\in \left( \frac{5 \pi}{2};3\pi \right)$. Tính $\sin\left(\alpha- \frac{5 \pi}{6}\right)$.\ 
+\choice
+{ $- \frac{7 \sqrt{3}}{18} - \frac{2 \sqrt{2}}{9}$ }
+   { $\frac{7}{9} - \frac{4 \sqrt{2}}{9}$ }
+     { \True $- \frac{7 \sqrt{3}}{18} + \frac{2 \sqrt{2}}{9}$ }
+    { $- \frac{7}{18} + \frac{2 \sqrt{6}}{9}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( \frac{5 \pi}{2};3\pi \right)$ nên $\cos \alpha < 0$.
+
+$\cos \alpha =-\sqrt{1-\frac{49}{81}}=- \frac{4 \sqrt{2}}{9}$.
+
+$\sin\left(\alpha- \frac{5 \pi}{6}\right)=\sin \alpha\cos (- \frac{5 \pi}{6})+\cos \alpha \sin (- \frac{5 \pi}{6})=$$\frac{7}{9}.(- \frac{\sqrt{3}}{2})+(- \frac{4 \sqrt{2}}{9}).(- \frac{1}{2})=- \frac{7 \sqrt{3}}{18} + \frac{2 \sqrt{2}}{9}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin \beta=\frac{2}{5}$ với $\beta\in \left( \frac{\pi}{2};\pi \right)$. Tính $\sin\left(\beta+\frac{2 \pi}{3}\right)$.\ 
+\choice
+{ $\frac{2}{5} - \frac{\sqrt{21}}{5}$ }
+   { $\frac{\sqrt{3}}{5} + \frac{\sqrt{21}}{10}$ }
+     { \True $- \frac{3 \sqrt{7}}{10} - \frac{1}{5}$ }
+    { $- \frac{1}{5} + \frac{3 \sqrt{7}}{10}$ }
+\loigiai{ 
+ Vì $\beta \in \left( \frac{\pi}{2};\pi \right)$ nên $\cos \beta < 0$.
+
+$\cos \beta =-\sqrt{1-\frac{4}{25}}=- \frac{\sqrt{21}}{5}$.
+
+$\sin\left(\beta+\frac{2 \pi}{3}\right)=\sin \beta\cos (\frac{2 \pi}{3})+\cos \beta \sin (\frac{2 \pi}{3})=$$\frac{2}{5}.(- \frac{1}{2})+(- \frac{\sqrt{21}}{5}).(\frac{\sqrt{3}}{2})=- \frac{3 \sqrt{7}}{10} - \frac{1}{5}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin x=\frac{1}{2}$ với $x\in \left( 2\pi;\frac{5 \pi}{2} \right)$. Tính $\sin\left(x- \frac{\pi}{6}\right)$.\ 
+\choice
+{ $\frac{1}{2} + \frac{\sqrt{3}}{2}$ }
+   { $\frac{\sqrt{3}}{2}$ }
+     { $\frac{1}{2}$ }
+    { \True $0$ }
+\loigiai{ 
+ Vì $x \in \left( 2\pi;\frac{5 \pi}{2} \right)$ nên $\cos x > 0$.
+
+$\cos x =\sqrt{1-\frac{1}{4}}=\frac{\sqrt{3}}{2}$.
+
+$\sin\left(x- \frac{\pi}{6}\right)=\sin x\cos (- \frac{\pi}{6})+\cos x \sin (- \frac{\pi}{6})=$$\frac{1}{2}.(\frac{\sqrt{3}}{2})+\frac{\sqrt{3}}{2}.(- \frac{1}{2})=0$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin x=\frac{3}{5}$ với $x\in \left( 0;\frac{\pi}{2} \right)$. Tính $\sin\left(x- \frac{\pi}{3}\right)$.\ 
+\choice
+{ $\frac{3}{10} + \frac{2 \sqrt{3}}{5}$ }
+   { $\frac{2}{5} - \frac{3 \sqrt{3}}{10}$ }
+     { \True $\frac{3}{10} - \frac{2 \sqrt{3}}{5}$ }
+    { $\frac{7}{5}$ }
+\loigiai{ 
+ Vì $x \in \left( 0;\frac{\pi}{2} \right)$ nên $\cos x > 0$.
+
+$\cos x =\sqrt{1-\frac{9}{25}}=\frac{4}{5}$.
+
+$\sin\left(x- \frac{\pi}{3}\right)=\sin x\cos (- \frac{\pi}{3})+\cos x \sin (- \frac{\pi}{3})=$$\frac{3}{5}.(\frac{1}{2})+\frac{4}{5}.(- \frac{\sqrt{3}}{2})=\frac{3}{10} - \frac{2 \sqrt{3}}{5}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin \alpha=\frac{2}{3}$ với $\alpha\in \left( 2\pi;\frac{5 \pi}{2} \right)$. Tính $\sin\left(\alpha+\frac{\pi}{6}\right)$.\ 
+\choice
+{ \True $\frac{\sqrt{5}}{6} + \frac{\sqrt{3}}{3}$ }
+   { $\frac{2}{3} + \frac{\sqrt{5}}{3}$ }
+     { $\frac{1}{3} + \frac{\sqrt{15}}{6}$ }
+    { $- \frac{\sqrt{5}}{6} + \frac{\sqrt{3}}{3}$ }
+\loigiai{ 
+ Vì $\alpha \in \left( 2\pi;\frac{5 \pi}{2} \right)$ nên $\cos \alpha > 0$.
+
+$\cos \alpha =\sqrt{1-\frac{4}{9}}=\frac{\sqrt{5}}{3}$.
+
+$\sin\left(\alpha+\frac{\pi}{6}\right)=\sin \alpha\cos (\frac{\pi}{6})+\cos \alpha \sin (\frac{\pi}{6})=$$\frac{2}{3}.(\frac{\sqrt{3}}{2})+\frac{\sqrt{5}}{3}.(\frac{1}{2})=\frac{\sqrt{5}}{6} + \frac{\sqrt{3}}{3}$. 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin \beta=\frac{8}{9}$ với $\beta\in \left( 2\pi;\frac{5 \pi}{2} \right)$. Tính $\sin\left(\beta- \frac{2 \pi}{3}\right)$.\ 
+\choice
+{ $- \frac{4 \sqrt{3}}{9} - \frac{\sqrt{17}}{18}$ }
+   { \True $- \frac{4}{9} - \frac{\sqrt{51}}{18}$ }
+     { $\frac{\sqrt{17}}{9} + \frac{8}{9}$ }
+    { $- \frac{4}{9} + \frac{\sqrt{51}}{18}$ }
+\loigiai{ 
+ Vì $\beta \in \left( 2\pi;\frac{5 \pi}{2} \right)$ nên $\cos \beta > 0$.
+
+$\cos \beta =\sqrt{1-\frac{64}{81}}=\frac{\sqrt{17}}{9}$.
+
+$\sin\left(\beta- \frac{2 \pi}{3}\right)=\sin \beta\cos (- \frac{2 \pi}{3})+\cos \beta \sin (- \frac{2 \pi}{3})=$$\frac{8}{9}.(- \frac{1}{2})+\frac{\sqrt{17}}{9}.(- \frac{\sqrt{3}}{2})=- \frac{4}{9} - \frac{\sqrt{51}}{18}$. 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+{\bf PHẦN II. Câu trắc nghiệm đúng sai.}
+\setcounter{ex}{0}
+\Opensolutionfile{ans}[ans/ans001-2]
+\begin{ex}[M2. Cho tanx. Xét Đ-S: cotx, cos2x, sin2x, tan2x]
+ Cho $\tan x=4$ . Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cot x=\frac{1}{4}$ }
+   { \True $\cos 2x=- \frac{15}{17}$ }
+     { $\sin 2x=\frac{42}{17}$ }
+    { \True $\tan 2x=- \frac{8}{15}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ $\cot x = \frac{1}{4}$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos 2x=2\cos^2 x-1=\dfrac{2}{1+\tan^2 x}-1=- \frac{15}{17}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2x=2\sin x \cos x=2\tan x \cos^2 x=\dfrac{2\tan x} {1+\tan^2 x}=\frac{8}{17}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan 2x=\dfrac{\sin 2x}{\cos 2x}=- \frac{8}{15}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\tan b=-3$ . Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cot b=\frac{5}{3}$ }
+   { \True $\cos 2b=- \frac{4}{5}$ }
+     { \True $\sin 2b=- \frac{3}{5}$ }
+    { \True $\tan 2b=\frac{3}{4}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ $\cot b = - \frac{1}{3}$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos 2b=2\cos^2 b-1=\dfrac{2}{1+\tan^2 b}-1=- \frac{4}{5}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin 2b=2\sin b \cos b=2\tan b \cos^2 b=\dfrac{2\tan b} {1+\tan^2 b}=- \frac{3}{5}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan 2b=\dfrac{\sin 2b}{\cos 2b}=\frac{3}{4}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\tan \alpha=-3$ . Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cot \alpha=- \frac{1}{3}$ }
+   { $\cos 2\alpha=- \frac{14}{5}$  }
+     { $\sin 2\alpha=\frac{12}{5}$ }
+    { $\tan 2\alpha=- \frac{3}{5}:- \frac{4}{5}=\frac{15}{4}$  }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ $\cot \alpha = - \frac{1}{3}$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $\cos 2\alpha=2\cos^2 \alpha-1=\dfrac{2}{1+\tan^2 \alpha}-1=- \frac{4}{5}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2\alpha=2\sin \alpha \cos \alpha=2\tan \alpha \cos^2 \alpha=\dfrac{2\tan \alpha} {1+\tan^2 \alpha}=- \frac{3}{5}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\tan 2\alpha=\dfrac{\sin 2\alpha}{\cos 2\alpha}=\frac{3}{4}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\tan b=2$ . Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cot b=\frac{3}{2}$ }
+   { $\cos 2b=- \frac{13}{5}$  }
+     { $\sin 2b=\frac{19}{5}$ }
+    { \True $\tan 2b=- \frac{4}{3}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ $\cot b = \frac{1}{2}$
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $\cos 2b=2\cos^2 b-1=\dfrac{2}{1+\tan^2 b}-1=- \frac{3}{5}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2b=2\sin b \cos b=2\tan b \cos^2 b=\dfrac{2\tan b} {1+\tan^2 b}=\frac{4}{5}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan 2b=\dfrac{\sin 2b}{\cos 2b}=- \frac{4}{3}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\tan \alpha=-5$ . Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cot \alpha=\frac{4}{5}$ }
+   { \True $\cos 2\alpha=- \frac{12}{13}$ }
+     { \True $\sin 2\alpha=- \frac{5}{13}$ }
+    { \True $\tan 2\alpha=\frac{5}{12}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ $\cot \alpha = - \frac{1}{5}$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos 2\alpha=2\cos^2 \alpha-1=\dfrac{2}{1+\tan^2 \alpha}-1=- \frac{12}{13}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin 2\alpha=2\sin \alpha \cos \alpha=2\tan \alpha \cos^2 \alpha=\dfrac{2\tan \alpha} {1+\tan^2 \alpha}=- \frac{5}{13}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan 2\alpha=\dfrac{\sin 2\alpha}{\cos 2\alpha}=\frac{5}{12}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\tan b=6$ . Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cot b=\frac{19}{6}$ }
+   { \True $\cos 2b=- \frac{35}{37}$ }
+     { $\sin 2b=\frac{123}{37}$ }
+    { \True $\tan 2b=- \frac{12}{35}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ $\cot b = \frac{1}{6}$
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos 2b=2\cos^2 b-1=\dfrac{2}{1+\tan^2 b}-1=- \frac{35}{37}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2b=2\sin b \cos b=2\tan b \cos^2 b=\dfrac{2\tan b} {1+\tan^2 b}=\frac{12}{37}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\tan 2b=\dfrac{\sin 2b}{\cos 2b}=- \frac{12}{35}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}[M2. Cho sinx. Xét Đ-S: cosx, sin2x, sin(x+a), cos(x+b)]
+ Cho $\sin \beta=\frac{\sqrt{2}}{3}, \beta\in \left( \frac{5 \pi}{2};3\pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cos \beta=- \frac{\sqrt{7}}{3}$ }
+   { $\sin 2\beta=- \frac{\sqrt{14}}{9}$  }
+     { $\cos 2\beta=- \frac{5}{9}$  }
+    { $\sin\left(\beta- \frac{\pi}{6}\right)=- \sqrt{1 - \frac{2 \sqrt{14}}{9}}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $\beta \in \left( \frac{5 \pi}{2};3\pi \right)$ nên $\cos \beta < 0$.
+
+$\cos \beta =-\sqrt{1-\frac{2}{9}}=- \frac{\sqrt{7}}{3}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2\beta=2\sin \beta \cos \beta=2.\frac{\sqrt{2}}{3}.(- \frac{\sqrt{7}}{3})=- \frac{2 \sqrt{14}}{9}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos 2\beta=1-2\sin^2 \beta=1-2.\frac{2}{9}=\frac{5}{9}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\sin\left(\beta- \frac{\pi}{6}\right)=\sin \beta\cos (- \frac{\pi}{6})+\cos \beta \sin (- \frac{\pi}{6})=$$\frac{\sqrt{2}}{3}.(\frac{\sqrt{3}}{2})+(- \frac{\sqrt{7}}{3}).(- \frac{1}{2})=\frac{\sqrt{6}}{6} + \frac{\sqrt{7}}{6}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a=\frac{8}{9}, a\in \left( \frac{\pi}{2};\pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cos a=\frac{\sqrt{17}}{9}$ }
+   { \True $\sin 2a=- \frac{16 \sqrt{17}}{81}$ }
+     { $\cos 2a=\frac{47}{81}$  }
+    { \True $\sin\left(a- \frac{\pi}{6}\right)=\frac{\sqrt{17}}{18} + \frac{4 \sqrt{3}}{9}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Vì $a \in \left( \frac{\pi}{2};\pi \right)$ nên $\cos a < 0$.
+
+$\cos a =-\sqrt{1-\frac{64}{81}}=- \frac{\sqrt{17}}{9}$.
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin 2a=2\sin a \cos a=2.\frac{8}{9}.(- \frac{\sqrt{17}}{9})=- \frac{16 \sqrt{17}}{81}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos 2a=1-2\sin^2 a=1-2.\frac{64}{81}=- \frac{47}{81}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin\left(a- \frac{\pi}{6}\right)=\sin a\cos (- \frac{\pi}{6})+\cos a \sin (- \frac{\pi}{6})=$$\frac{8}{9}.(\frac{\sqrt{3}}{2})+(- \frac{\sqrt{17}}{9}).(- \frac{1}{2})=\frac{\sqrt{17}}{18} + \frac{4 \sqrt{3}}{9}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin a=\frac{\sqrt{7}}{8}, a\in \left( - \frac{3 \pi}{2};- \pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cos a=- \frac{\sqrt{57}}{8}$ }
+   { $\sin 2a=- \frac{\sqrt{399}}{64}$  }
+     { \True $\cos 2a=\frac{25}{32}$ }
+    { $\sin\left(a- \pi\right)=- \frac{\sqrt{57}}{8} + \frac{\sqrt{7}}{8}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $a \in \left( - \frac{3 \pi}{2};- \pi \right)$ nên $\cos a < 0$.
+
+$\cos a =-\sqrt{1-\frac{7}{64}}=- \frac{\sqrt{57}}{8}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2a=2\sin a \cos a=2.\frac{\sqrt{7}}{8}.(- \frac{\sqrt{57}}{8})=- \frac{\sqrt{399}}{32}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos 2a=1-2\sin^2 a=1-2.\frac{7}{64}=\frac{25}{32}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\sin\left(a- \pi\right)=\sin a\cos (- \pi)+\cos a \sin (- \pi)=$$\frac{\sqrt{7}}{8}.(-1)+(- \frac{\sqrt{57}}{8}).(0)=- \frac{\sqrt{7}}{8}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin \gamma=\frac{7}{9}, \gamma\in \left( \frac{5 \pi}{2};3\pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cos \gamma=\frac{4 \sqrt{2}}{9}$ }
+   { $\sin 2\gamma=- \frac{28 \sqrt{2}}{81}$  }
+     { $\cos 2\gamma=\frac{17}{81}$  }
+    { $\sin\left(\gamma- \frac{\pi}{4}\right)=\frac{7}{9} - \frac{4 \sqrt{2}}{9}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Vì $\gamma \in \left( \frac{5 \pi}{2};3\pi \right)$ nên $\cos \gamma < 0$.
+
+$\cos \gamma =-\sqrt{1-\frac{49}{81}}=- \frac{4 \sqrt{2}}{9}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2\gamma=2\sin \gamma \cos \gamma=2.\frac{7}{9}.(- \frac{4 \sqrt{2}}{9})=- \frac{56 \sqrt{2}}{81}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos 2\gamma=1-2\sin^2 \gamma=1-2.\frac{49}{81}=- \frac{17}{81}$
+
+d) Khẳng định đã cho là khẳng định sai.
+
+ $\sin\left(\gamma- \frac{\pi}{4}\right)=\sin \gamma\cos (- \frac{\pi}{4})+\cos \gamma \sin (- \frac{\pi}{4})=$$\frac{7}{9}.(\frac{\sqrt{2}}{2})+(- \frac{4 \sqrt{2}}{9}).(- \frac{\sqrt{2}}{2})=\frac{4}{9} + \frac{7 \sqrt{2}}{18}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin \gamma=\frac{\sqrt{6}}{7}, \gamma\in \left( \frac{\pi}{2};\pi \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ $\cos \gamma=\frac{\sqrt{43}}{7}$ }
+   { \True $\sin 2\gamma=- \frac{2 \sqrt{258}}{49}$ }
+     { \True $\cos 2\gamma=\frac{37}{49}$ }
+    { \True $\sin\left(\gamma+\frac{\pi}{2}\right)=- \frac{\sqrt{43}}{7}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định sai.
+
+ Vì $\gamma \in \left( \frac{\pi}{2};\pi \right)$ nên $\cos \gamma < 0$.
+
+$\cos \gamma =-\sqrt{1-\frac{6}{49}}=- \frac{\sqrt{43}}{7}$.
+
+b) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin 2\gamma=2\sin \gamma \cos \gamma=2.\frac{\sqrt{6}}{7}.(- \frac{\sqrt{43}}{7})=- \frac{2 \sqrt{258}}{49}$.
+
+c) Khẳng định đã cho là khẳng định đúng.
+
+ $\cos 2\gamma=1-2\sin^2 \gamma=1-2.\frac{6}{49}=\frac{37}{49}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin\left(\gamma+\frac{\pi}{2}\right)=\sin \gamma\cos (\frac{\pi}{2})+\cos \gamma \sin (\frac{\pi}{2})=$$\frac{\sqrt{6}}{7}.(0)+(- \frac{\sqrt{43}}{7}).(1)=- \frac{\sqrt{43}}{7}$.
+
+ 
+ }\end{ex}
+
+\begin{ex}
+ Cho $\sin x=\frac{2}{3}, x\in \left( 2\pi;\frac{5 \pi}{2} \right)$. Xét tính đúng-sai của các khẳng định sau.
+\choiceTFt
+{ \True $\cos x=\frac{\sqrt{5}}{3}$ }
+   { $\sin 2x=\frac{2 \sqrt{5}}{9}$  }
+     { $\cos 2x=- \frac{1}{9}$  }
+    { \True $\sin\left(x- \frac{\pi}{2}\right)=- \frac{\sqrt{5}}{3}$ }
+\loigiai{ 
+ 
+
+ a) Khẳng định đã cho là khẳng định đúng.
+
+ Vì $x \in \left( 2\pi;\frac{5 \pi}{2} \right)$ nên $\cos x > 0$.
+
+$\cos x =\sqrt{1-\frac{4}{9}}=\frac{\sqrt{5}}{3}$.
+
+b) Khẳng định đã cho là khẳng định sai.
+
+ $\sin 2x=2\sin x \cos x=2.\frac{2}{3}.\frac{\sqrt{5}}{3}=\frac{4 \sqrt{5}}{9}$.
+
+c) Khẳng định đã cho là khẳng định sai.
+
+ $\cos 2x=1-2\sin^2 x=1-2.\frac{4}{9}=\frac{1}{9}$
+
+d) Khẳng định đã cho là khẳng định đúng.
+
+ $\sin\left(x- \frac{\pi}{2}\right)=\sin x\cos (- \frac{\pi}{2})+\cos x \sin (- \frac{\pi}{2})=$$\frac{2}{3}.(0)+\frac{\sqrt{5}}{3}.(-1)=- \frac{\sqrt{5}}{3}$.
+
+ 
+ }\end{ex}
+
+\Closesolutionfile{ans}
+
+ \begin{center}
+-----HẾT-----
+\end{center}
+
+ %\newpage 
+%\begin{center}
+%{\bf BẢNG ĐÁP ÁN MÃ ĐỀ 1 }
+%\end{center}
+%{\bf Phần 1 }
+% \inputansbox{6}{ans001-1}
+%{\bf Phần 2 }
+% \inputansbox{2}{ans001-2}
+
+
+
+\end{document}
