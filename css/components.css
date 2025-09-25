@@ -346,3 +346,135 @@
     color: var(--text-inverse);
 }
 
+/* --- Share Widget --- */
+.share-fab-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+.share-fab-main {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.share-fab-main:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+}
+
+.share-fab-main svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.share-fab-main .close-icon {
+    opacity: 0;
+    transform: rotate(-45deg) scale(0);
+    position: absolute;
+}
+
+.share-fab-main .share-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+.share-fab-container.active .share-fab-main .close-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+.share-fab-container.active .share-fab-main .share-icon {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+}
+
+.share-fab-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.share-fab-container.active .share-fab-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.share-fab-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.share-fab-item:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.share-fab-item svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    fill: #333;
+}
+
+.share-fab-item span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Toast Notification */
+#share-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s, bottom 0.5s;
+}
+
+#share-toast.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 50px;
+}
+
+#share-toast.error {
+    background-color: #dc3545;
+}
+

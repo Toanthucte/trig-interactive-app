@@ -1,3 +1,10 @@
+import { UnitConverter } from './components/unit-converter.js';
+import { InteractiveCircle } from './components/interactive-circle.js';
+import { ValueTable } from './components/value-table.js';
+import { PracticalApps } from './components/practical-apps.js';
+import { QuizGame } from './components/quiz-game.js';
+import { ShareWidget } from './components/share-widget.js';
+
 /**
  * Main Application Controller - Project V2
  * Author: NQQ
@@ -16,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             main: document.getElementById('app-main'),
             footer: document.getElementById('app-footer'),
             tabNavigation: document.getElementById('tab-navigation'),
+            shareWidgetContainer: document.getElementById('share-widget-container'),
         },
 
         components: {
@@ -24,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'value-table': ValueTable,
             'practical-apps': PracticalApps,
             'quiz-game': QuizGame,
+            // ShareWidget is not a tab, but we can list it for consistency
         },
 
         tabs: [
@@ -40,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             this.setupTabContainers();
             this.setupEventListeners();
             this.handleTabClick(this.state.currentTab); // Activate the initial tab
+            
+            // Initialize the global share widget
+            ShareWidget.init(this.elements.shareWidgetContainer);
         },
 
         setupTabButtons() {
