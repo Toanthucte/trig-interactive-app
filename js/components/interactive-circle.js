@@ -73,6 +73,11 @@ export const InteractiveCircle = {
                         <input type="number" id="circle-angle-input" min="0" max="360" step="1" value="0">
                         <input type="range" id="angle-slider" min="0" max="360" step="0.1" value="0">
                     </div>
+                    <div class="button-group" id="circle-view-options">
+                        <button class="btn-view active" data-view="grid">Lưới</button>
+                        <button class="btn-view" data-view="labels">Nhãn</button>
+                        <button class="btn-view" data-view="trig-lines">Đường Gióng</button>
+                    </div>
                     <div class="button-group">
                         <button id="animation-toggle">▶️ Chạy</button>
                         <button id="animation-slow-toggle">🐢 Chạy chậm</button>
@@ -103,7 +108,8 @@ export const InteractiveCircle = {
             animationToggle: section.querySelector('#animation-toggle'),
             animationSlowToggle: section.querySelector('#animation-slow-toggle'),
             resetBtn: section.querySelector('#reset-circle'),
-            canvasContainer: section.querySelector('.canvas-container')
+            canvasContainer: section.querySelector('.canvas-container'),
+            viewOptionButtons: section.querySelectorAll('.btn-view')
         };
         this.canvas = this.elements.canvas;
         this.ctx = this.canvas.getContext('2d');
@@ -133,6 +139,10 @@ export const InteractiveCircle = {
         this.elements.animationSlowToggle.addEventListener('click', () => this.toggleAnimation(0.5));
         this.elements.resetBtn.addEventListener('click', () => this.resetCircle());
 
+        this.elements.viewOptionButtons.forEach(button => {
+            button.addEventListener('click', (e) => this.handleViewOptionClick(e));
+        });
+
         this.canvas.addEventListener('mousedown', (e) => this.handleMouseDown(e));
         this.canvas.addEventListener('mousemove', (e) => this.handleMouseMove(e));
         this.canvas.addEventListener('mouseup', () => this.handleMouseUp());
@@ -142,6 +152,24 @@ export const InteractiveCircle = {
             this.setupCanvas();
             this.draw();
         }, 100));
+    },
+
+    handleViewOptionClick(e) {
+        const button = e.target;
+        const view = button.dataset.view;
+        if (!view) return;
+
+        // Toggle the config property
+        const configKey = `show${view.charAt(0).toUpperCase() + view.slice(1)}`;
+        if (typeof this.config[configKey] !== 'undefined') {
+            this.config[configKey] = !this.config[configKey];
+        }
+
+        // Update button's active state
+        button.classList.toggle('active');
+        
+        playSound('ui-click');
+        this.draw();
     },
 
     setAngle(degrees) {
@@ -195,6 +223,7 @@ export const InteractiveCircle = {
     },
 
     drawGrid() {
+        if (!this.config.showGrid) return;
         const { width, height } = this.canvas;
         const scale = window.devicePixelRatio;
         const size = width / scale;
@@ -286,6 +315,7 @@ export const InteractiveCircle = {
     },
 
     drawLabels() {
+        if (!this.config.showLabels) return;
         this.ctx.fillStyle = this.config.textColor;
         this.ctx.font = `${this.config.fontSize}px Arial`;
 

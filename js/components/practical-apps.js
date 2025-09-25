@@ -133,6 +133,7 @@ export const PracticalApps = {
         console.log('PracticalApps component initialized');
         this.render(container);
         this.cacheElements();
+        this.renderCategories();
         this.addEventListeners();
         this.loadRandomProblem();
         this.isInitialized = true;
@@ -144,13 +145,16 @@ export const PracticalApps = {
                 <h2>🌍 Ứng Dụng Thực Tế</h2>
                 <p class="section-description">Giải quyết các bài toán thực tế sử dụng lượng giác.</p>
             </div>
-            <div class="apps-layout">
-                <div class="problem-statement">
+            <div class="category-scroller">
+                <!-- Categories will be rendered here -->
+            </div>
+            <div class="apps-grid-layout">
+                <div class="problem-statement-grid">
                     <h3 class="problem-title"></h3>
                     <p class="problem-description"></p>
                     <div class="problem-diagram"></div>
                 </div>
-                <div class="problem-solver">
+                <div class="problem-solver-grid">
                     <div class="input-section"></div>
                     <div class="action-buttons">
                         <button id="check-solution">Kiểm tra</button>
@@ -168,6 +172,7 @@ export const PracticalApps = {
         const section = document.getElementById('practical-apps');
         this.elements = {
             section,
+            categoryScroller: section.querySelector('.category-scroller'),
             problemTitle: section.querySelector('.problem-title'),
             problemDescription: section.querySelector('.problem-description'),
             problemDiagram: section.querySelector('.problem-diagram'),
@@ -180,10 +185,39 @@ export const PracticalApps = {
         };
     },
 
+    renderCategories() {
+        this.elements.categoryScroller.innerHTML = Object.entries(this.PROBLEM_CATEGORIES).map(([key, { name, icon }]) => `
+            <button class="category-btn" data-category="${key}">
+                <span class="category-icon">${icon}</span>
+                <span class="category-name">${name}</span>
+            </button>
+        `).join('');
+    },
+
     addEventListeners() {
+        this.elements.categoryScroller.addEventListener('click', (e) => {
+            const categoryBtn = e.target.closest('.category-btn');
+            if (categoryBtn) {
+                this.handleCategoryClick(categoryBtn.dataset.category);
+            }
+        });
         this.elements.checkBtn.addEventListener('click', () => this.checkSolution());
         this.elements.showSolutionBtn.addEventListener('click', () => this.showSolution());
         this.elements.nextProblemBtn.addEventListener('click', () => this.loadRandomProblem());
+    },
+
+    handleCategoryClick(categoryKey) {
+        if (this.state.currentCategory === categoryKey) return;
+        
+        this.state.currentCategory = categoryKey;
+        this.updateActiveCategory();
+        this.loadProblemFromCategory(categoryKey);
+    },
+
+    updateActiveCategory() {
+        this.elements.categoryScroller.querySelectorAll('.category-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.category === this.state.currentCategory);
+        });
     },
 
     loadRandomProblem() {
@@ -197,22 +231,36 @@ export const PracticalApps = {
         const randomCategoryKey = allCategoryKeys[Math.floor(Math.random() * allCategoryKeys.length)];
         const category = this.PROBLEM_CATEGORIES[randomCategoryKey];
         this.state.currentCategory = randomCategoryKey;
+        this.updateActiveCategory();
 
         // 2. Select a random problem from that category
-        if (!category || category.problems.length === 0) {
-            console.error(`Category ${randomCategoryKey} has no problems.`);
-            // Optionally, try another category or show a default message
+        const problems = category.problems;
+        if (!problems || problems.length === 0) {
+            console.error(`No problems found in category: ${randomCategoryKey}`);
             return;
         }
-        const problemIndex = Math.floor(Math.random() * category.problems.length);
-        this.state.currentProblem = category.problems[problemIndex];
-        
-        this.state.showingSolution = false;
-        this.state.userSolution = {};
-        this.updateProblemDisplay();
+        const randomProblem = problems[Math.floor(Math.random() * problems.length)];
+        this.state.currentProblem = randomProblem;
+
+        this.displayProblem();
     },
 
-    updateProblemDisplay() {
+    loadProblemFromCategory(categoryKey) {
+        const category = this.PROBLEM_CATEGORIES[categoryKey];
+        if (!category || !category.problems || category.problems.length === 0) {
+            console.error(`No problems found for category: ${categoryKey}`);
+            this.elements.problemTitle.textContent = "Lỗi";
+            this.elements.problemDescription.textContent = `Không tìm thấy bài toán nào cho danh mục này.`;
+            return;
+        }
+        
+        const problem = category.problems[0];
+        this.state.currentProblem = problem;
+
+        this.displayProblem();
+    },
+
+    displayProblem() {
         if (!this.state.currentProblem) {
             this.elements.problemTitle.textContent = 'Không có bài toán nào';
             this.elements.problemDescription.textContent = 'Vui lòng thêm bài toán vào file practical-apps.js';

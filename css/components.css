@@ -152,6 +152,113 @@
     border-color: var(--primary-color);
 }
 
+/* Generic Toggle/Active Button States */
+.unit-btn.active,
+.btn-view.active,
+.toggle-btn.active,
+.category-btn.active,
+.option-btn.active,
+.difficulty-btn.active {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+    border-color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: var(--shadow-inner);
+}
+
+/* Ensure all buttons have a consistent base style and transition */
+.unit-btn,
+.btn-view,
+.toggle-btn,
+.category-btn,
+.option-btn,
+.difficulty-btn {
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.unit-btn:hover,
+.btn-view:hover,
+.toggle-btn:hover,
+.category-btn:hover,
+.option-btn:hover,
+.difficulty-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary-color-light);
+}
+
+/* Style for category buttons in Practical Apps */
+.category-scroller {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+    /* Hide scrollbar for a cleaner look */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.category-scroller::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: 9999px; /* Pill shape */
+    text-align: left;
+    background: var(--surface-alt);
+    border: 1px solid var(--border-color);
+    white-space: nowrap; /* Prevent text wrapping */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    margin-right: var(--spacing-3); /* Add space between buttons */
+}
+
+.category-btn:last-child {
+    margin-right: 0;
+}
+
+.category-icon {
+    font-size: var(--font-size-lg);
+}
+
+/* Style for view option buttons in Interactive Circle */
+.btn-view {
+    background: var(--surface-alt);
+    border: 1px solid var(--border-color);
+}
+
+/* Style for toggle buttons in Value Table */
+.toggle-group {
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.toggle-btn {
+    flex: 1;
+    background: var(--surface-alt);
+    border: 1px solid var(--border-color);
+}
+
+/* Quiz Game Buttons */
+.difficulty-btn {
+    background: var(--surface-alt);
+    border: 1px solid var(--border-color);
+}
+
+.option-btn.correct {
+    background-color: var(--success-color);
+    color: var(--text-inverse);
+    border-color: var(--success-color-dark);
+}
+
+.option-btn.incorrect {
+    background-color: var(--error-color);
+    color: var(--text-inverse);
+    border-color: var(--error-color-dark);
+}
+
 /* Interactive Circle */
 .circle-layout-vertical {
     display: flex;
@@ -256,20 +363,23 @@
 }
 
 /* Practical Apps */
-.apps-layout {
+.apps-grid-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-6);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-5);
 }
 
-.problem-diagram {
-    background: var(--surface-alt);
-    min-height: 200px;
+@media (min-width: 768px) {
+    .apps-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.problem-statement-grid, .problem-solver-grid {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: var(--spacing-4);
+    padding: var(--spacing-5);
 }
 
 /* Quiz Game */

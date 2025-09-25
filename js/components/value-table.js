@@ -193,7 +193,12 @@ export const ValueTable = {
     handleUnitToggle(unit) {
         if (this.state.currentUnit === unit) return;
         this.state.currentUnit = unit;
-        this.elements.unitToggle.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.unit === unit));
+        
+        // Update active button state
+        this.elements.unitToggle.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.unit === unit);
+        });
+
         this.generateTableData();
         this.sortData();
         this.renderTable();
@@ -202,7 +207,12 @@ export const ValueTable = {
     handleFormatToggle(format) {
         if (this.state.currentFormat === format) return;
         this.state.currentFormat = format;
-        this.elements.formatToggle.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.format === format));
+
+        // Update active button state
+        this.elements.formatToggle.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.format === format);
+        });
+        
         this.renderTable();
     },
 

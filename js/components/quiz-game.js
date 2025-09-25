@@ -165,20 +165,33 @@ export const QuizGame = {
         this.elements.nextBtn.style.display = 'none';
     },
 
-    selectAnswer(index) {
+    selectAnswer(selectedIndex) {
         const q = this.state.gameSession.questions[this.state.currentQuestionIndex];
-        const isCorrect = index === q.a;
+        const isCorrect = selectedIndex === q.a;
+        
+        // Mark the selected button as active immediately
+        const selectedButton = this.elements.optionsContainer.querySelector(`.option-btn[data-index='${selectedIndex}']`);
+        if (selectedButton) {
+            selectedButton.classList.add('active');
+        }
+
         if (isCorrect) {
             this.state.gameSession.score++;
             playSound('quiz-correct');
         } else {
             playSound('quiz-incorrect');
         }
+
+        // Disable all buttons and show correct/incorrect status
         this.elements.optionsContainer.querySelectorAll('.option-btn').forEach((btn, i) => {
             btn.disabled = true;
-            if (i === q.a) btn.classList.add('correct');
-            else if (i === index) btn.classList.add('incorrect');
+            if (i === q.a) {
+                btn.classList.add('correct');
+            } else if (i === selectedIndex) {
+                btn.classList.add('incorrect');
+            }
         });
+
         this.elements.nextBtn.style.display = 'block';
     },
 
