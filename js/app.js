@@ -4,6 +4,8 @@ import { ValueTable } from './components/value-table.js';
 import { PracticalApps } from './components/practical-apps.js';
 import { QuizGame } from './components/quiz-game.js';
 import { ShareWidget } from './components/share-widget.js';
+// Note: utils.js and event-bus.js are not modules and are loaded globally in index.html
+// Note: math-keyboard.js is also loaded globally
 
 /**
  * Main Application Controller - Project V2

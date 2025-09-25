@@ -45,17 +45,13 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
 
-    <!-- Scripts (defer for performance) -->
+    <!-- Global scripts -->
     <script src="js/utils.js" defer></script>
     <script src="js/event-bus.js" defer></script>
     <script src="js/components/math-keyboard.js" defer></script>
-    <script src="js/components/unit-converter.js" defer></script>
-    <script src="js/components/interactive-circle.js" defer></script>
-    <script src="js/components/value-table.js" defer></script>
-    <script src="js/components/practical-apps.js" defer></script>
-    <script src="js/components/quiz-game.js" defer></script>
-    <script src="js/components/share-widget.js" defer></script>
-    <script src="js/app.js" defer></script>
+
+    <!-- Main App Module -->
+    <script src="js/app.js" type="module" defer></script>
 </head>
 <body>
     <div id="app-container">
@@ -67,7 +63,7 @@
         </header>
 
         <!-- App Content -->
-        <main id="app"></main>
+        <main id="app-main"></main>
 
         <footer id="app-footer">
             <p>&copy; 2025 - Project V2 by NQQ</p>
