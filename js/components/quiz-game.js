@@ -1,3 +1,5 @@
+import { playSound } from '../utils.js';
+
 /**
  * Quiz Game Component - Project V2
  * Author: NQQ
@@ -138,6 +140,7 @@ export const QuizGame = {
         };
         this.state.currentQuestionIndex = 0;
         this.loadQuestion();
+        playSound('quiz-start');
     },
 
     generateQuestions() {
@@ -167,6 +170,9 @@ export const QuizGame = {
         const isCorrect = index === q.a;
         if (isCorrect) {
             this.state.gameSession.score++;
+            playSound('quiz-correct');
+        } else {
+            playSound('quiz-incorrect');
         }
         this.elements.optionsContainer.querySelectorAll('.option-btn').forEach((btn, i) => {
             btn.disabled = true;
@@ -185,6 +191,7 @@ export const QuizGame = {
         this.elements.gameArea.style.display = 'none';
         this.elements.resultSection.style.display = 'block';
         this.elements.scoreDisplay.innerHTML = `Điểm của bạn: ${this.state.gameSession.score}/${this.state.gameSession.questions.length}`;
+        playSound('quiz-complete');
     },
 
     resetGame() {

@@ -1,3 +1,4 @@
+import { playSound } from './utils.js';
 import { UnitConverter } from './components/unit-converter.js';
 import { InteractiveCircle } from './components/interactive-circle.js';
 import { ValueTable } from './components/value-table.js';
@@ -50,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
             this.setupTabButtons();
             this.setupTabContainers();
             this.setupEventListeners();
-            this.handleTabClick(this.state.currentTab); // Activate the initial tab
+            
+            // Activate the initial tab without playing sound on load
+            this.handleTabClick(this.state.currentTab, { isInitialLoad: true });
             
             // Initialize the global share widget
             ShareWidget.init(this.elements.shareWidgetContainer);
@@ -75,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setupEventListeners() {
             this.elements.tabNavigation.addEventListener('click', (e) => {
                 if (e.target.matches('.tab-btn')) {
+                    playSound('ui-click');
                     this.handleTabClick(e.target.dataset.tabId);
                 }
             });
@@ -89,8 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         },
 
-        handleTabClick(tabId) {
-            if (!tabId) return;
+        handleTabClick(tabId, options = {}) {
+            const { isInitialLoad = false } = options;
+
+            // Don't do anything if it's not the initial load and the tab is already active
+            if (!isInitialLoad && tabId === this.state.currentTab) return;
+
+            if (!isInitialLoad) {
+                playSound('card-slide');
+            }
+            
             this.state.currentTab = tabId;
 
             // Update tab buttons

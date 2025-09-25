@@ -65,11 +65,7 @@ export const UnitConverter = {
 
     addEventListeners() {
         this.elements.angleInput.addEventListener('input', debounce(() => this.convert(), 250));
-        this.elements.unitSelector.addEventListener('click', (e) => {
-            if (e.target.matches('.unit-btn')) {
-                this.setUnit(e.target.dataset.unit);
-            }
-        });
+        
         this.elements.unitButtons.forEach(button => {
             button.addEventListener('click', () => {
                 playSound('ui-click');
@@ -80,12 +76,10 @@ export const UnitConverter = {
         });
     },
 
-    setUnit(unit) {
-        this.state.currentUnit = unit;
-        this.elements.unitSelector.querySelectorAll('.unit-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.unit === unit);
+    updateActiveButton() {
+        this.elements.unitButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.unit === this.state.currentUnit);
         });
-        this.convert();
     },
 
     convert() {

@@ -1,3 +1,5 @@
+import { playSound } from '../utils.js';
+
 /**
  * Share Widget Component - Project V2
  * Author: NQQ
@@ -58,6 +60,7 @@ export const ShareWidget = {
     addEventListeners() {
         this.elements.mainButton.addEventListener('click', () => {
             this.toggleMenu();
+            playSound('ui-open');
         });
 
         this.elements.shareItems.forEach(item => {
@@ -102,6 +105,7 @@ export const ShareWidget = {
             case 'copy':
                 navigator.clipboard.writeText(url).then(() => {
                     this.showToast('Đã sao chép link!');
+                    playSound('ui-confirm');
                 }).catch(err => {
                     this.showToast('Lỗi khi sao chép!', 'error');
                     console.error('Failed to copy: ', err);
