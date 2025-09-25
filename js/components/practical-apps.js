@@ -4,7 +4,7 @@
  * Created: 24/07/2024
  */
 
-const PracticalApps = {
+export const PracticalApps = {
     isInitialized: false,
     elements: {},
     state: {

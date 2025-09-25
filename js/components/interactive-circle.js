@@ -4,7 +4,7 @@
  * Created: 24/07/2024
  */
 
-const InteractiveCircle = {
+export const InteractiveCircle = {
     isInitialized: false,
     elements: {},
     canvas: null,

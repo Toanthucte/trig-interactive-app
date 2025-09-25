@@ -4,7 +4,7 @@
  * Created: 24/07/2024
  */
 
-const QuizGame = {
+export const QuizGame = {
     isInitialized: false,
     elements: {},
     state: {

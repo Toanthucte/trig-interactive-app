@@ -6,7 +6,7 @@
  * A floating action button (FAB) that expands to show social sharing options.
  */
 
-const ShareWidget = {
+export const ShareWidget = {
     isInitialized: false,
     elements: {},
     

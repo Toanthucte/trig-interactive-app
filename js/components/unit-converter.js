@@ -4,7 +4,7 @@
  * Created: 24/07/2024
  */
 
-const UnitConverter = {
+export const UnitConverter = {
     isInitialized: false,
     elements: {},
     state: {

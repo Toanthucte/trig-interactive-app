@@ -4,7 +4,7 @@
  * Created: 24/07/2024
  */
 
-const ValueTable = {
+export const ValueTable = {
     isInitialized: false,
     elements: {},
     state: {
