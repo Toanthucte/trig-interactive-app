@@ -1,3 +1,5 @@
+import { debounce, degToRad, radToDeg, formatNumber, playSound } from '../utils.js';
+
 /**
  * Unit Converter Component - Project V2
  * Author: NQQ
@@ -57,15 +59,24 @@ export const UnitConverter = {
             unitSelector: section.querySelector('.unit-selector'),
             resultsContainer: section.querySelector('#conversion-results'),
             historyContainer: section.querySelector('.history-list'),
+            unitButtons: section.querySelectorAll('.unit-btn'),
         };
     },
 
     addEventListeners() {
-        this.elements.angleInput.addEventListener('input', Utils.debounce(() => this.convert(), 250));
+        this.elements.angleInput.addEventListener('input', debounce(() => this.convert(), 250));
         this.elements.unitSelector.addEventListener('click', (e) => {
             if (e.target.matches('.unit-btn')) {
                 this.setUnit(e.target.dataset.unit);
             }
+        });
+        this.elements.unitButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                playSound('ui-click');
+                this.state.currentUnit = button.dataset.unit;
+                this.updateActiveButton();
+                this.convert();
+            });
         });
     },
 
@@ -91,7 +102,7 @@ export const UnitConverter = {
             return;
         }
 
-        const valueInRadians = Utils.degToRad(valueInDegrees);
+        const valueInRadians = degToRad(valueInDegrees);
         const valueInGradians = valueInDegrees * (10 / 9);
 
         this.renderResults(valueInDegrees, valueInRadians, valueInGradians);
@@ -116,7 +127,7 @@ export const UnitConverter = {
 
             // The value is always parsed as the current unit type
             if (this.state.currentUnit === 'radians') {
-                return Utils.radToDeg(value);
+                return radToDeg(value);
             }
             if (this.state.currentUnit === 'gradians') {
                 return value * (9 / 10);
@@ -133,17 +144,18 @@ export const UnitConverter = {
         this.elements.resultsContainer.innerHTML = `
             <div class="result-card">
                 <h4>Độ</h4>
-                <p>${Utils.formatNumber(degrees, 4)}°</p>
+                <p>${formatNumber(degrees, 4)}°</p>
             </div>
             <div class="result-card">
                 <h4>Radian</h4>
-                <p>${Utils.formatNumber(radians, 4)} rad</p>
+                <p>${formatNumber(radians, 4)} rad</p>
             </div>
             <div class="result-card">
                 <h4>Gradian</h4>
-                <p>${Utils.formatNumber(gradians, 4)} gon</p>
+                <p>${formatNumber(gradians, 4)} gon</p>
             </div>
         `;
+        // Add to history is now called from convert()
     },
 
     addToHistory(item) {
@@ -156,12 +168,21 @@ export const UnitConverter = {
     },
 
     renderHistory() {
-        this.elements.historyContainer.innerHTML = this.state.history.map(item => `
-            <div class="history-item">
+        this.elements.historyContainer.innerHTML = this.state.history.map(item => 
+            `<div class="history-item" data-input="${item.input}">
                 <span>${item.input}</span>
-                <span>&rarr; ${Utils.formatNumber(item.degrees, 2)}°</span>
-            </div>
-        `).join('');
+                <span>≈ ${formatNumber(item.degrees, 2)}°</span>
+            </div>`
+        ).join('');
+        
+        // Add click listeners to history items
+        this.elements.historyContainer.querySelectorAll('.history-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const input = item.getAttribute('data-input');
+                this.elements.angleInput.value = input;
+                this.convert();
+            });
+        });
     },
 
     saveHistory() {

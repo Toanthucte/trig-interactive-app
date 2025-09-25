@@ -1,3 +1,5 @@
+import { debounce, degToRad, radToDeg, formatNumber, formatAngle } from '../utils.js';
+
 /**
  * Value Table Component - Project V2
  * Author: NQQ
@@ -156,7 +158,7 @@ export const ValueTable = {
         this.elements.formatToggle.addEventListener('click', (e) => {
             if (e.target.matches('.toggle-btn')) this.handleFormatToggle(e.target.dataset.format);
         });
-        this.elements.searchInput.addEventListener('input', Utils.debounce((e) => this.handleSearch(e.target.value), 250));
+        this.elements.searchInput.addEventListener('input', debounce((e) => this.handleSearch(e.target.value), 250));
         this.elements.table.querySelector('thead').addEventListener('click', (e) => {
             const header = e.target.closest('th');
             if (header && header.dataset.sort) this.handleSort(header.dataset.sort);
@@ -165,7 +167,7 @@ export const ValueTable = {
 
     generateTableData() {
         this.state.tableData = this.SPECIAL_ANGLES[this.state.currentUnit].map(angle => {
-            const angleRad = this.state.currentUnit === 'degrees' ? Utils.degToRad(angle) : angle;
+            const angleRad = this.state.currentUnit === 'degrees' ? degToRad(angle) : angle;
             return {
                 angle,
                 angleRad,
@@ -180,7 +182,7 @@ export const ValueTable = {
     renderTable() {
         this.elements.tbody.innerHTML = this.state.filteredData.map(row => `
             <tr>
-                <td>${this.formatAngle(row.angle)}</td>
+                <td>${formatAngle(row.angle, this.state.currentUnit)}</td>
                 <td>${this.formatValue('sin', row.sin, row.angleRad)}</td>
                 <td>${this.formatValue('cos', row.cos, row.angleRad)}</td>
                 <td>${this.formatValue('tan', row.tan, row.angleRad)}</td>
@@ -204,6 +206,22 @@ export const ValueTable = {
         this.renderTable();
     },
 
+    handleSearch(query) {
+        const lowerQuery = query.toLowerCase().trim();
+        if (!lowerQuery) {
+            this.state.filteredData = [...this.state.tableData];
+        } else {
+            this.state.filteredData = this.state.tableData.filter(row => {
+                const angleStr = formatAngle(row.angle, this.state.currentUnit).toLowerCase();
+                const sinStr = this.formatValue('sin', row.sin, row.angleRad).toLowerCase();
+                const cosStr = this.formatValue('cos', row.cos, row.angleRad).toLowerCase();
+                const tanStr = this.formatValue('tan', row.tan, row.angleRad).toLowerCase();
+                return angleStr.includes(lowerQuery) || sinStr.includes(lowerQuery) || cosStr.includes(lowerQuery) || tanStr.includes(lowerQuery);
+            });
+        }
+        this.renderTable();
+    },
+
     handleSort(column) {
         if (this.state.sortColumn === column) {
             this.state.sortDirection = this.state.sortDirection === 'asc' ? 'desc' : 'asc';
@@ -213,73 +231,46 @@ export const ValueTable = {
         }
         this.sortData();
         this.renderTable();
+        this.updateSortHeaders();
     },
 
     sortData() {
         this.state.filteredData.sort((a, b) => {
-            const valA = a[this.state.sortColumn];
-            const valB = b[this.state.sortColumn];
-            if (this.state.sortDirection === 'asc') {
-                return valA > valB ? 1 : -1;
+            let valA, valB;
+            if (this.state.sortColumn === 'angle') {
+                valA = a.angle;
+                valB = b.angle;
             } else {
-                return valA < valB ? 1 : -1;
+                valA = a[this.state.sortColumn];
+                valB = b[this.state.sortColumn];
+            }
+
+            if (valA < valB) return this.state.sortDirection === 'asc' ? -1 : 1;
+            if (valA > valB) return this.state.sortDirection === 'asc' ? 1 : -1;
+            return 0;
+        });
+    },
+
+    updateSortHeaders() {
+        this.elements.table.querySelectorAll('th').forEach(th => {
+            th.classList.remove('sort-asc', 'sort-desc');
+            if (th.dataset.sort === this.state.sortColumn) {
+                th.classList.add(this.state.sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
             }
         });
     },
 
-    handleSearch(term) {
-        const lowerTerm = term.toLowerCase();
-        if (!lowerTerm) {
-            this.state.filteredData = [...this.state.tableData];
-        } else {
-            this.state.filteredData = this.state.tableData.filter(row => {
-                return Object.values(row).some(val => val.toString().toLowerCase().includes(lowerTerm));
-            });
-        }
-        this.renderTable();
-    },
-
-    formatAngle(angle) {
-        if (this.state.currentUnit === 'degrees') {
-            return `${angle}°`;
-        }
-
-        const RADIAN_MAP = {
-            0: '0',
-            [Math.PI / 6]: 'π/6',
-            [Math.PI / 4]: 'π/4',
-            [Math.PI / 3]: 'π/3',
-            [Math.PI / 2]: 'π/2',
-            [2 * Math.PI / 3]: '2π/3',
-            [3 * Math.PI / 4]: '3π/4',
-            [5 * Math.PI / 6]: '5π/6',
-            [Math.PI]: 'π',
-            [7 * Math.PI / 6]: '7π/6',
-            [5 * Math.PI / 4]: '5π/4',
-            [4 * Math.PI / 3]: '4π/3',
-            [3 * Math.PI / 2]: '3π/2',
-            [5 * Math.PI / 3]: '5π/3',
-            [7 * Math.PI / 4]: '7π/4',
-            [11 * Math.PI / 6]: '11π/6',
-            [2 * Math.PI]: '2π'
-        };
-
-        // Find the closest special angle within a small tolerance
-        for (const key in RADIAN_MAP) {
-            if (Math.abs(angle - key) < 1e-9) {
-                return RADIAN_MAP[key];
-            }
-        }
-
-        // Fallback for any other angle
-        return `${Utils.formatNumber(angle / Math.PI, 2)}π`;
-    },
-
     formatValue(func, value, angleRad) {
-        if (this.state.currentFormat === 'exact' && this.EXACT_VALUES[func] && this.EXACT_VALUES[func][angleRad]) {
-            return this.EXACT_VALUES[func][angleRad];
+        if (this.state.currentFormat === 'exact') {
+            const exactVal = this.EXACT_VALUES[func][angleRad];
+            if (exactVal !== undefined) return exactVal;
         }
-        if (!isFinite(value)) return '∞';
-        return Utils.formatNumber(value, 3);
+        // Fallback to decimal if not a special angle or format is decimal
+        if (Math.abs(value) > 1e6) return '∞'; // Handle tangent infinity
+        return formatNumber(value, 3);
+    },
+
+    activate() {
+        console.log('ValueTable component activated');
     }
 };

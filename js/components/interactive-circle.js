@@ -1,3 +1,5 @@
+import { debounce, degToRad, radToDeg, formatNumber, playSound } from '../utils.js';
+
 /**
  * Interactive Circle Component - Project V2
  * Author: NQQ
@@ -11,6 +13,7 @@ export const InteractiveCircle = {
     ctx: null,
     isDragging: false,
     currentAngle: 0,
+    lastSnappedAngle: null,
     animationFrame: null,
     
     config: {
@@ -28,7 +31,9 @@ export const InteractiveCircle = {
         fontSize: 12,
         showGrid: true,
         showLabels: true,
-        showTrigLines: true
+        showTrigLines: true,
+        snapThreshold: 4, // Degrees within which to snap
+        snapAngles: [0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330, 360]
     },
 
     animation: {
@@ -133,7 +138,7 @@ export const InteractiveCircle = {
         this.canvas.addEventListener('mouseup', () => this.handleMouseUp());
         this.canvas.addEventListener('mouseleave', () => this.handleMouseUp());
 
-        window.addEventListener('resize', Utils.debounce(() => {
+        window.addEventListener('resize', debounce(() => {
             this.setupCanvas();
             this.draw();
         }, 100));
@@ -142,7 +147,7 @@ export const InteractiveCircle = {
     setAngle(degrees) {
         this.currentAngle = degrees;
         if (document.activeElement !== this.elements.angleInput) {
-            this.elements.angleInput.value = Utils.formatNumber(degrees, 1);
+            this.elements.angleInput.value = formatNumber(degrees, 1);
         }
         if (document.activeElement !== this.elements.angleSlider) {
             this.elements.angleSlider.value = degrees;
@@ -152,21 +157,21 @@ export const InteractiveCircle = {
     },
 
     updateInfoPanels() {
-        const angleRad = Utils.degToRad(this.currentAngle);
+        const angleRad = degToRad(this.currentAngle);
         const x = Math.cos(angleRad);
         const y = Math.sin(angleRad);
         const quadrant = this.getQuadrant(this.currentAngle);
         const signs = this.getQuadrantSigns(quadrant);
         const rule = this.getQuadrantRule(quadrant);
 
-        this.elements.coordinatesPanel.innerHTML = `<h4>Tọa độ (x, y)</h4><p>(${Utils.formatNumber(x, 3)}, ${Utils.formatNumber(y, 3)})</p>`;
+        this.elements.coordinatesPanel.innerHTML = `<h4>Tọa độ (x, y)</h4><p>(${formatNumber(x, 3)}, ${formatNumber(y, 3)})</p>`;
         this.elements.quadrantInfo.innerHTML = `<h4>Góc phần tư ${quadrant}</h4><p>sin: ${signs.sin}, cos: ${signs.cos}, tan: ${signs.tan}</p>`;
         this.elements.trigValues.innerHTML = `
             <h4>Giá trị</h4>
             <div class="values-grid">
-                <span>sin: ${Utils.formatNumber(y, 3)}</span>
-                <span>cos: ${Utils.formatNumber(x, 3)}</span>
-                <span>tan: ${y/x === Infinity ? '∞' : Utils.formatNumber(Math.tan(angleRad), 3)}</span>
+                <span>sin: ${formatNumber(y, 3)}</span>
+                <span>cos: ${formatNumber(x, 3)}</span>
+                <span>tan: ${y/x === Infinity ? '∞' : formatNumber(Math.tan(angleRad), 3)}</span>
             </div>`;
         this.elements.quadrantRule.innerHTML = `
             <h4>Qui tắc A-S-T-C</h4>
@@ -238,7 +243,7 @@ export const InteractiveCircle = {
     },
 
     drawAngleLines() {
-        const angleRad = Utils.degToRad(this.currentAngle);
+        const angleRad = degToRad(this.currentAngle);
         const x = this.centerX + this.radius * Math.cos(angleRad);
         const y = this.centerY - this.radius * Math.sin(angleRad);
 
@@ -266,7 +271,7 @@ export const InteractiveCircle = {
     },
 
     drawPoint() {
-        const angleRad = Utils.degToRad(this.currentAngle);
+        const angleRad = degToRad(this.currentAngle);
         const x = this.centerX + this.radius * Math.cos(angleRad);
         const y = this.centerY - this.radius * Math.sin(angleRad);
 
@@ -312,8 +317,8 @@ export const InteractiveCircle = {
 
     drawDirectionArrow() {
         const arrowRadius = this.radius + 20; // Move arrow outside the circle
-        const startAngle = Utils.degToRad(60);
-        const endAngle = Utils.degToRad(10);
+        const startAngle = degToRad(60);
+        const endAngle = degToRad(10);
 
         this.ctx.strokeStyle = this.config.axisColor;
         this.ctx.lineWidth = 1.5;
@@ -384,13 +389,38 @@ export const InteractiveCircle = {
     },
 
     handleMouseMove(e) {
-        if (this.isDragging) {
-            this.updateAngleFromEvent(e);
+        if (!this.isDragging) return;
+        const rect = this.canvas.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const dx = mouseX - this.centerX;
+        const dy = this.centerY - mouseY; // Y is inverted in canvas coords
+        let angle = radToDeg(Math.atan2(dy, dx));
+        if (angle < 0) angle += 360;
+
+        // Snapping logic
+        let snapped = false;
+        for (const snapAngle of this.config.snapAngles) {
+            if (Math.abs(angle - snapAngle) < this.config.snapThreshold) {
+                if (this.lastSnappedAngle !== snapAngle) {
+                    playSound('interactive-snap');
+                    this.lastSnappedAngle = snapAngle;
+                }
+                angle = snapAngle;
+                snapped = true;
+                break;
+            }
         }
+        if (!snapped) {
+            this.lastSnappedAngle = null;
+        }
+
+        this.setAngle(angle);
     },
 
     handleMouseUp() {
         this.isDragging = false;
+        this.lastSnappedAngle = null; // Reset on mouse up
     },
 
     updateAngleFromEvent(e) {
@@ -400,7 +430,7 @@ export const InteractiveCircle = {
         const dx = x - this.centerX;
         const dy = y - this.centerY;
         let angleRad = Math.atan2(-dy, dx);
-        this.setAngle(Utils.radToDeg(angleRad));
+        this.setAngle(radToDeg(angleRad));
     },
 
     toggleAnimation(speed) {
