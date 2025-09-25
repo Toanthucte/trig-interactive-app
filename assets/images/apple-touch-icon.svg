@@ -1,0 +1,74 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Apple icon gradient -->
+    <radialGradient id="apple-bg-gradient" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" style="stop-color:#4ade80;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Glow effect for iOS -->
+    <filter id="apple-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- iOS shadow -->
+    <filter id="apple-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Rounded square background for iOS -->
+  <rect x="10" y="10" width="160" height="160" rx="35" ry="35" 
+        fill="url(#apple-bg-gradient)" filter="url(#apple-shadow)"/>
+  
+  <!-- Inner highlight -->
+  <rect x="15" y="15" width="150" height="150" rx="30" ry="30" 
+        fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  
+  <!-- Main coordinate system -->
+  <g filter="url(#apple-glow)">
+    <!-- X-axis -->
+    <line x1="40" y1="90" x2="140" y2="90" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <!-- Y-axis -->
+    <line x1="90" y1="40" x2="90" y2="140" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Arrows -->
+    <polygon points="140,90 133,85 133,95" fill="white"/>
+    <polygon points="90,40 85,47 95,47" fill="white"/>
+  </g>
+  
+  <!-- Unit circle -->
+  <circle cx="90" cy="90" r="35" fill="none" stroke="white" stroke-width="3" opacity="0.95"/>
+  
+  <!-- 60-degree angle arc -->
+  <path d="M 125 90 A 35 35 0 0 0 107.5 59.64" 
+        fill="none" 
+        stroke="#fbbf24" 
+        stroke-width="4" 
+        stroke-linecap="round"/>
+  
+  <!-- Radius line -->
+  <line x1="90" y1="90" x2="107.5" y2="59.64" 
+        stroke="#10b981" 
+        stroke-width="3" 
+        stroke-linecap="round"/>
+  
+  <!-- Point on circle -->
+  <circle cx="107.5" cy="59.64" r="5" fill="#ef4444"/>
+  
+  <!-- Mathematical annotations -->
+  <g fill="white" font-family="Arial, sans-serif" font-weight="bold">
+    <!-- 60° angle -->
+    <text x="98" y="78" font-size="12" opacity="0.9">60°</text>
+    
+    <!-- Title -->
+    <text x="90" y="160" text-anchor="middle" font-size="14" font-weight="bold" 
+          fill="white">TRIG APP</text>
+  </g>
+</svg>

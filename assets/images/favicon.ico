@@ -1,9 +1,0 @@
-<!-- Simple Favicon ICO equivalent -->
-<!-- This is a fallback icon for older browsers -->
-<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="8" cy="8" r="7" fill="#2563eb"/>
-  <circle cx="8" cy="8" r="5" fill="none" stroke="white" stroke-width="1"/>
-  <line x1="3" y1="8" x2="13" y2="8" stroke="white"/>
-  <line x1="8" y1="3" x2="8" y2="13" stroke="white"/>
-  <circle cx="11" cy="5" r="1" fill="#ef4444"/>
-</svg>

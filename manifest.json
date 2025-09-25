@@ -17,10 +17,10 @@
       "purpose": "any maskable"
     },
     {
-      "src": "assets/images/favicon.svg", 
-      "sizes": "any",
+      "src": "assets/images/apple-touch-icon.svg", 
+      "sizes": "180x180",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
