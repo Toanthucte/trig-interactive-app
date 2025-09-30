@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "front": "Hãy nêu mối liên hệ giữa bình phương $\\sin$ và $\\cos$ của một góc $x$.",
+    "back": "$$1 = \\sin^2 x + \\cos^2 x$$",
+    "tip": "Công thức cơ bản nhất của lượng giác, luôn đúng với mọi x.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 2,
+    "front": "Có công thức nào liên hệ giữa $\\tan$ và $\\cot$ của cùng một góc không?",
+    "back": "$$1 = \\tan x \\cdot \\cot x$$",
+    "tip": "Liên hệ giữa tang và cotang, dùng để biến đổi biểu thức.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 3,
+    "front": "Nếu biết $\\cos x$, bạn có thể tính $\\sin^2 x$ bằng cách nào?",
+    "back": "$$\\sin^2 x = 1 - \\cos^2 x$$",
+    "tip": "Biến đổi từ công thức gốc, dùng để chuyển đổi giữa sin và cos.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 4,
+    "front": "Nếu biết $\\sin x$, bạn có thể tính $\\cos^2 x$ bằng cách nào?",
+    "back": "$$\\cos^2 x = 1 - \\sin^2 x$$",
+    "tip": "Biến đổi từ công thức gốc, dùng để chuyển đổi giữa cos và sin.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 5,
+    "front": "Làm thế nào để tìm $\\sin x$ khi chỉ biết $\\cos x$?",
+    "back": "$$\\sin x = \\pm \\sqrt{1 - \\cos^2 x}$$",
+    "tip": "Biến đổi từ công thức gốc, chú ý dấu phụ thuộc vào góc x.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 6,
+    "front": "Làm thế nào để tìm $\\cos x$ khi chỉ biết $\\sin x$?",
+    "back": "$$\\cos x = \\pm \\sqrt{1 - \\sin^2 x}$$",
+    "tip": "Biến đổi từ công thức gốc, chú ý dấu phụ thuộc vào góc x.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 7,
+    "front": "Bạn có biết cách biểu diễn $\\tan x$ qua $\\sin$ và $\\cos$ không?",
+    "back": "$$\\tan x = \\dfrac{\\sin x}{\\cos x}$$",
+    "tip": "Định nghĩa tang qua sin và cos, dùng nhiều trong biến đổi biểu thức.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 8,
+    "front": "Bạn có biết cách biểu diễn $\\cot x$ qua $\\sin$ và $\\cos$ không?",
+    "back": "$$\\cot x = \\dfrac{\\cos x}{\\sin x}$$",
+    "tip": "Định nghĩa cotang qua cos và sin, dùng nhiều trong biến đổi biểu thức.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 9,
+    "front": "Có công thức nào liên hệ giữa $\\tan^2 x$ và $\\cos^2 x$ không?",
+    "back": "$$\\dfrac{1}{\\cos^2 x} = \\tan^2 x + 1$$",
+    "tip": "Biến đổi liên hệ giữa tan và cos, dùng trong giải phương trình lượng giác.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 10,
+    "front": "Có công thức nào liên hệ giữa $\\cot^2 x$ và $\\sin^2 x$ không?",
+    "back": "$$\\dfrac{1}{\\sin^2 x} = 1 + \\cot^2 x$$",
+    "tip": "Biến đổi liên hệ giữa cotang và sin, dùng trong giải phương trình lượng giác.",
+    "topic": "Công thức Cơ Bản"
+  },
+  {
+    "id": 11,
+    "front": "Hãy viết công thức cộng góc cho $\\sin (a ± b)$.",
+    "back": "$$\\sin (a \\pm b) = \\sin a \\cos b \\pm \\sin b \\cos a$$",
+    "tip": "sin (a+b) bằng sin cos   sin cos",
+    "topic": "Công thức Cộng (a + b)"
+  },
+  {
+    "id": 12,
+    "front": "Hãy viết công thức cộng góc cho $\\cos (a ± b)$.",
+    "back": "$$\\cos (a \\pm b) = \\cos a \\cos b \\mp \\sin a \\sin b$$",
+    "tip": "cos (a+b) bằng cos cos - sin sin",
+    "topic": "Công thức Cộng (a + b)"
+  },
+  {
+    "id": 13,
+    "front": "Nếu thay b = a trong công thức cộng góc sin(a + b), bạn thu được gì?",
+    "back": "$$\\sin 2a = 2 \\sin a \\cos a$$",
+    "tip": "Công thức nhân đôi cho sin, rất quan trọng trong biến đổi lượng giác.",
+    "topic": "Công thức Cộng (a + b)"
+  },
+  {
+    "id": 14,
+    "front": "Nếu thay b = a trong công thức cộng góc cos(a + b), bạn thu được gì? Có bao nhiêu dạng công thức cho cos(2a)?",
+    "back": "$$\\cos 2a = \\cos^2 a - \\sin^2 a$$\n$$\\cos 2a = 2 \\cos^2 a - 1$$\n$$\\cos 2a = 1 - 2 \\sin^2 a$$",
+    "tip": "Công thức nhân đôi cho cos, có nhiều dạng biến đổi hữu ích.",
+    "topic": "Công thức Cộng (a + b)"
+  }
+]

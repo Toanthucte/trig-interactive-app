@@ -5,6 +5,7 @@ import { ValueTable } from './components/value-table.js';
 import { PracticalApps } from './components/practical-apps.js';
 import { QuizGame } from './components/quiz-game.js';
 import { ShareWidget } from './components/share-widget.js';
+import { Flashcard } from './components/flashcard.js';
 // Note: utils.js and event-bus.js are not modules and are loaded globally in index.html
 // Note: math-keyboard.js is also loaded globally
 
@@ -30,20 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         components: {
+            'flashcard': Flashcard,
             'unit-converter': UnitConverter,
             'interactive-circle': InteractiveCircle,
             'value-table': ValueTable,
             'practical-apps': PracticalApps,
             'quiz-game': QuizGame,
-            // ShareWidget is not a tab, but we can list it for consistency
         },
 
         tabs: [
+            { id: 'flashcard', label: 'Flashcard' },
             { id: 'unit-converter', label: 'Chuyển đổi' },
             { id: 'interactive-circle', label: 'Vòng tròn' },
             { id: 'value-table', label: 'Bảng giá trị' },
             { id: 'practical-apps', label: 'Ứng dụng' },
             { id: 'quiz-game', label: 'Trò chơi' },
+            
         ],
 
         init() {
