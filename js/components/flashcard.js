@@ -19,6 +19,12 @@ export const Flashcard = {
               <option value="all">Tất cả chủ đề</option>
               <option value="Công thức Cơ Bản">Công thức Cơ Bản</option>
               <option value="Công thức Cộng (a + b)">Công thức Cộng (a + b)</option>
+              <option value="Hạ bậc">Hạ bậc</option>
+              <option value="Tổng thành Tích">Tổng thành Tích</option>
+              <option value="Tích thành Tổng">Tích thành Tổng</option>
+              <option value="Chu kỳ hàm LG">Chu kỳ hàm LG</option>
+              <option value="Phương trình LG cơ bản">Phương trình LG cơ bản</option>
+              <option value="Phương trình LG đặc biệt">Phương trình LG đặc biệt</option>
             </select>
           </div>
         </div>
@@ -116,8 +122,11 @@ export const Flashcard = {
       if (window.MathJax) {
         window.MathJax.typesetPromise([answerEl]);
       }
-      tipEl.textContent = card.tip;
+      tipEl.innerHTML = card.tip;
       tipEl.style.display = 'none'; // Ẩn tip mặc định
+      if (window.MathJax) {
+        window.MathJax.typesetPromise([tipEl]);
+      }
       cardEl.classList.toggle('flipped', isFlipped);
     }
 

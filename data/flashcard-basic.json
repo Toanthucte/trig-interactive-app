@@ -72,14 +72,14 @@
   {
     "id": 11,
     "front": "Hãy viết công thức cộng góc cho $\\sin (a ± b)$.",
-    "back": "$$\\sin (a \\pm b) = \\sin a \\cos b \\pm \\sin b \\cos a$$",
+    "back": "$$\\sin (a \\pm b) = $$ $$\\sin a \\cos b \\pm \\sin b \\cos a$$",
     "tip": "sin (a+b) bằng sin cos   sin cos",
     "topic": "Công thức Cộng (a + b)"
   },
   {
     "id": 12,
     "front": "Hãy viết công thức cộng góc cho $\\cos (a ± b)$.",
-    "back": "$$\\cos (a \\pm b) = \\cos a \\cos b \\mp \\sin a \\sin b$$",
+    "back": "$$\\cos (a \\pm b) = $$ $$\\cos a \\cos b \\mp \\sin a \\sin b$$",
     "tip": "cos (a+b) bằng cos cos - sin sin",
     "topic": "Công thức Cộng (a + b)"
   },
@@ -93,8 +93,188 @@
   {
     "id": 14,
     "front": "Nếu thay b = a trong công thức cộng góc cos(a + b), bạn thu được gì? Có bao nhiêu dạng công thức cho cos(2a)?",
-    "back": "$$\\cos 2a = \\cos^2 a - \\sin^2 a$$\n$$\\cos 2a = 2 \\cos^2 a - 1$$\n$$\\cos 2a = 1 - 2 \\sin^2 a$$",
+    "back": "$$\\cos 2a = \\cos^2 a - \\sin^2 a$$ $$\\cos 2a = 2 \\cos^2 a - 1$$ $$\\cos 2a = 1 - 2 \\sin^2 a$$",
     "tip": "Công thức nhân đôi cho cos, có nhiều dạng biến đổi hữu ích.",
     "topic": "Công thức Cộng (a + b)"
+  }
+  ,
+  {
+    "id": 15,
+    "front": "Viết công thức biến đổi tổng thành tích cho $\\cos a + \\cos b$.",
+    "back": "$$\\cos a + \\cos b = $$ $$ 2 \\cos \\left(\\dfrac{a+b}{2}\\right) \\cdot \\cos \\left(\\dfrac{a-b}{2}\\right)$$",
+    "tip": "Tổng hai cos thành tích hai cos trung bình và hiệu.",
+    "topic": "Tổng thành Tích"
+  },
+  {
+    "id": 16,
+    "front": "Viết công thức biến đổi tổng thành tích cho $\\cos a - \\cos b$.",
+    "back": "$$\\cos a - \\cos b = $$ $$ -2 \\sin \\left(\\dfrac{a+b}{2}\\right) \\cdot \\sin \\left(\\dfrac{a-b}{2}\\right)$$",
+    "tip": "Hiệu hai cos thành tích hai sin trung bình và hiệu, có dấu trừ.",
+    "topic": "Tổng thành Tích"
+  },
+  {
+    "id": 17,
+    "front": "Viết công thức biến đổi tổng thành tích cho $\\sin a + \\sin b$.",
+    "back": "$$\\sin a + \\sin b = $$ $$ 2 \\sin \\left(\\dfrac{a+b}{2}\\right) \\cdot \\cos \\left(\\dfrac{a-b}{2}\\right)$$",
+    "tip": "Tổng hai sin thành tích sin trung bình và cos hiệu.",
+    "topic": "Tổng thành Tích"
+  },
+  {
+    "id": 18,
+    "front": "Viết công thức biến đổi tổng thành tích cho $\\sin a - \\sin b$.",
+    "back": "$$\\sin a - \\sin b = $$ $$ 2 \\cos \\left(\\dfrac{a+b}{2}\\right) \\cdot \\sin \\left(\\dfrac{a-b}{2}\\right)$$",
+    "tip": "Hiệu hai sin thành tích cos trung bình và sin hiệu.",
+    "topic": "Tổng thành Tích"
+  }
+  ,
+  {
+    "id": 19,
+    "front": "Viết công thức chuyển tích thành tổng cho $\\sin a \\cos b$.",
+    "back": "$$\\sin a \\cos b = $$ $$\\tfrac{1}{2}[\\sin(a+b) + \\sin(a-b)]$$",
+    "tip": "Tích sin và cos thành tổng hai sin góc cộng và góc hiệu.",
+    "topic": "Tích thành Tổng"
+  },
+  {
+    "id": 20,
+    "front": "Viết công thức chuyển tích thành tổng cho $\\cos a \\cos b$.",
+    "back": "$$\\cos a \\cos b = $$ $$\\tfrac{1}{2}[\\cos(a+b) + \\cos(a-b)]$$",
+    "tip": "Tích hai cos thành tổng hai cos góc cộng và góc hiệu.",
+    "topic": "Tích thành Tổng"
+  },
+  {
+    "id": 21,
+    "front": "Viết công thức chuyển tích thành tổng cho $\\sin a \\sin b$.",
+    "back": "$$\\sin a \\sin b = $$ $$-\\tfrac{1}{2}[\\cos(a+b) - \\cos(a-b)]$$",
+    "tip": "Tích hai sin thành hiệu hai cos góc cộng và góc hiệu, có dấu trừ.",
+    "topic": "Tích thành Tổng"
+  }
+  ,
+  {
+    "id": 22,
+    "front": "Viết công thức hạ bậc cho $\\sin^2 a$.",
+    "back": "$$\\sin^2 a = \\dfrac{1 - \\cos 2a}{2}$$",
+    "tip": "Công thức hạ bậc giúp chuyển đổi sin bình về cos góc nhân đôi.",
+    "topic": "Hạ bậc"
+  },
+  {
+    "id": 23,
+    "front": "Viết công thức hạ bậc cho $\\cos^2 a$.",
+    "back": "$$\\cos^2 a = \\dfrac{1 + \\cos 2a}{2}$$",
+    "tip": "Công thức hạ bậc giúp chuyển đổi cos bình về cos góc nhân đôi.",
+    "topic": "Hạ bậc"
+  },
+  {
+    "id": 24,
+    "front": "Công thức liên hệ giữa $\\sin^2 a$ và $\\cos^2 a$ là gì?",
+    "back": "$$\\sin^2 a + \\cos^2 a = 1$$",
+    "tip": "Công thức cơ bản nhất, luôn đúng với mọi a.",
+    "topic": "Hạ bậc"
+  }
+  ,
+  {
+    "id": 25,
+    "front": "Giải phương trình $\\sin u = \\sin v$.",
+    "back": "$$u = v + k2\\pi,\\; k \\in \\mathbb{Z}$$ $$u = \\pi - v + k2\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Phương trình sin bằng sin có hai họ nghiệm cơ bản.",
+    "topic": "Phương trình LG cơ bản"
+  },
+  {
+    "id": 26,
+    "front": "Giải phương trình $\\cos u = \\cos v$.",
+    "back": "$$u = v + k2\\pi,\\; k \\in \\mathbb{Z}$$ $$u = -v + k2\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Phương trình cos bằng cos có hai họ nghiệm cơ bản.",
+    "topic": "Phương trình LG cơ bản"
+  },
+  {
+    "id": 27,
+    "front": "Giải phương trình $\\tan u = \\tan v$.",
+    "back": "$$u = v + k\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Phương trình tan bằng tan có một họ nghiệm cơ bản.",
+    "topic": "Phương trình LG cơ bản"
+  },
+  {
+    "id": 28,
+    "front": "Giải phương trình $\\cot u = \\cot v$.",
+    "back": "$$u = v + k\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Phương trình cot bằng cot có một họ nghiệm cơ bản.",
+    "topic": "Phương trình LG cơ bản"
+  }
+  ,
+  {
+    "id": 29,
+    "front": "Giải phương trình $\\sin u = 0$.",
+    "back": "$$u = k\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Sin bằng 0 khi u là bội của pi.",
+    "topic": "Phương trình LG đặc biệt"
+  },
+  {
+    "id": 30,
+    "front": "Giải phương trình $\\sin u = 1$.",
+    "back": "$$u = \\dfrac{\\pi}{2} + k2\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Sin bằng 1 khi u là pi/2 cộng bội của 2pi.",
+    "topic": "Phương trình LG đặc biệt"
+  },
+  {
+    "id": 31,
+    "front": "Giải phương trình $\\sin u = -1$.",
+    "back": "$$u = -\\dfrac{\\pi}{2} + k2\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Sin bằng -1 khi u là -pi/2 cộng bội của 2pi.",
+    "topic": "Phương trình LG đặc biệt"
+  },
+  {
+    "id": 32,
+    "front": "Giải phương trình $\\cos u = 0$.",
+    "back": "$$u = \\dfrac{\\pi}{2} + k\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Cos bằng 0 khi u là pi/2 cộng bội của pi.",
+    "topic": "Phương trình LG đặc biệt"
+  },
+  {
+    "id": 33,
+    "front": "Giải phương trình $\\cos u = 1$.",
+    "back": "$$u = k2\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Cos bằng 1 khi u là bội của 2pi.",
+    "topic": "Phương trình LG đặc biệt"
+  },
+  {
+    "id": 34,
+    "front": "Giải phương trình $\\cos u = -1$.",
+    "back": "$$u = \\pi + k2\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Cos bằng -1 khi u là pi cộng bội của 2pi.",
+    "topic": "Phương trình LG đặc biệt"
+  },
+  {
+    "id": 35,
+    "front": "Giải phương trình $\\tan u = 0$.",
+    "back": "$$u = k\\pi,\\; k \\in \\mathbb{Z}$$",
+    "tip": "Tan bằng 0 khi u là bội của pi.",
+    "topic": "Phương trình LG đặc biệt"
+  },
+  {
+    "id": 36,
+    "front": "Chu kỳ của hàm $\\sin u$ là gì?",
+    "back": "$$2\\pi$$",
+    "tip": "Hàm sin lặp lại giá trị sau mỗi $2\\pi$.",
+    "topic": "Chu kỳ hàm LG"
+  },
+  {
+    "id": 37,
+    "front": "Chu kỳ của hàm $\\cos u$ là gì?",
+    "back": "$$2\\pi$$",
+    "tip": "Hàm cos lặp lại giá trị sau mỗi $2\\pi$.",
+    "topic": "Chu kỳ hàm LG"
+  },
+  {
+    "id": 38,
+    "front": "Chu kỳ của hàm $\\tan u$ là gì?",
+    "back": "$$\\pi$$",
+    "tip": "Hàm tan lặp lại giá trị sau mỗi $\\pi$.",
+    "topic": "Chu kỳ hàm LG"
+  },
+  {
+    "id": 39,
+    "front": "Chu kỳ của hàm $\\cot u$ là gì?",
+    "back": "$$\\pi$$",
+    "tip": "Hàm cot lặp lại giá trị sau mỗi $\\pi$.",
+    "topic": "Chu kỳ hàm LG"
   }
 ]
